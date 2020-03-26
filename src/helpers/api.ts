@@ -2,8 +2,14 @@ import HttpError from "standard-http-error"
 import ERROR_CODES from "standard-http-error/codes"
 
 export type Payload = Record<string, any>
+export type Query = Record<string, string>
 
-const request = async <T>(method: string, url: string, params?: Payload): Promise<T> => {
+const queryString = (query: Query) =>
+  Object.keys(query)
+    .map((key) => `${key}=${encodeURIComponent(query[key])}`)
+    .join("&")
+
+const request = async <T>(method: string, url: string, params?: Payload | Query): Promise<T> => {
   const headers = new Headers()
   headers.set("Accept", "application/json")
 
@@ -12,11 +18,15 @@ const request = async <T>(method: string, url: string, params?: Payload): Promis
   }
 
   if (params) {
-    if (params instanceof FormData) {
-      init.body = params
+    if (method === "GET") {
+      url += "?" + queryString(params)
     } else {
-      headers.set("Content-Type", "application/json")
-      init.body = JSON.stringify(params)
+      if (params instanceof FormData) {
+        init.body = params
+      } else {
+        headers.set("Content-Type", "application/json")
+        init.body = JSON.stringify(params)
+      }
     }
   }
 
@@ -41,13 +51,8 @@ const request = async <T>(method: string, url: string, params?: Payload): Promis
 
 export default {
   request,
-  get: <T = any>(path: string) => request<T>("GET", path),
+  get: <T = any>(path: string, params?: Query) => request<T>("GET", path, params),
   post: <T = any>(path: string, params: Payload) => request<T>("POST", path, params),
   put: <T = any>(path: string, params: Payload) => request<T>("PUT", path, params),
-  delete: <T = any>(path: string) => request<T>("DELETE", path),
+  delete: <T = any>(path: string, params: Payload) => request<T>("DELETE", path, params),
 }
-
-export const queryString = (query: Record<string, string>) =>
-  Object.keys(query)
-    .map((key) => `${key}=${encodeURIComponent(query[key])}`)
-    .join("&")

@@ -1,23 +1,23 @@
 const questions: Question[] = [
   {
-    id: 1,
+    slug: "q1",
     label: "Question 1",
     answers: [
       {
         label: "Reponse 1",
-        nextId: 2,
+        next: "q2",
       },
       {
         label: "Reponse 2",
-        nextId: 3,
+        next: "q3",
       },
     ],
   },
   {
-    id: 2,
+    slug: "q2",
     label: "Question 2",
     multiple: true,
-    getNextId: () => 4,
+    next: () => "q4",
     answers: [
       {
         label: "Question 2 Reponse 1",
@@ -28,9 +28,9 @@ const questions: Question[] = [
     ],
   },
   {
-    id: 3,
+    slug: "q3",
     label: "Question 3",
-    getNextId: () => 4,
+    next: "q4",
     answers: [
       {
         label: "Question 3 Reponse 1",
@@ -41,9 +41,9 @@ const questions: Question[] = [
     ],
   },
   {
-    id: 4,
+    slug: "q4",
     label: "Question 4",
-    getNextId: () => 5,
+    next: "q5",
     answers: [
       {
         label: "Question 4 Reponse 1",

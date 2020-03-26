@@ -1,12 +1,14 @@
+type Slug = string
+
 interface Question {
-  id: number
+  slug: Slug
   label: string
   multiple?: boolean
   answers: Answer[]
-  getNextId?: (answer: Answer | undefined) => number
+  next?: Slug | ((answer?: Answer) => Slug)
 }
 
 interface Answer {
   label: string
-  nextId?: number
+  next?: Slug
 }

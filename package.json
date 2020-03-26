@@ -4,8 +4,9 @@
   "description": "Tu vas craquer ?",
   "version": "0.1.0",
   "contributors": [
-    "Antoine Rousseau <antoine@rousseau.im>",
-    "Raphaël Pi <pi.raph@gmail.com>"
+    "Margot Dauban <dauban.margot@gmail.com>",
+    "Raphaël Pi <pi.raph@gmail.com>",
+    "Antoine Rousseau <antoine@rousseau.im>"
   ],
   "dependencies": {
     "@babel/preset-typescript": "^7.9.0",
@@ -43,6 +44,7 @@
     "gatsby-transformer-sharp": "^2.3.19",
     "http-proxy-middleware": "^1.0.3",
     "netlify-lambda": "^1.6.3",
+    "prettier": "^2.0.2",
     "prop-types": "^15.7.2",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
@@ -52,9 +54,6 @@
     "styled-components": "^5.0.1",
     "typescript": "^3.8.3",
     "webpack-node-externals": "^1.7.2"
-  },
-  "devDependencies": {
-    "prettier": "^2.0.2"
   },
   "license": "MIT",
   "scripts": {

@@ -3,7 +3,7 @@ import styled, { createGlobalStyle } from "styled-components"
 
 import normalize from "./normalize"
 import style from "./style"
-import { ErrorBoundary } from "../helpers/bugsnag"
+import { ErrorBoundary } from "src/helpers/bugsnag"
 
 const GlobalStyles = createGlobalStyle`
   ${normalize}
