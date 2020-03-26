@@ -1,9 +1,10 @@
 import React from "react"
+import { RouteComponentProps } from "@reach/router"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
-const NotFoundPage = () => (
+const NotFoundPage: React.FC<RouteComponentProps> = () => (
   <Layout>
     <SEO title="404: Not found" />
     <h1>NOT FOUND</h1>
