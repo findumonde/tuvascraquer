@@ -1732,6 +1732,18 @@
     "@types/glob" "*"
     "@types/node" "*"
 
+"@types/standard-error@*":
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/@types/standard-error/-/standard-error-1.1.0.tgz#7625b53aa5e60ea510b11452bdcc6731b7775bf6"
+  integrity sha512-lZshsx/QFLUJcu9prwm3Gtsl+b38HAqO6XUGH8PGwSmiswQhscd2MKrfk3LX3W3HyvNVUKcpsiuhU9r8DX32ww==
+
+"@types/standard-http-error@^2.0.0":
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/@types/standard-http-error/-/standard-http-error-2.0.0.tgz#b13aa73bf45452d43b270de1feadb7bd8d7e29cd"
+  integrity sha512-HBr17A2tj2FkOVNxV1zzhShe1mg1VjzQ3Wlr2tI+sELZxJCY1RrJmWulV1Yft5X8HDSn3Ds6dYmlk0HWUjwamw==
+  dependencies:
+    "@types/standard-error" "*"
+
 "@types/styled-components@^5.0.1":
   version "5.0.1"
   resolved "https://registry.yarnpkg.com/@types/styled-components/-/styled-components-5.0.1.tgz#44d210b0a0218a70df998d1a8e1f69c82d9cc68b"
@@ -11750,6 +11762,18 @@ stackframe@^1.1.1:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/stackframe/-/stackframe-1.1.1.tgz#ffef0a3318b1b60c3b58564989aca5660729ec71"
   integrity sha512-0PlYhdKh6AfFxRyK/v+6/k+/mMfyiEBbTM5L94D0ZytQnJ166wuwoTYLHFWGbs2dpA8Rgq763KGWmN1EQEYHRQ==
+
+"standard-error@>= 1.1.0 < 2":
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/standard-error/-/standard-error-1.1.0.tgz#23e5168fa1c0820189e5812701a79058510d0d34"
+  integrity sha1-I+UWj6HAggGJ5YEnAaeQWFENDTQ=
+
+standard-http-error@^2.0.1:
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/standard-http-error/-/standard-http-error-2.0.1.tgz#f8ae9172e3cef9cb38d2e7084a1925f57a7c34bd"
+  integrity sha1-+K6RcuPO+cs40ucIShkl9Xp8NL0=
+  dependencies:
+    standard-error ">= 1.1.0 < 2"
 
 static-extend@^0.1.1:
   version "0.1.2"

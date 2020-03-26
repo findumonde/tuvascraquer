@@ -1,34 +1,70 @@
+/* eslint-disable @typescript-eslint/camelcase */
+
+require("dotenv").config()
+
+const { createProxyMiddleware } = require("http-proxy-middleware")
+
+// we need these in the browser for Bugsnag:
+process.env.GATSBY_DEPLOY_URL = process.env.DEPLOY_URL || "local" // from Netlify
+process.env.GATSBY_RELEASE = process.env.COMMIT_REF || "local" // from Netlify
+process.env.GATSBY_DEPLOY_DATE = new Date().toString()
+
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    title: `Tu vas craquer ?`,
+    description: `Calculateur de craquage avant la fin du monde`,
+    locale: `fr_FR`,
+    siteUrl: `https://tuvascraquer.netlify.com`,
+    keywords: ["coronavirus", "covid", "SARS-CoV-2", "fin du monde", "craquer"],
   },
   plugins: [
-    `gatsby-plugin-react-helmet`,
+    `gatsby-transformer-sharp`,
     {
-      resolve: `gatsby-source-filesystem`,
+      resolve: `gatsby-plugin-sharp`,
       options: {
-        name: `images`,
-        path: `${__dirname}/src/images`,
+        defaultQuality: 50,
       },
     },
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
+    `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
+        name: `Tu vas craquer ?`,
+        short_name: `Tu vas craquer ?`,
         start_url: `/`,
-        background_color: `#663399`,
-        theme_color: `#663399`,
+        background_color: `#e10f14`,
+        theme_color: `#e10f14`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        icon: `src/images/icon.png`, // This path is relative to the root of the site.
       },
     },
-    // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.dev/offline
-    // `gatsby-plugin-offline`,
+    `gatsby-plugin-typescript`,
+    {
+      resolve: `gatsby-plugin-styled-components`,
+      options: {
+        displayName: process.env.NODE_ENV === "development",
+      },
+    },
+    `gatsby-plugin-netlify`,
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: process.env.GOOGLE_ANALYTICS,
+        head: false,
+        anonymize: true,
+        respectDNT: true,
+      },
+    },
   ],
+  developMiddleware: (app) => {
+    app.use(
+      "/.netlify/functions/",
+      createProxyMiddleware({
+        target: "http://localhost:9000",
+        pathRewrite: {
+          "/.netlify/functions/": "",
+        },
+      })
+    )
+  },
 }
