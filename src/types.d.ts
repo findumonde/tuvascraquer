@@ -11,11 +11,11 @@ interface Question {
   theme: ThemeId
   label: string
   multiple?: boolean
-  answers: Answer[]
-  next?: (answer?: Answer) => Slug
+  choices: Choice[]
+  next?: (choice?: Choice) => Slug
 }
 
-interface Answer {
+interface Choice {
   label: string
   next?: Slug
 }

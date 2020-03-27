@@ -2,7 +2,7 @@ const questions: Record<Slug, Question> = {
   q1: {
     theme: "green",
     label: "Question 1",
-    answers: [
+    choices: [
       {
         label: "Reponse 1",
         next: "q2",
@@ -20,17 +20,9 @@ const questions: Record<Slug, Question> = {
         next: "q5",
       },
       {
-        label: "Reponse 4",
+        label: "Reponse 5",
         next: "q5",
       },
-      // {
-      //   label: "Reponse 5",
-      //   next: "q6",
-      // },
-      // {
-      //   label: "Reponse 6",
-      //   next: "q7",
-      // },
     ],
   },
   q2: {
@@ -38,7 +30,7 @@ const questions: Record<Slug, Question> = {
     label: "Question 2",
     multiple: true,
     next: () => "q4",
-    answers: [
+    choices: [
       {
         label: "Question 2 Reponse 1",
       },
@@ -51,7 +43,7 @@ const questions: Record<Slug, Question> = {
     theme: "purple",
     label: "Question 3",
     next: () => "q4",
-    answers: [
+    choices: [
       {
         label: "Question 3 Reponse 1",
       },
@@ -64,7 +56,7 @@ const questions: Record<Slug, Question> = {
     theme: "orange",
     label: "Question 4",
     next: () => "q5",
-    answers: [
+    choices: [
       {
         label: "Question 4 Reponse 1",
       },

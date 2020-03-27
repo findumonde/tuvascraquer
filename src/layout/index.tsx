@@ -8,6 +8,7 @@ import Footer from "./footer"
 const Content = styled.main`
   max-width: 1000px;
   margin: auto;
+  padding: 30px;
 `
 
 const Layout: React.FC<SEOProps> = ({ children, ...props }) => (
