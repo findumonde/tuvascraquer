@@ -1,5 +1,3 @@
-/* eslint-disable @typescript-eslint/camelcase */
-
 require("dotenv").config()
 
 const { createProxyMiddleware } = require("http-proxy-middleware")
@@ -15,7 +13,7 @@ module.exports = {
     description: `Calculateur de craquage avant la fin du monde`,
     locale: `fr_FR`,
     siteUrl: `https://tuvascraquer.netlify.com`,
-    keywords: ["coronavirus", "covid", "SARS-CoV-2", "fin du monde", "craquer"],
+    keywords: ["coronavirus", "covid", "SARS-CoV-2", "fin du monde", "craquer", "confinement", "lockdown", "quiz"],
   },
   plugins: [
     `gatsby-transformer-sharp`,
