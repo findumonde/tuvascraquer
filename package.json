@@ -58,7 +58,7 @@
   },
   "license": "MIT",
   "scripts": {
-    "develop": "rm -rf .cache && rm -rf public/ && gatsby develop",
+    "start": "rm -rf .cache && rm -rf public/ && gatsby develop",
     "lambda": "NODE_ENV=development netlify-lambda serve src/functions --config webpack.functions.js --timeout 30",
     "build": "rm -rf .cache && rm -rf public/ && gatsby build && netlify-lambda build src/functions --config webpack.functions.js",
     "lint": "tsc --skipLibCheck ; eslint --fix \"**/*.{ts,tsx,js,jsx,json}\"",
