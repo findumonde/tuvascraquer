@@ -40,12 +40,13 @@ interface AnswerProps {
   answer: Answer
   question: Question
   active: boolean
-  onClick: (answer: Answer) => void
+  index: number
+  onClick: (index: number) => void
 }
 
-const Answer: React.FC<AnswerProps> = ({ answer, question, onClick, active }) => {
+const Answer: React.FC<AnswerProps> = ({ answer, question, onClick, active, index }) => {
   const handleOnclick = () => {
-    onClick(answer)
+    onClick(index)
   }
 
   return (

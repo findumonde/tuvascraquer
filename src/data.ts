@@ -46,7 +46,7 @@ const questions: Record<Slug, Question> = {
   q3: {
     theme: "purple",
     label: "Question 3",
-    next: "q4",
+    next: () => "q4",
     answers: [
       {
         label: "Question 3 Reponse 1",
@@ -59,7 +59,7 @@ const questions: Record<Slug, Question> = {
   q4: {
     theme: "orange",
     label: "Question 4",
-    next: "q5",
+    next: () => "q5",
     answers: [
       {
         label: "Question 4 Reponse 1",

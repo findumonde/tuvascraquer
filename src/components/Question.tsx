@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 import styled from "styled-components"
 
 import Answer from "src/components/Answer"
@@ -15,6 +15,8 @@ const AnswerContainer = styled.div`
   flex-wrap: wrap;
 `
 
+const Next = styled.button``
+
 const Disclaimer = styled.p``
 
 interface QuestionProps {
@@ -23,21 +25,21 @@ interface QuestionProps {
 }
 
 const Question: React.FC<QuestionProps> = ({ question, next }) => {
+  const [active, setActive] = useState({})
   const { multiple, label, theme } = question
 
   const { color, Virus } = THEMES[theme]
 
-  const handleClick = (answer: Answer) => {
-    console.log(`Just click on: ${answer.label}`)
+  const handleClick = (index: number) => {
+    const newActive = multiple ? { ...active, [index]: !active[index] } : { [index]: !active[index] }
+    setActive(newActive)
   }
 
-  // const handleNext = (answer: Answer) => {
-  //   if (multiple) {
-  //     typeOf(question.next)(question?.next)
-  //   } else {
-  //     next(answer?.next)
-  //   }
-  // }
+  const handleNext = () => {
+    const slug = question.next ? question.next() : question.answers[Object.keys(active)[0]].next
+    setActive({})
+    next(slug)
+  }
 
   return (
     <Container color={color}>
@@ -46,9 +48,17 @@ const Question: React.FC<QuestionProps> = ({ question, next }) => {
       {multiple && <Disclaimer>Question à choix multiples</Disclaimer>}
       <AnswerContainer>
         {question.answers.map((answer, key) => (
-          <Answer key={key} answer={answer} question={question} onClick={handleClick} active={false} />
+          <Answer
+            key={key}
+            answer={answer}
+            question={question}
+            onClick={handleClick}
+            active={active[key]}
+            index={key}
+          />
         ))}
       </AnswerContainer>
+      <Next onClick={handleNext}>Suivant</Next>
     </Container>
   )
 }

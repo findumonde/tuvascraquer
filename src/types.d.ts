@@ -12,7 +12,7 @@ interface Question {
   label: string
   multiple?: boolean
   answers: Answer[]
-  next?: Slug | ((answer?: Answer) => Slug)
+  next?: (answer?: Answer) => Slug
 }
 
 interface Answer {
