@@ -14,7 +14,6 @@ const Choices = styled.div`
 `
 
 const NextButton = styled.button<{ disabled: boolean; color: string }>`
-  padding: 15px 30px;
   border-radius: 40px;
   margin: 0 auto 20px;
   font-family: ${FONTS.title};
@@ -39,7 +38,10 @@ const NextButton = styled.button<{ disabled: boolean; color: string }>`
   }
 `
 
-const Disclaimer = styled.p``
+const Disclaimer = styled.p`
+  font-style: italic;
+  font-weight: 300;
+`
 
 interface QuestionProps {
   question: Question
@@ -81,7 +83,7 @@ const Question: React.FC<QuestionProps> = ({ question, next }) => {
     <>
       <Virus width={100} style={{ position: "absolute", right: 20 }} />
       <Title>{label}</Title>
-      {multiple && <Disclaimer>Question à choix multiples</Disclaimer>}
+      {multiple && <Disclaimer>Plusieurs réponses possibles</Disclaimer>}
       <Choices>
         {question.choices.map((choice, index) => (
           <ChoiceButton

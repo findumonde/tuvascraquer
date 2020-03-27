@@ -14,9 +14,7 @@ const Home: GatsbyPage = () => {
   }
 
   return (
-    <Layout>
-      {current ? <Question question={current} next={handleNext} /> : <Summary score={97}>Terminé</Summary>}
-    </Layout>
+    <Layout>{current ? <Question question={current} next={handleNext} /> : <Summary date="mercredi 8 mars" />}</Layout>
   )
 }
 

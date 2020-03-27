@@ -13,6 +13,7 @@ export default css`
   }
   button {
     cursor: pointer;
+    background-color: ${COLORS.white};
     border-radius: 25px;
     box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.2);
     border: 2px solid ${COLORS.black};
@@ -21,5 +22,11 @@ export default css`
     align-items: center;
     justify-content: center;
     font-size: 1.2em;
+    padding: 15px 30px;
+  }
+  @media (max-width: 350px) {
+    body {
+      font-size: 90%;
+    }
   }
 `
