@@ -4,15 +4,13 @@ import styled from "styled-components"
 import Answer from "src/components/Answer"
 import { THEMES } from "src/helpers/constants"
 
-const Container = styled.div<{ color: string }>`
-  color: ${(props) => props.color};
-`
-const Title = styled.h1`
-  margin-bottom: 100px;
-`
-const AnswerContainer = styled.div`
+const Title = styled.h1``
+
+const Answers = styled.div`
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
+  margin: 30px;
 `
 
 const Next = styled.button``
@@ -30,7 +28,7 @@ const Question: React.FC<QuestionProps> = ({ question, next }) => {
 
   const { color, Virus } = THEMES[theme]
 
-  const handleClick = (index: number) => {
+  const handleClick = (index: number) => () => {
     const newActive = multiple ? { ...active, [index]: !active[index] } : { [index]: !active[index] }
     setActive(newActive)
   }
@@ -42,24 +40,17 @@ const Question: React.FC<QuestionProps> = ({ question, next }) => {
   }
 
   return (
-    <Container color={color}>
+    <>
       <Virus width={100} />
       <Title>{label}</Title>
       {multiple && <Disclaimer>Question à choix multiples</Disclaimer>}
-      <AnswerContainer>
-        {question.answers.map((answer, key) => (
-          <Answer
-            key={key}
-            answer={answer}
-            question={question}
-            onClick={handleClick}
-            active={active[key]}
-            index={key}
-          />
+      <Answers>
+        {question.answers.map((answer, index) => (
+          <Answer key={index} answer={answer} color={color} onClick={handleClick(index)} active={active[index]} />
         ))}
-      </AnswerContainer>
+      </Answers>
       <Next onClick={handleNext}>Suivant</Next>
-    </Container>
+    </>
   )
 }
 

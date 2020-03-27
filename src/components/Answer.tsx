@@ -1,61 +1,40 @@
 import React from "react"
 import styled from "styled-components"
 
-import { COLORS, THEMES } from "src/helpers/constants"
+import { COLORS } from "src/helpers/constants"
 
-const Container = styled.div`
-  flex: 1;
-  min-width: 500px;
-`
-
-const Button = styled.div<{ active?: boolean; color: string }>`
-  position: relative;
+const Button = styled.button<{ active?: boolean; color: string }>`
+  flex: 1 0 100%;
+  @media (min-width: 460px) {
+    flex: 0 1 calc(50% - 60px);
+    min-width: 400px;
+  }
+  margin: 15px 30px;
   cursor: pointer;
-  margin: 20px;
-  background: ${COLORS.white};
   padding: 20px;
-  border-radius: 4px;
+  border-radius: 26px;
   min-height: 100px;
-  ${({ color }) => `color: ${color};
-  border: 1px solid ${color};`}
-
-  ${({ active, color }) =>
-    active &&
-    `background: ${color};
-  color: ${COLORS.white}`}
-
-  &:hover {
-    ${({ color }) => `
-    text-shadow: -1px -1px 0 ${color};`}
-    transition: all 0.2ms linear;
-  }
-
-  &:active {
-    ${({ color }) => `box-shadow: 0px 0px 0 ${color}, 2px 3px 6px ${color};`}
-    top: 2px;
-  }
+  background-color: ${({ active, color }) => (active ? color : COLORS.white)};
+  box-shadow: 0px 3px 6px #00000029;
+  border: 2px solid ${({ active }) => (active ? COLORS.white : COLORS.black)};
+  outline: none;
+  color: ${({ active }) => (active ? COLORS.white : COLORS.black)};
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2em;
 `
 
-interface AnswerProps {
+interface AnswerProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   answer: Answer
-  question: Question
+  color: string
   active: boolean
-  index: number
-  onClick: (index: number) => void
 }
 
-const Answer: React.FC<AnswerProps> = ({ answer, question, onClick, active, index }) => {
-  const handleOnclick = () => {
-    onClick(index)
-  }
-
-  return (
-    <Container>
-      <Button color={THEMES[question.theme].color} active={active} onClick={handleOnclick}>
-        <span>{answer.label}</span>
-      </Button>
-    </Container>
-  )
-}
+const Answer: React.FC<AnswerProps> = ({ answer, color, active, ...props }) => (
+  <Button color={color} active={active} {...props}>
+    {answer.label}
+  </Button>
+)
 
 export default Answer

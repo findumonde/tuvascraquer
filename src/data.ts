@@ -19,6 +19,10 @@ const questions: Record<Slug, Question> = {
         label: "Reponse 4",
         next: "q5",
       },
+      {
+        label: "Reponse 4",
+        next: "q5",
+      },
       // {
       //   label: "Reponse 5",
       //   next: "q6",
