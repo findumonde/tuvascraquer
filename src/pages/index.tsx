@@ -6,10 +6,10 @@ import data from "src/data"
 import { START } from "src/helpers/constants"
 
 const Home: GatsbyPage = () => {
-  const [current, setCurrent] = useState(data.find((question) => question.slug === START))
+  const [current, setCurrent] = useState(data[START])
 
   const handleNext = (slug: Slug) => {
-    setCurrent(data.find((question) => question.slug === slug))
+    setCurrent(data[slug])
   }
 
   return (

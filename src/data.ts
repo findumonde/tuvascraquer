@@ -1,7 +1,6 @@
-const questions: Question[] = [
-  {
-    slug: "q1",
-    theme: "purple",
+const questions: Record<Slug, Question> = {
+  q1: {
+    theme: "green",
     label: "Question 1",
     answers: [
       {
@@ -30,9 +29,8 @@ const questions: Question[] = [
       // },
     ],
   },
-  {
-    slug: "q2",
-    theme: "purple",
+  q2: {
+    theme: "pink",
     label: "Question 2",
     multiple: true,
     next: () => "q4",
@@ -45,8 +43,7 @@ const questions: Question[] = [
       },
     ],
   },
-  {
-    slug: "q3",
+  q3: {
     theme: "purple",
     label: "Question 3",
     next: "q4",
@@ -59,9 +56,8 @@ const questions: Question[] = [
       },
     ],
   },
-  {
-    slug: "q4",
-    theme: "purple",
+  q4: {
+    theme: "orange",
     label: "Question 4",
     next: "q5",
     answers: [
@@ -73,6 +69,6 @@ const questions: Question[] = [
       },
     ],
   },
-]
+}
 
 export default questions

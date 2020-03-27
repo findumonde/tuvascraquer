@@ -1,8 +1,14 @@
 type Slug = string
 
+type ThemeId = "pink" | "purple" | "green" | "red" | "orange"
+
+interface Theme {
+  color: string
+  Virus: React.FC<React.SVGProps<SVGSVGElement>>
+}
+
 interface Question {
-  slug: Slug
-  theme: Slug
+  theme: ThemeId
   label: string
   multiple?: boolean
   answers: Answer[]

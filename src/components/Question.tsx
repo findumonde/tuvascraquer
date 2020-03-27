@@ -1,7 +1,12 @@
 import React from "react"
 import styled from "styled-components"
-import Answer from "./Answer"
 
+import Answer from "src/components/Answer"
+import { THEMES } from "src/helpers/constants"
+
+const Container = styled.div<{ color: string }>`
+  color: ${(props) => props.color};
+`
 const Title = styled.h1`
   margin-bottom: 100px;
 `
@@ -18,7 +23,9 @@ interface QuestionProps {
 }
 
 const Question: React.FC<QuestionProps> = ({ question, next }) => {
-  const { multiple, label } = question
+  const { multiple, label, theme } = question
+
+  const { color, Virus } = THEMES[theme]
 
   const handleClick = (answer: Answer) => {
     console.log(`Just click on: ${answer.label}`)
@@ -33,7 +40,8 @@ const Question: React.FC<QuestionProps> = ({ question, next }) => {
   // }
 
   return (
-    <>
+    <Container color={color}>
+      <Virus width={100} />
       <Title>{label}</Title>
       {multiple && <Disclaimer>Question à choix multiples</Disclaimer>}
       <AnswerContainer>
@@ -41,7 +49,7 @@ const Question: React.FC<QuestionProps> = ({ question, next }) => {
           <Answer key={key} answer={answer} question={question} onClick={handleClick} active={false} />
         ))}
       </AnswerContainer>
-    </>
+    </Container>
   )
 }
 

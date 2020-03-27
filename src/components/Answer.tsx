@@ -1,36 +1,37 @@
-import React, { useState } from "react"
+import React from "react"
 import styled from "styled-components"
-import { COLORS } from "src/helpers/constants"
+
+import { COLORS, THEMES } from "src/helpers/constants"
 
 const Container = styled.div`
   flex: 1;
   min-width: 500px;
 `
 
-const Button = styled.div<{ active?: boolean; theme: Slug }>`
+const Button = styled.div<{ active?: boolean; color: string }>`
   position: relative;
   cursor: pointer;
   margin: 20px;
-  background: ${COLORS.general.white};
+  background: ${COLORS.white};
   padding: 20px;
   border-radius: 4px;
   min-height: 100px;
-  ${({ theme }) => `color: ${COLORS[theme].button};
-  border: 1px solid ${COLORS[theme].button};`}
+  ${({ color }) => `color: ${color};
+  border: 1px solid ${color};`}
 
-  ${({ active, theme }) =>
+  ${({ active, color }) =>
     active &&
-    `background: ${COLORS[theme].button};
-  color: ${COLORS.general.white}`}
+    `background: ${color};
+  color: ${COLORS.white}`}
 
   &:hover {
-    ${({ theme }) => `
-    text-shadow: -1px -1px 0 ${COLORS[theme].buttonDarker};`}
+    ${({ color }) => `
+    text-shadow: -1px -1px 0 ${color};`}
     transition: all 0.2ms linear;
   }
 
   &:active {
-    ${({ theme }) => `box-shadow: 0px 0px 0 ${COLORS[theme].buttonDarkest}, 2px 3px 6px ${COLORS[theme].buttonDark};`}
+    ${({ color }) => `box-shadow: 0px 0px 0 ${color}, 2px 3px 6px ${color};`}
     top: 2px;
   }
 `
@@ -49,7 +50,7 @@ const Answer: React.FC<AnswerProps> = ({ answer, question, onClick, active }) =>
 
   return (
     <Container>
-      <Button theme={question.theme} active={active} onClick={handleOnclick}>
+      <Button color={THEMES[question.theme].color} active={active} onClick={handleOnclick}>
         <span>{answer.label}</span>
       </Button>
     </Container>
