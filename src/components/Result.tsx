@@ -23,9 +23,16 @@ const Bottom = styled.div`
   height: 40px;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   svg {
     width: 10%;
     height: 100%;
+  }
+  svg:first-of-type {
+    height: 120%;
+  }
+  svg:last-of-type {
+    height: 140%;
   }
 `
 

@@ -56,17 +56,21 @@ const Question: React.FC<QuestionProps> = ({ question, next }) => {
   const { color } = THEMES[theme]
 
   const handleClick = (index: number) => () => {
+    const position = answers.indexOf(index)
     if (multiple && !question.choices[index].unique) {
-      const position = answers.indexOf(index)
       if (position !== -1) {
         const newAnswers = answers.slice()
         newAnswers.splice(position, 1)
         setAnswers(newAnswers)
       } else {
-        setAnswers([...answers, index])
+        setAnswers([...answers.filter((i) => !question.choices[i].unique), index])
       }
     } else {
-      setAnswers([index])
+      if (position !== -1) {
+        setAnswers([])
+      } else {
+        setAnswers([index])
+      }
     }
   }
 

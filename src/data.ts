@@ -162,6 +162,11 @@ const questions: Record<Slug, Question> = {
         label: "Quel confinement ?",
         points: 3,
       },
+      {
+        label: "Rien de tout ça, je suis normal·e",
+        points: 3,
+        unique: true,
+      },
     ],
   },
   situation: {
@@ -174,7 +179,7 @@ const questions: Record<Slug, Question> = {
         points: 1,
       },
       {
-        label: "Je garde mes enfants mais je me soigne",
+        label: "Je garde mes enfants, mais je me soigne",
         points: -3,
       },
       {
@@ -201,15 +206,15 @@ const questions: Record<Slug, Question> = {
     choices: [
       {
         label: "Oui",
-        next: "peopleYes",
+        next: "alone",
       },
       {
         label: "Non",
-        next: "peopleNo",
+        next: "peopleYes",
       },
     ],
   },
-  peopleNo: {
+  alone: {
     theme: "orange",
     label: "Es-tu un gros geek ?",
     next: () => "days",
@@ -227,7 +232,7 @@ const questions: Record<Slug, Question> = {
     theme: "orange",
     label: "Avec qui partages-tu ton toit ?",
     multiple: true,
-    next: (answers) => (answers.some((a) => a < 6) ? "celebrities" : "days"),
+    next: (answers) => (answers.some((index) => index < 6) ? "celebrities" : "days"),
     choices: [
       {
         label: "Mon conjoint / ma conjointe",
@@ -297,8 +302,8 @@ const questions: Record<Slug, Question> = {
         points: 1,
       },
       {
-        label: "Je tue des Sims, je me défoule sur Animal Crossing, je termine RDR2…",
-        points: 2,
+        label: "Je surveille mon stock de PQ",
+        points: -1,
       },
       {
         label: "J’explique à ma mère comment installer HouseParty",
@@ -317,12 +322,12 @@ const questions: Record<Slug, Question> = {
         points: 1,
       },
       {
-        label: "Je surveille mon stock de PQ",
-        points: -1,
+        label: "Je me défoule sur Animal Crossing ou Fornite / Je termine Red Dead Redemption 2 ou Doom Eternal…",
+        points: 2,
       },
       {
         label:
-          "J’apprends le japonais, je peaufine mes positions de yoga, je repeins la salle de bain, je relis « À la recherche du temps perdu »… Bref, je suis chiant·e",
+          "J’apprends le japonais, je peaufine mes positions de yoga, je repeins la salle de bain, je relis mes classiques… Bref, je suis chiant·e",
         points: 3,
       },
       {
