@@ -5,23 +5,23 @@ const questions: Record<Slug, Question> = {
     next: () => "house",
     choices: [
       {
-        label: "Des immeubles, j'habite en ville",
+        label: "Des immeubles, j’habite en ville",
         points: 2,
       },
       {
-        label: "Des champs, j'habite à la campagne",
+        label: "Des champs, j’habite à la campagne",
         points: 4,
       },
       {
-        label: "La mer, j'habite sur le littoral",
+        label: "La mer, j’habite sur le littoral",
         points: 4,
       },
       {
-        label: "Un rassemblement religieux, j'habite à Mulhouse",
+        label: "Un rassemblement religieux, j’habite à Mulhouse",
         points: -1,
       },
       {
-        label: "Je n'ai pas de fenêtre",
+        label: "Je n’ai pas de fenêtre",
         points: -2,
       },
     ],
@@ -151,11 +151,11 @@ const questions: Record<Slug, Question> = {
         points: -1,
       },
       {
-        label: "Je n'avais jamais fait cuire de pâtes",
+        label: "Je n’avais jamais fait cuire de pâtes",
         points: -2,
       },
       {
-        label: "J'ai roulé une grosse pelle à un·e italien·ne qui a passé 6 mois en Chine",
+        label: "J’ai roulé une grosse pelle à un·e italien·ne qui a passé 6 mois en Chine",
         points: -3,
       },
       {
@@ -170,7 +170,7 @@ const questions: Record<Slug, Question> = {
     next: () => "people",
     choices: [
       {
-        label: "Etudiant, j'explique à mes profs comment marche Discord",
+        label: "Etudiant, j’explique à mes profs comment marche Discord",
         points: 1,
       },
       {
@@ -301,7 +301,7 @@ const questions: Record<Slug, Question> = {
         points: 2,
       },
       {
-        label: "J'explique à ma mère comment installer HouseParty",
+        label: "J’explique à ma mère comment installer HouseParty",
         points: 2,
       },
       {
@@ -313,7 +313,7 @@ const questions: Record<Slug, Question> = {
         points: 3,
       },
       {
-        label: "J'épie mes voisins naturistes par la fenêtre",
+        label: "J’épie mes voisins naturistes par la fenêtre",
         points: 1,
       },
       {
@@ -322,7 +322,7 @@ const questions: Record<Slug, Question> = {
       },
       {
         label:
-          "J'apprends le japonais, je peaufine mes positions de yoga, je repeins la salle de bain, je relis « À la recherche du temps perdu »… Bref, je suis chiant·e",
+          "J’apprends le japonais, je peaufine mes positions de yoga, je repeins la salle de bain, je relis « À la recherche du temps perdu »… Bref, je suis chiant·e",
         points: 3,
       },
       {
@@ -334,7 +334,7 @@ const questions: Record<Slug, Question> = {
   },
   drink: {
     theme: "green",
-    label: "A l'apéro tu bois…",
+    label: "A l’apéro tu bois…",
     choices: [
       {
         label: "De l’eau",
@@ -356,7 +356,7 @@ const questions: Record<Slug, Question> = {
   },
   food: {
     theme: "purple",
-    label: "Qu'as-tu mangé hier midi ?",
+    label: "Qu’as-tu mangé hier midi ?",
     next: () => "shower",
     choices: [
       {
@@ -410,18 +410,22 @@ const questions: Record<Slug, Question> = {
     next: () => "end",
     choices: [
       {
-        label: "Il n'y aura pas d'après",
+        label: "Il n’y aura pas d’après",
       },
       {
-        label: "J'abandonne mes enfants sur une aire d'autoroute",
+        label: "J’abandonne mes enfants sur une aire d’autoroute",
         points: -1,
       },
       {
-        label: "Je claque au bar tout ce que j'ai pas dépensé",
+        label: "Je claque au bar tout ce que j’ai pas dépensé",
       },
       {
         label: "Je vais voter écolo aux municipales",
         points: 1,
+      },
+      {
+        label: "Je vais oublier toutes les choses inutiles que j’ai apprises",
+        points: 2,
       },
       {
         label: "Quel confinement ?",
