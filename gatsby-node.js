@@ -19,20 +19,3 @@ exports.onCreateWebpackConfig = ({ stage, actions }) => {
     },
   })
 }
-
-const RESULTS = ["bad", "good"]
-
-exports.createPages = async ({ actions }) => {
-  const { createPage } = actions
-  const component = path.resolve(`src/templates/result.tsx`)
-
-  RESULTS.forEach((result) => {
-    createPage({
-      path: `/result/${result}/`,
-      component,
-      context: {
-        result,
-      },
-    })
-  })
-}

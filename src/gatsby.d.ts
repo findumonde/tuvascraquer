@@ -13,8 +13,6 @@ interface GatsbyPageProps<D, C> extends PageProps {
 }
 type GatsbyPage<D = any, C = object> = React.FC<GatsbyPageProps<D, C>>
 
-declare const graphql: (query: TemplateStringsArray) => void
-
 declare namespace GatsbySsr {
   type OnRenderBody = (fns: {
     pathname: string

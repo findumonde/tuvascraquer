@@ -2,26 +2,19 @@ import React, { useState } from "react"
 
 import Layout from "src/layout"
 import Question from "src/components/Question"
+import Result from "src/components/Result"
 import data from "src/data"
 import { START } from "src/helpers/constants"
-import { queryString } from "src/helpers/api"
 
-const Home: GatsbyPage = ({ navigate }) => {
+const Home: GatsbyPage = () => {
   const [current, setCurrent] = useState<Question | undefined>(data[START])
 
   const handleNext = (slug: Slug) => {
-    const next = data[slug]
-    if (next) {
-      setCurrent(next)
-    } else {
-      navigate("/result/bad/?" + queryString({ date: "mercredi 8 mars" }))
-    }
+    setCurrent(data[slug])
   }
 
   return (
-    <Layout>
-      <Question question={current} next={handleNext} />
-    </Layout>
+    <Layout>{current ? <Question question={current} next={handleNext} /> : <Result date="mercredi 8 mars" />}</Layout>
   )
 }
 

@@ -2,3 +2,9 @@
   publish = "public/"
   command = "yarn build"
   functions = "functions"
+
+[[redirects]]
+  from = "/*"
+  to = "/"
+  status = 301
+  force = false

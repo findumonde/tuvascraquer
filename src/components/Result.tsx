@@ -1,7 +1,6 @@
 import React from "react"
 import styled from "styled-components"
 
-import Layout from "src/layout"
 import { COLORS } from "src/helpers/constants"
 import { isBrowser, openPopup } from "src/helpers/window"
 import { queryString } from "src/helpers/api"
@@ -14,16 +13,12 @@ const ShareButton = styled.button<{ color: string }>`
   ${({ color }) => `color: ${color}; border-color: ${color}`}
 `
 
-interface Context {
-  result: string
+interface Props {
+  date: string
 }
 
-const Result: GatsbyPage<undefined, Context> = ({ location, pageContext: { result } }) => {
-  const params = new URLSearchParams(location.search)
-  const date = params.get("date")
-  const title = `Tu vas craquer ${date} !`
+const Result: React.FC<Props> = ({ date }) => {
   const text = `Je vais craquer ${date} !\n#confinement #covid19`
-  const url = location.href
   const hasShareApi = isBrowser() && "share" in navigator
 
   const track = (type: string) => {
@@ -35,7 +30,7 @@ const Result: GatsbyPage<undefined, Context> = ({ location, pageContext: { resul
       .share({
         title: "Tu vas craquer ?",
         text,
-        url,
+        url: location.href,
       })
       .then(() => {
         track("share")
@@ -47,7 +42,7 @@ const Result: GatsbyPage<undefined, Context> = ({ location, pageContext: { resul
 
   const handleFacebook = () => {
     const params = {
-      u: url,
+      u: location.href,
       quote: text,
     }
     openPopup("fb", `https://www.facebook.com/sharer/sharer.php?${queryString(params)}`)
@@ -56,7 +51,7 @@ const Result: GatsbyPage<undefined, Context> = ({ location, pageContext: { resul
 
   const handleTwitter = () => {
     const params = {
-      url,
+      url: location.href,
       text: text + "\n",
     }
     openPopup("twitter", `https://twitter.com/intent/tweet?${queryString(params)}`, 275)
@@ -64,8 +59,8 @@ const Result: GatsbyPage<undefined, Context> = ({ location, pageContext: { resul
   }
 
   return (
-    <Layout title={title}>
-      <Title>Terminé / {result}</Title>
+    <>
+      <Title>Terminé</Title>
       <Score>Tu vas craquer {date} !</Score>
       {hasShareApi ? (
         <ShareButton color={COLORS.black} onClick={handleShare}>
@@ -81,7 +76,7 @@ const Result: GatsbyPage<undefined, Context> = ({ location, pageContext: { resul
           </ShareButton>
         </>
       )}
-    </Layout>
+    </>
   )
 }
 
