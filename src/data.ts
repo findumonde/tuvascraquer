@@ -28,28 +28,31 @@ const questions: Record<Slug, Question> = {
   },
   house: {
     theme: "orange",
-    label: "Dans quel type de logement es-tu confiné·e ?",
+    label: "Où es-tu confiné·e ?",
     next: () => "outside1",
     choices: [
       {
-        label: "Une maison",
+        label: "Dans une maison",
         points: 4,
       },
       {
-        label: "Un appartement",
+        label: "Dans un appartement",
         points: 2,
       },
       {
-        label: "Une caravane",
+        label: "Dans caravane",
         points: 1,
       },
       {
-        label: "Un bateau… de croisière",
+        label: "Dans bateau… de croisière",
         points: -3,
       },
       {
-        label: "Un bunker",
+        label: "Dans bunker",
         points: -2,
+      },
+      {
+        label: "Dans ton cul",
       },
     ],
   },
@@ -134,6 +137,10 @@ const questions: Record<Slug, Question> = {
         label: "Une connexion Internet",
         points: 3,
       },
+      {
+        label: "Un vibro",
+        points: 2,
+      },
     ],
   },
   before: {
@@ -144,6 +151,10 @@ const questions: Record<Slug, Question> = {
     choices: [
       {
         label: "Je faisais du sport plusieurs fois par semaine",
+        points: -1,
+      },
+      {
+        label: "J’avais une vie sexuelle",
         points: -1,
       },
       {
@@ -255,6 +266,10 @@ const questions: Record<Slug, Question> = {
         points: 2,
       },
       {
+        label: "Ton frère",
+        points: 2,
+      },
+      {
         label: "Mon chien",
         points: 2,
       },
@@ -319,6 +334,10 @@ const questions: Record<Slug, Question> = {
         points: 3,
       },
       {
+        label: "Cuisiner, manger, repeat",
+        points: 2,
+      },
+      {
         label: "Je termine Tetris",
         points: 2,
       },
@@ -326,6 +345,10 @@ const questions: Record<Slug, Question> = {
         label:
           "J’apprends le japonais, je peaufine mes positions de yoga, je repeins la salle de bain, je relis mes classiques… Bref, je suis chiant·e",
         points: 3,
+      },
+      {
+        label: "Je ponce mon Pornhub gratuit",
+        points: 1,
       },
       {
         label: "Rien. Je ne fais absolument rien.",

@@ -2,14 +2,7 @@ import React from "react"
 import { Helmet } from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
 
-export interface Props {
-  title?: string
-  noindex?: boolean
-  description?: string
-  image?: string
-}
-
-const SEO: React.FC<Props> = ({ title, noindex, description, image }) => {
+const SEO: React.FC = () => {
   const {
     site: { siteMetadata: data },
   } = useStaticQuery(graphql`
@@ -29,21 +22,19 @@ const SEO: React.FC<Props> = ({ title, noindex, description, image }) => {
   const htmlAttr = {
     lang: data.locale.substr(0, 2),
   }
-  const pageTitle = title ? `${title} | ${data.title}` : data.title
 
   return (
     <Helmet htmlAttributes={htmlAttr}>
-      <title>{pageTitle}</title>
-      <meta property="og:title" content={pageTitle} />
-      <meta name="description" property="og:description" content={description || data.description} />
+      <title>{data.title}</title>
+      <meta property="og:title" content={data.title} />
+      <meta name="description" property="og:description" content={data.description} />
       <meta property="og:type" content="website" />
       <meta name="twitter:card" content="summary" />
       <meta name="keywords" content={data.keywords.join(", ")} />
       <meta property="og:locale" content={data.locale} />
       <meta property="og:site_name" content={data.title} />
       <meta property="og:url" content={data.siteUrl} />
-      {image && <meta property="og:image" content={image} />}
-      {noindex && <meta name="robots" content="noindex" />}
+      <meta property="og:image" content={`${data.siteUrl}/icon.png`} />
     </Helmet>
   )
 }

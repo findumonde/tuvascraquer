@@ -24,7 +24,11 @@ const Bottom = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  @media (max-width: 500px) {
+    height: 30px;
+  }
   svg {
+    flex: 1 0 auto;
     width: 10%;
     height: 100%;
   }
@@ -32,7 +36,8 @@ const Bottom = styled.div`
     height: 120%;
   }
   svg:last-of-type {
-    height: 140%;
+    height: 150%;
+    margin-top: -15px;
   }
 `
 
@@ -95,7 +100,7 @@ const Result: React.FC<Props> = ({ date, range }) => {
 
   return (
     <>
-      <Content>
+      <Content style={{ minHeight: window.innerHeight - 100 }}>
         <Character />
         <Score>
           Tu vas craquer
