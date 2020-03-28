@@ -13,7 +13,7 @@ const questions: Record<Slug, Question> = {
         points: 4,
       },
       {
-        label: "La mer, j’habite sur le littoral",
+        label: "La mer, j’habite sur la côte",
         points: 4,
       },
       {
@@ -38,10 +38,6 @@ const questions: Record<Slug, Question> = {
       {
         label: "Un appartement",
         points: 2,
-      },
-      {
-        label: "Un studio",
-        points: -1,
       },
       {
         label: "Une caravane",
@@ -283,7 +279,8 @@ const questions: Record<Slug, Question> = {
         points: 4,
       },
       {
-        label: "Un professionnel de la santé",
+        label: "Le Professeur Didier Raoult",
+        points: -1,
       },
       {
         label: "Un porteur du coronavirus",
@@ -298,7 +295,7 @@ const questions: Record<Slug, Question> = {
     next: () => "drink",
     choices: [
       {
-        label: "Je regarde Pandemic sur Netflix",
+        label: "Je regarde Pandémie sur Netflix",
         points: 1,
       },
       {
@@ -306,11 +303,15 @@ const questions: Record<Slug, Question> = {
         points: -1,
       },
       {
+        label: "Je chante sur le karaoké projeté sur l’immeuble d’en face",
+        points: 3,
+      },
+      {
         label: "J’explique à ma mère comment installer HouseParty",
         points: 2,
       },
       {
-        label: "Je me perds dans les méandres de Twitter et réponds à des questionnaire à la con",
+        label: "Je réponds à des questionnaire à la con",
         points: 2,
       },
       {
@@ -318,11 +319,7 @@ const questions: Record<Slug, Question> = {
         points: 3,
       },
       {
-        label: "J’épie mes voisins naturistes par la fenêtre",
-        points: 1,
-      },
-      {
-        label: "Je me défoule sur Animal Crossing ou Fornite / Je termine Red Dead Redemption 2 ou Doom Eternal…",
+        label: "Je termine Tetris",
         points: 2,
       },
       {
@@ -340,6 +337,7 @@ const questions: Record<Slug, Question> = {
   drink: {
     theme: "green",
     label: "A l’apéro tu bois…",
+    next: () => "food",
     choices: [
       {
         label: "De l’eau",
@@ -415,11 +413,11 @@ const questions: Record<Slug, Question> = {
     next: () => "end",
     choices: [
       {
-        label: "Il n’y aura pas d’après",
+        label: "Il n’y a pas d’après",
       },
       {
-        label: "J’abandonne mes enfants sur une aire d’autoroute",
-        points: -1,
+        label: "Cette fois on sait qui est le père",
+        points: 1,
       },
       {
         label: "Je claque au bar tout ce que j’ai pas dépensé",
@@ -429,11 +427,11 @@ const questions: Record<Slug, Question> = {
         points: 1,
       },
       {
-        label: "Je vais oublier toutes les choses inutiles que j’ai apprises",
+        label: "J’oublie toutes les choses inutiles que j’ai apprises",
         points: 2,
       },
       {
-        label: "Quel confinement ?",
+        label: "Je passe quelques jours traquille à la maison",
         points: 3,
       },
     ],
