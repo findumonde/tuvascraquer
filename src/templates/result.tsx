@@ -3,7 +3,7 @@ import styled from "styled-components"
 
 import Layout from "src/layout"
 import { COLORS } from "src/helpers/constants"
-import { openPopup } from "src/helpers/window"
+import { isBrowser, openPopup } from "src/helpers/window"
 import { queryString } from "src/helpers/api"
 
 const Title = styled.h1``
@@ -24,6 +24,7 @@ const Result: GatsbyPage<undefined, Context> = ({ location, pageContext: { resul
   const title = `Tu vas craquer ${date} !`
   const text = `Je vais craquer ${date} !\n#confinement #covid19`
   const url = location.href
+  const hasShareApi = isBrowser() && "share" in navigator
 
   const track = (type: string) => {
     // TODO: GA
@@ -66,7 +67,7 @@ const Result: GatsbyPage<undefined, Context> = ({ location, pageContext: { resul
     <Layout title={title}>
       <Title>Terminé / {result}</Title>
       <Score>Tu vas craquer {date} !</Score>
-      {"share" in navigator ? (
+      {hasShareApi ? (
         <ShareButton color={COLORS.black} onClick={handleShare}>
           Partager
         </ShareButton>

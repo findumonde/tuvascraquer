@@ -14,7 +14,7 @@ export default css`
   button {
     cursor: pointer;
     background-color: ${COLORS.white};
-    border-radius: 25px;
+    border-radius: 20px;
     box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.2);
     border: 2px solid ${COLORS.black};
     outline: none;

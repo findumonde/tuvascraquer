@@ -1,3 +1,5 @@
+export const isBrowser = () => typeof window !== "undefined"
+
 const getSize = (avail: number, min: number, max: number) => Math.max(Math.min(min, avail), Math.min(max, avail / 2))
 
 const getPosition = (avail: number, size: number) => Math.round(avail / 2 - size / 2)
