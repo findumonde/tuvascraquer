@@ -81,7 +81,6 @@ const Question: React.FC<QuestionProps> = ({ question, next }) => {
 
   return (
     <>
-      <Virus width={100} style={{ position: "absolute", right: 20 }} />
       <Title>{label}</Title>
       {multiple && <Disclaimer>Plusieurs réponses possibles</Disclaimer>}
       <Choices>

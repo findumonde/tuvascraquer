@@ -7,7 +7,7 @@ import Footer from "./footer"
 
 const Content = styled.main`
   max-width: 1000px;
-  margin: auto;
+  margin: 0 auto;
   padding: 30px;
 `
 

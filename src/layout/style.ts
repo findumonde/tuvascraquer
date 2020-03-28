@@ -6,6 +6,7 @@ export default css`
   body {
     text-align: center;
     font-family: ${FONTS.text};
+    overflow-x: hidden;
   }
   h1 {
     font-family: ${FONTS.title};
