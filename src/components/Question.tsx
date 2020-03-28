@@ -56,7 +56,7 @@ const Question: React.FC<QuestionProps> = ({ question, next }) => {
   const { color } = THEMES[theme]
 
   const handleClick = (index: number) => () => {
-    if (multiple) {
+    if (multiple && !question.choices[index].unique) {
       const position = answers.indexOf(index)
       if (position !== -1) {
         const newAnswers = answers.slice()
@@ -75,7 +75,7 @@ const Question: React.FC<QuestionProps> = ({ question, next }) => {
       // no answer
       return
     }
-    const slug = question.next ? question.next() : question.choices[answers[0]].next
+    const slug = question.next ? question.next(answers) : question.choices[answers[0]].next
     setAnswers([])
     next(slug)
   }

@@ -12,11 +12,13 @@ interface Question {
   label: string
   multiple?: boolean
   choices: Choice[]
-  next?: (choice?: Choice) => Slug
+  next?: (answers: number[]) => Slug
 }
 
 interface Choice {
   label: string
+  unique?: boolean
+  points?: number
   next?: Slug
 }
 

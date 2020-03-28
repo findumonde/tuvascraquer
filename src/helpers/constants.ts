@@ -11,7 +11,7 @@ export const FONTS = {
   text: "'Open Sans', sans-serif",
 }
 
-export const START = "q1"
+export const START = "place"
 
 export const THEMES: Record<ThemeId, Theme> = {
   red: { color: "#FF534D", Virus: RedVirus },
