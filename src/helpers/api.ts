@@ -4,7 +4,7 @@ import ERROR_CODES from "standard-http-error/codes"
 export type Payload = Record<string, any>
 export type Query = Record<string, string>
 
-const queryString = (query: Query) =>
+export const queryString = (query: Query) =>
   Object.keys(query)
     .map((key) => `${key}=${encodeURIComponent(query[key])}`)
     .join("&")
