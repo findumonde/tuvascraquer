@@ -1,11 +1,11 @@
 import React from "react"
 import styled from "styled-components"
 
-import { openPopup } from "src/helpers/window"
+import Layout from "src/layout"
 import { COLORS } from "src/helpers/constants"
+import { openPopup } from "src/helpers/window"
 import { queryString } from "src/helpers/api"
 
-const Container = styled.div``
 const Title = styled.h1``
 const Score = styled.h2``
 
@@ -14,20 +14,34 @@ const ShareButton = styled.button<{ color: string }>`
   ${({ color }) => `color: ${color}; border-color: ${color}`}
 `
 
-interface SummaryProps {
-  date: string
+interface Context {
+  result: string
 }
 
-const Summary: React.FC<SummaryProps> = ({ date }) => {
+const Result: GatsbyPage<undefined, Context> = ({ location, pageContext: { result } }) => {
+  const params = new URLSearchParams(location.search)
+  const date = params.get("date")
+  const title = `Tu vas craquer ${date} !`
   const text = `Je vais craquer ${date} !\n#confinement #covid19`
   const url = location.href
 
+  const track = (type: string) => {
+    // TODO: GA
+  }
+
   const handleShare = () => {
-    navigator.share({
-      title: "Tu vas craquer ?",
-      text,
-      url,
-    })
+    navigator
+      .share({
+        title: "Tu vas craquer ?",
+        text,
+        url,
+      })
+      .then(() => {
+        track("share")
+      })
+      .catch(() => {
+        // ignore
+      })
   }
 
   const handleFacebook = () => {
@@ -36,6 +50,7 @@ const Summary: React.FC<SummaryProps> = ({ date }) => {
       quote: text,
     }
     openPopup("fb", `https://www.facebook.com/sharer/sharer.php?${queryString(params)}`)
+    track("facebook")
   }
 
   const handleTwitter = () => {
@@ -44,11 +59,12 @@ const Summary: React.FC<SummaryProps> = ({ date }) => {
       text: text + "\n",
     }
     openPopup("twitter", `https://twitter.com/intent/tweet?${queryString(params)}`, 275)
+    track("twitter")
   }
 
   return (
-    <Container>
-      <Title>Terminé</Title>
+    <Layout title={title}>
+      <Title>Terminé / {result}</Title>
       <Score>Tu vas craquer {date} !</Score>
       {"share" in navigator ? (
         <ShareButton color={COLORS.black} onClick={handleShare}>
@@ -64,8 +80,8 @@ const Summary: React.FC<SummaryProps> = ({ date }) => {
           </ShareButton>
         </>
       )}
-    </Container>
+    </Layout>
   )
 }
 
-export default Summary
+export default Result

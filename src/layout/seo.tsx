@@ -6,11 +6,10 @@ export interface Props {
   title?: string
   noindex?: boolean
   description?: string
-  url?: string
   image?: string
 }
 
-const SEO: React.FC<Props> = ({ title, noindex, description, url, image }) => {
+const SEO: React.FC<Props> = ({ title, noindex, description, image }) => {
   const {
     site: { siteMetadata: data },
   } = useStaticQuery(graphql`
@@ -42,8 +41,8 @@ const SEO: React.FC<Props> = ({ title, noindex, description, url, image }) => {
       <meta name="keywords" content={data.keywords.join(", ")} />
       <meta property="og:locale" content={data.locale} />
       <meta property="og:site_name" content={data.title} />
+      <meta property="og:url" content={data.siteUrl} />
       {image && <meta property="og:image" content={image} />}
-      {url && <meta property="og:url" content={url} />}
       {noindex && <meta name="robots" content="noindex" />}
     </Helmet>
   )

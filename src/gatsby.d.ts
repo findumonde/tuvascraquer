@@ -1,4 +1,5 @@
 type GatsbyLinkProps = import("gatsby").GatsbyLinkProps
+type PageProps = import("gatsby").PageProps
 type NavigateFn = import("@reach/router").NavigateFn
 type HistoryLocation = import("history").Location
 
@@ -6,18 +7,11 @@ type Omit<T, K> = Pick<T, Exclude<keyof T, K>>
 // https://github.com/gatsbyjs/gatsby/issues/16682#issuecomment-523352028
 type LinkProps = Omit<GatsbyLinkProps<{}>, "ref"> & { exact?: boolean }
 
-interface GatsbyPageProps<S> {
-  data: any
-  uri: string
-  path: string
-  pageContext: {
-    [key: string]: any
-  }
-  location: Window["location"] & HistoryLocation<S>
-  navigate: NavigateFn
+interface GatsbyPageProps<D, C> extends PageProps {
+  data: D
+  pageContext: C
 }
-
-type GatsbyPage<S = {}> = React.FC<GatsbyPageProps<S>>
+type GatsbyPage<D = any, C = object> = React.FC<GatsbyPageProps<D, C>>
 
 declare const graphql: (query: TemplateStringsArray) => void
 

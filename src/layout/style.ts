@@ -23,6 +23,7 @@ export default css`
     justify-content: center;
     font-size: 1.2em;
     padding: 15px 30px;
+    -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
   }
   @media (max-width: 350px) {
     body {
