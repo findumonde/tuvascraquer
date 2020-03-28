@@ -22,7 +22,7 @@ const Home: GatsbyPage = () => {
           <Question question={current} next={handleNext} />
         </>
       ) : (
-        <Result date="mercredi 8 mars" />
+        <Result date="mercredi 8 mars" range={0} />
       )}
     </Layout>
   )

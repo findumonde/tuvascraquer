@@ -3,6 +3,7 @@ import styled from "styled-components"
 
 import ChoiceButton from "src/components/ChoiceButton"
 import { THEMES, COLORS, FONTS } from "src/helpers/constants"
+import BaseButton from "src/components/Button"
 
 const Title = styled.h1``
 
@@ -13,7 +14,7 @@ const Choices = styled.div`
   margin: 30px 0;
 `
 
-const NextButton = styled.button<{ disabled: boolean; color: string }>`
+const NextButton = styled(BaseButton)<{ disabled: boolean; color: string }>`
   border-radius: 40px;
   margin: 0 auto 20px;
   font-family: ${FONTS.title};
@@ -52,7 +53,7 @@ const Question: React.FC<QuestionProps> = ({ question, next }) => {
   const [answers, setAnswers] = useState<number[]>([])
   const { multiple, label, theme } = question
 
-  const { color, Virus } = THEMES[theme]
+  const { color } = THEMES[theme]
 
   const handleClick = (index: number) => () => {
     if (multiple) {

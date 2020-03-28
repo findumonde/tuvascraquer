@@ -19,3 +19,9 @@ interface Choice {
   label: string
   next?: Slug
 }
+
+interface Result {
+  Character: React.FC<React.SVGProps<SVGSVGElement>>
+  text: string
+  color: string
+}

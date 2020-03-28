@@ -2,8 +2,9 @@ import React from "react"
 import styled from "styled-components"
 
 import { COLORS } from "src/helpers/constants"
+import BaseButton from "src/components/Button"
 
-const Button = styled.button<{ selected?: boolean; color: string }>`
+const Button = styled(BaseButton)<{ selected?: boolean; color: string }>`
   flex: 1 0 100%;
   margin: 15px 30px;
   @media (min-width: 470px) {

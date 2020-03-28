@@ -7,24 +7,24 @@ export default css`
     text-align: center;
     font-family: ${FONTS.text};
     overflow-x: hidden;
+    color: ${COLORS.black};
   }
-  h1 {
+  h1,
+  h2,
+  h3 {
     font-family: ${FONTS.title};
     font-weight: normal;
   }
   button {
     cursor: pointer;
-    background-color: ${COLORS.white};
-    border-radius: 20px;
-    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.2);
-    border: 2px solid ${COLORS.black};
     outline: none;
+    background-color: ${COLORS.white};
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 1.2em;
-    padding: 15px 30px;
     -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+    border: none;
   }
   @media (max-width: 350px) {
     body {
