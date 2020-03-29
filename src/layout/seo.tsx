@@ -35,6 +35,8 @@ const SEO: React.FC = () => {
       <meta property="og:site_name" content={data.title} />
       <meta property="og:url" content={data.siteUrl} />
       <meta property="og:image" content={`${data.siteUrl}/virus.png`} />
+      <meta property="og:image:width" content="1024" />
+      <meta property="og:image:height" content="1024" />
     </Helmet>
   )
 }
