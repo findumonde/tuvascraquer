@@ -64,14 +64,13 @@ const getResult = (points: number) => {
   }
 }
 
-const DAYS_OFFSET = 15 // website was live on day 15
-const DAYS_WEIGHTER = 1.3 // 130 points => 100 days
+const DAYS_WEIGHTER = 1.5 // 150 points => 100 days
 
 const Result: React.FC<Props> = ({ points }) => {
   const minDate = addDays(new Date(), 2)
-  let date = addDays(START_DATE, DAYS_OFFSET + (points - RANGES[0]) / DAYS_WEIGHTER)
+  let date = addDays(START_DATE, (points - RANGES[0]) / DAYS_WEIGHTER)
   if (date.getTime() < minDate.getTime()) {
-    date = minDate // cheating
+    date = addDays(minDate, -(RANGES[0] - points) / 5) // cheating
   }
   const dateStr = format(date, "EEEE d MMMM", { locale: fr })
   const sharedText = `Je vais craquer ${dateStr} !\n#confinement #covid19`
