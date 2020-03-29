@@ -9,7 +9,7 @@ import { START } from "src/helpers/constants"
 import Home from "src/components/Home"
 
 const IndexPage: GatsbyPage = () => {
-  const [current, setCurrent] = useState<Slug | undefined | "RESULT">()
+  const [current, setCurrent] = useState<undefined | Slug | "RESULT">()
   const [total, setTotal] = useState(0)
 
   useEffect(() => {

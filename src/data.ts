@@ -501,4 +501,4 @@ const questions: Record<Slug, Question> = {
 
 export default questions
 
-export const RANGES = [-36, -13, 9, 31, 54, 78]
+export const RANGES = [-47, -22, 3, 28, 53, 78]
