@@ -2,8 +2,8 @@ import React, { useState } from "react"
 import styled from "styled-components"
 
 import ChoiceButton from "src/components/ChoiceButton"
-import { THEMES, COLORS, FONTS } from "src/helpers/constants"
-import BaseButton from "src/components/Button"
+import { THEMES } from "src/helpers/constants"
+import NextButton from "src/components/NextButton"
 
 const Title = styled.h1``
 
@@ -12,31 +12,6 @@ const Choices = styled.div`
   flex-wrap: wrap;
   justify-content: center;
   margin: 30px 0;
-`
-
-const NextButton = styled(BaseButton)<{ disabled: boolean; color: string }>`
-  border-radius: 40px;
-  margin: 0 auto 20px;
-  font-family: ${FONTS.title};
-  font-size: 1.6em;
-  ${({ color }) => `color: ${color}; border-color: ${color}`};
-  span {
-    display: inline-block;
-    width: 0;
-    height: 0;
-    border-top: 10px solid transparent;
-    border-bottom: 10px solid transparent;
-    border-left: 15px solid ${({ color }) => color};
-    margin-left: 10px;
-  }
-  :disabled {
-    color: ${COLORS.black};
-    border-color: ${COLORS.black};
-    opacity: 0.5;
-    span {
-      border-left-color: ${COLORS.black};
-    }
-  }
 `
 
 const Disclaimer = styled.p`

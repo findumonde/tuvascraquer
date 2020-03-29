@@ -2,7 +2,6 @@ import { GreenVirus, OrangeVirus, PinkVirus, PurpleVirus, RedVirus } from "src/i
 import { WorstCharacter, BadCharacter, AverageCharacter, GoodCharacter, BestCharacter } from "src/images/characters"
 
 export const START_DATE = new Date(2020, 2, 17)
-export const ONE_DAY = 86400000
 
 export const COLORS = {
   white: "#ffffff",

@@ -54,7 +54,7 @@ interface Props {
 
 const track = (type: string, value: string | number) => {
   console.log("GA", type, value)
-  // TODO: GA
+  // TODO
 }
 
 const getResult = (points: number) => {

@@ -1,7 +1,7 @@
 import styled from "styled-components"
 
 import BaseButton from "src/components/Button"
-import { COLORS, FONTS } from "src/helpers/constants"
+import { COLORS, FONTS, THEMES } from "src/helpers/constants"
 
 const NextButton = styled(BaseButton)<{ disabled?: boolean; color?: string }>`
   border-radius: 40px;
@@ -25,6 +25,16 @@ const NextButton = styled(BaseButton)<{ disabled?: boolean; color?: string }>`
     span {
       border-left-color: ${COLORS.black};
     }
+  }
+  :not(:disabled):hover {
+    color: ${({ color }) => color || THEMES.red.color};
+    border-color: ${({ color }) => color || THEMES.red.color};
+    span {
+      border-left-color: ${({ color }) => color || THEMES.red.color};
+    }
+    transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
+    transform: translateY(2px);
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.2);
   }
 `
 

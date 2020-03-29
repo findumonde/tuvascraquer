@@ -307,8 +307,12 @@ const questions: Record<Slug, Question> = {
     next: () => "drink",
     choices: [
       {
-        label: "T’avais remarqué que l’eau des WC s’échappe toujours dans le sens inverse des aiguilles d’une montre ?",
-        points: -1,
+        label: "Je réponds à des questionnaire à la con",
+        points: 2,
+      },
+      {
+        label: "Je travaille ma stratégie de belotte et mes attaques dans Risk",
+        points: 3,
       },
       {
         label: "Je chante sur le karaoké projeté sur l’immeuble d’en face",
@@ -319,20 +323,12 @@ const questions: Record<Slug, Question> = {
         points: 2,
       },
       {
-        label: "Je réponds à des questionnaire à la con",
-        points: 2,
-      },
-      {
-        label: "Je travaille ma stratégie de belotte et mes attaques dans Risk",
-        points: 3,
-      },
-      {
         label: "Cuisiner, manger, repeat",
         points: 2,
       },
       {
-        label: "Je termine Tetris",
-        points: 2,
+        label: "Netflix, Pornhub, repeat",
+        points: 1,
       },
       {
         label:
@@ -340,11 +336,15 @@ const questions: Record<Slug, Question> = {
         points: 3,
       },
       {
-        label: "Netflix, Pornhub, repeat",
-        points: 1,
+        label: "T’avais remarqué que l’eau des WC s’échappe toujours dans le sens inverse des aiguilles d’une montre ?",
+        points: -1,
       },
       {
         label: "Je me touche en regardant un match de Megan Rapinoe",
+        points: 2,
+      },
+      {
+        label: "Je termine Tetris",
         points: 2,
       },
       {

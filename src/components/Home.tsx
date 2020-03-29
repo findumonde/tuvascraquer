@@ -1,7 +1,8 @@
 import React from "react"
 import styled from "styled-components"
+import { differenceInDays } from "date-fns"
 
-import { RESULTS, THEMES, START_DATE, ONE_DAY } from "src/helpers/constants"
+import { RESULTS, THEMES, START_DATE } from "src/helpers/constants"
 import { isBrowser } from "src/helpers/window"
 import NextButton from "./NextButton"
 
@@ -30,11 +31,6 @@ const Bottom = styled.div`
   }
 `
 
-const getDays = () => {
-  const diff = Date.now() - START_DATE.getTime()
-  return Math.floor(diff / ONE_DAY)
-}
-
 interface Props {
   start: () => void
 }
@@ -42,7 +38,7 @@ interface Props {
 const Home: React.FC<Props> = ({ start }) => {
   return (
     <>
-      <Title>Confinement{isBrowser() ? ` J+${getDays()}` : ""}</Title>
+      <Title>Confinement{isBrowser() ? ` J+${differenceInDays(new Date(), START_DATE)}` : ""}</Title>
       <Subtitle>Quand vas-tu craquer ?</Subtitle>
       <NextButton onClick={start}>
         Démarrer
