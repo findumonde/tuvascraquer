@@ -298,6 +298,9 @@ const questions: Record<Slug, Question> = {
         label: "Un·e porteur·se du coronavirus",
         points: -3,
       },
+      {
+        label: "Rien de tout cela",
+      },
     ],
   },
   days: {
@@ -416,7 +419,7 @@ const questions: Record<Slug, Question> = {
         points: 2,
       },
       {
-        label: "Hier… ou avant-hier… on est quel jour ?",
+        label: "Hier… ou avant-hier… je sais plus",
         points: 1,
       },
       {
