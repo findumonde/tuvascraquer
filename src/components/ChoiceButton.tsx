@@ -18,6 +18,7 @@ const Button = styled(BaseButton)<{ selected?: boolean; color: string }>`
   background-color: ${({ selected, color }) => (selected ? color : COLORS.white)};
   border-color: ${({ selected }) => (selected ? COLORS.white : COLORS.black)};
   color: ${({ selected }) => (selected ? COLORS.white : COLORS.black)};
+  white-space: pre-line;
 `
 
 interface Props extends React.ButtonHTMLAttributes<HTMLButtonElement> {

@@ -408,7 +408,7 @@ const questions: Record<Slug, Question> = {
   shower: {
     theme: "red",
     label: "De quand date ta dernière douche ?",
-    next: () => "after",
+    next: () => "out",
     choices: [
       {
         label: "Il y a une heure",
@@ -428,8 +428,31 @@ const questions: Record<Slug, Question> = {
       },
     ],
   },
-  after: {
+  out: {
     theme: "orange",
+    label: "Pour sortir…",
+    next: () => "after",
+    choices: [
+      {
+        label: "Je remplis soigneusement mon attestation pour promener mon chien en peluche",
+        points: -2,
+      },
+      {
+        label: "Je me déguise en sac poubelle",
+        points: -1,
+      },
+      {
+        label: "J’envoie mon gosse en éclaireur",
+        points: -2,
+      },
+      {
+        label: "TU RESTES CHEZ TOI BORDEL !\n#RestezChezVous",
+        points: 2,
+      },
+    ],
+  },
+  after: {
+    theme: "pink",
     label: "Après le confinement…",
     multiple: true,
     next: () => "end",
@@ -455,7 +478,7 @@ const questions: Record<Slug, Question> = {
     ],
   },
   end: {
-    theme: "pink",
+    theme: "green",
     label: "Es-tu sûr·e de vouloir connaître le résultat de ce test ?",
     choices: [
       {
@@ -472,4 +495,4 @@ const questions: Record<Slug, Question> = {
 
 export default questions
 
-export const RANGES = [-34, -12, 9, 31, 53, 76]
+export const RANGES = [-36, -13, 9, 31, 54, 78]
