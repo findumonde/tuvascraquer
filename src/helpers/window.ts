@@ -12,3 +12,11 @@ export const openPopup = (name: string, url: string, bestHeight?: number) => {
   const top = getPosition(availHeight, height)
   window.open(url, name, `width=${width},height=${height},left=${left},top=${top}`)
 }
+
+if (isBrowser() && !window.ga) {
+  // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
+  // @ts-ignore
+  window.ga = (...args: any[]) => {
+    console.log("[GA]", args.join(" / "))
+  }
+}

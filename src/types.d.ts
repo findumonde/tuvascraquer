@@ -23,6 +23,7 @@ interface Choice {
 }
 
 interface Result {
+  slug: "worst" | "bad" | "average" | "good" | "best"
   Character: React.FC<React.SVGProps<SVGSVGElement>>
   text: string
   color: string

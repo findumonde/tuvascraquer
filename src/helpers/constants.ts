@@ -25,29 +25,34 @@ export const THEMES: Record<ThemeId, Theme> = {
 
 export const RESULTS: Result[] = [
   {
+    slug: "worst",
     Character: WorstCharacter,
     text:
       "Tu n’es vraiment pas beau à voir, tu commences à te transformer en pangolin. Tes voisins ont plus peur de te croiser que d’attraper le coronavirus.",
     color: THEMES.red.color,
   },
   {
+    slug: "bad",
     Character: BadCharacter,
     text: "Tu devrais ralentir sur la chloroquine, aller prendre une douche et surtout libérer tes enfants de la cave.",
     color: THEMES.orange.color,
   },
   {
+    slug: "average",
     Character: AverageCharacter,
     text:
       "Passée l’euphorie des premiers apéro-visio, des applaudissements sur le balcon et des chamboule-tout de PQ, tu vas bientôt passer dans la quatrième dimension. ",
     color: THEMES.pink.color,
   },
   {
+    slug: "good",
     Character: GoodCharacter,
     text:
       "Glandeur dans l’âme, le confinement te va comme un gant, tu es en totale osmose avec ton canapé. On en reparle quand tu auras fait le tour de Netflix…",
     color: THEMES.green.color,
   },
   {
+    slug: "best",
     Character: BestCharacter,
     text:
       "Tu es né pour être confiné ! Si tu attrapes le coronavirus, mieux vaut qu’il se mette en quarantaine. Mais malheureusement, toutes les bonnes choses ont une fin…",

@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import styled from "styled-components"
 
 import ChoiceButton from "src/components/ChoiceButton"
@@ -26,19 +26,22 @@ interface QuestionProps {
 
 const Question: React.FC<QuestionProps> = ({ question, next }) => {
   const [answers, setAnswers] = useState<number[]>([])
-  const { multiple, label, theme } = question
-
+  const { choices, multiple, label, theme } = question
   const { color } = THEMES[theme]
+
+  useEffect(() => {
+    ga("send", "pageview", question.label)
+  }, [question])
 
   const handleClick = (index: number) => () => {
     const position = answers.indexOf(index)
-    if (multiple && !question.choices[index].unique) {
+    if (multiple && !choices[index].unique) {
       if (position !== -1) {
         const newAnswers = answers.slice()
         newAnswers.splice(position, 1)
         setAnswers(newAnswers)
       } else {
-        setAnswers([...answers.filter((i) => !question.choices[i].unique), index])
+        setAnswers([...answers.filter((i) => !choices[i].unique), index])
       }
     } else {
       if (position !== -1) {
@@ -54,8 +57,11 @@ const Question: React.FC<QuestionProps> = ({ question, next }) => {
       // no answer
       return
     }
-    const points = answers.reduce((total, index) => total + (question.choices[index].points || 0), 0)
-    const slug = question.next ? question.next(answers) : question.choices[answers[0]].next
+    const points = answers.reduce((total, index) => total + (choices[index].points || 0), 0)
+    const slug = question.next ? question.next(answers) : choices[answers[0]].next
+    answers.forEach((index) => {
+      ga("send", "event", "answer", question.label, choices[index].label)
+    })
     setAnswers([])
     next(points, slug)
   }
@@ -65,7 +71,7 @@ const Question: React.FC<QuestionProps> = ({ question, next }) => {
       <Title>{label}</Title>
       {multiple && <Disclaimer>Plusieurs réponses possibles</Disclaimer>}
       <Choices>
-        {question.choices.map((choice, index) => (
+        {choices.map((choice, index) => (
           <ChoiceButton
             key={index}
             choice={choice}

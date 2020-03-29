@@ -52,9 +52,8 @@ interface Props {
   points: number
 }
 
-const track = (type: string, value: string | number) => {
-  console.log("GA", type, value)
-  // TODO
+const trackSharing = (label: string) => {
+  ga("send", "social", label, "share")
 }
 
 const getResult = (points: number) => {
@@ -75,11 +74,13 @@ const Result: React.FC<Props> = ({ points }) => {
   const sharedText = `Je vais craquer ${dateStr} !\n#confinement #covid19`
   const hasShareApi = isBrowser() && "share" in navigator
 
-  const { Character, color, text } = getResult(points)
+  const { slug, Character, color, text } = getResult(points)
 
   useEffect(() => {
-    track("result", points)
-  }, [points])
+    ga("set", "dimension1", slug)
+    ga("set", "metric1", points)
+    ga("send", "pageview", "result")
+  }, [slug, points])
 
   const handleShare = () => {
     navigator
@@ -89,7 +90,7 @@ const Result: React.FC<Props> = ({ points }) => {
         url: location.href,
       })
       .then(() => {
-        track("share", "share")
+        trackSharing("share")
       })
       .catch(() => {
         // ignore
@@ -102,7 +103,7 @@ const Result: React.FC<Props> = ({ points }) => {
       quote: sharedText,
     }
     openPopup("fb", `https://www.facebook.com/sharer/sharer.php?${queryString(params)}`)
-    track("share", "facebook")
+    trackSharing("facebook")
   }
 
   const handleTwitter = () => {
@@ -111,7 +112,7 @@ const Result: React.FC<Props> = ({ points }) => {
       text: sharedText + "\n",
     }
     openPopup("twitter", `https://twitter.com/intent/tweet?${queryString(params)}`, 275)
-    track("share", "twitter")
+    trackSharing("twitter")
   }
 
   return (

@@ -357,6 +357,7 @@ const questions: Record<Slug, Question> = {
   drink: {
     theme: "green",
     label: "A l’apéro tu bois…",
+    multiple: true,
     next: () => "food",
     choices: [
       {
@@ -475,4 +476,4 @@ const questions: Record<Slug, Question> = {
 
 export default questions
 
-export const RANGES = [-33, -12, 9, 31, 52, 73]
+export const RANGES = [-34, -12, 9, 31, 53, 76]
