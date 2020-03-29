@@ -46,7 +46,7 @@ const Disclaimer = styled.p`
 
 interface QuestionProps {
   question: Question
-  next: (slug: Slug) => void
+  next: (points: number, slug?: Slug) => void
 }
 
 const Question: React.FC<QuestionProps> = ({ question, next }) => {
@@ -79,9 +79,10 @@ const Question: React.FC<QuestionProps> = ({ question, next }) => {
       // no answer
       return
     }
+    const points = answers.reduce((total, index) => total + (question.choices[index].points || 0), 0)
     const slug = question.next ? question.next(answers) : question.choices[answers[0]].next
     setAnswers([])
-    next(slug)
+    next(points, slug)
   }
 
   return (

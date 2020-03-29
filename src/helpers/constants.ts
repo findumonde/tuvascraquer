@@ -1,6 +1,9 @@
 import { GreenVirus, OrangeVirus, PinkVirus, PurpleVirus, RedVirus } from "src/images/virus"
 import { WorstCharacter, BadCharacter, AverageCharacter, GoodCharacter, BestCharacter } from "src/images/characters"
 
+export const START_DATE = new Date(2020, 2, 17)
+export const ONE_DAY = 86400000
+
 export const COLORS = {
   white: "#ffffff",
   black: "#1B1A1A",
@@ -30,7 +33,7 @@ export const RESULTS: Result[] = [
   },
   {
     Character: BadCharacter,
-    text: "Tu devrais ralentir sur la Chloroquine, aller prendre une douche et surtout libérer tes enfants de la cave.",
+    text: "Tu devrais ralentir sur la chloroquine, aller prendre une douche et surtout libérer tes enfants de la cave.",
     color: THEMES.orange.color,
   },
   {

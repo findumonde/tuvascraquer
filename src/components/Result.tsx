@@ -1,13 +1,16 @@
 import React, { useEffect } from "react"
 import styled from "styled-components"
+import { addDays, format } from "date-fns"
+import { fr } from "date-fns/locale"
 
-import { RESULTS } from "src/helpers/constants"
+import { RESULTS, START_DATE } from "src/helpers/constants"
 import { isBrowser, openPopup } from "src/helpers/window"
 import { queryString } from "src/helpers/api"
 
 import ShareIcon from "src/images/share.svg"
 import FacebookIcon from "src/images/facebook.svg"
 import TwitterIcon from "src/images/twitter.svg"
+import { RANGES } from "src/data"
 
 const Content = styled.div`
   min-height: calc(100vh - 90px);
@@ -46,8 +49,7 @@ const ShareButton = styled.button`
 `
 
 interface Props {
-  date: string
-  range: number
+  points: number
 }
 
 const track = (type: string, value: string | number) => {
@@ -55,13 +57,29 @@ const track = (type: string, value: string | number) => {
   // TODO: GA
 }
 
-const Result: React.FC<Props> = ({ date, range }) => {
-  const sharedText = `Je vais craquer ${date} !\n#confinement #covid19`
+const getResult = (points: number) => {
+  for (let i = 0; i < RESULTS.length; i++) {
+    if ((points >= RANGES[i] || i === 0) && (points <= RANGES[i + 1] || i === RESULTS.length - 1)) {
+      return RESULTS[i]
+    }
+  }
+}
+
+const Result: React.FC<Props> = ({ points }) => {
+  const minDate = addDays(new Date(), 2)
+  let date = addDays(START_DATE, 12 + (points + 33))
+  if (date.getTime() < minDate.getTime()) {
+    date = minDate // cheating
+  }
+  const dateStr = format(date, "EEEE d MMMM", { locale: fr })
+  const sharedText = `Je vais craquer ${dateStr} !\n#confinement #covid19`
   const hasShareApi = isBrowser() && "share" in navigator
 
+  const { Character, color, text } = getResult(points)
+
   useEffect(() => {
-    track("result", range)
-  }, [range])
+    track("result", points)
+  }, [points])
 
   const handleShare = () => {
     navigator
@@ -96,8 +114,6 @@ const Result: React.FC<Props> = ({ date, range }) => {
     track("share", "twitter")
   }
 
-  const { Character, color, text } = RESULTS[range]
-
   return (
     <>
       <Content style={{ minHeight: window.innerHeight - 100 }}>
@@ -105,7 +121,7 @@ const Result: React.FC<Props> = ({ date, range }) => {
         <Score>
           Tu vas craquer
           <br />
-          <span style={{ color }}>{date} !</span>
+          <span style={{ color }}>{dateStr} !</span>
         </Score>
         <Text>{text}</Text>
         <Share>

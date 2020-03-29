@@ -10,19 +10,22 @@ import Home from "src/components/Home"
 
 const IndexPage: GatsbyPage = () => {
   const [current, setCurrent] = useState<Question | undefined | "end">()
+  const [total, setTotal] = useState(0)
 
   if (current === "end") {
     return (
       <Layout>
-        <Result date="mercredi 8 mars" range={0} />
+        <Result points={total} />
       </Layout>
     )
   }
 
   if (current) {
-    const handleNext = (slug?: Slug) => {
+    const handleNext = (points: number, slug?: Slug) => {
+      setTotal(total + points)
       setCurrent(slug ? data[slug] : "end")
     }
+
     return (
       <Layout>
         <Background theme={current.theme} />

@@ -1,7 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 
-import SEO, { Props as SEOProps } from "./seo"
+import SEO from "./seo"
 import Header from "./header"
 import Footer from "./footer"
 
@@ -11,9 +11,9 @@ const Content = styled.main`
   padding: 30px 30px 20px;
 `
 
-const Layout: React.FC<SEOProps> = ({ children, ...props }) => (
+const Layout: React.FC = ({ children }) => (
   <>
-    <SEO {...props} />
+    <SEO />
     <Header />
     <Content>{children}</Content>
     <Footer />

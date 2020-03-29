@@ -30,8 +30,8 @@ module.exports = {
         name: `Tu vas craquer ?`,
         short_name: `Tu vas craquer ?`,
         start_url: `/`,
-        background_color: `##1B1A1A`,
-        theme_color: `##1B1A1A`,
+        background_color: `#1B1A1A`,
+        theme_color: `#1B1A1A`,
         display: `minimal-ui`,
         icon: `static/icon.png`, // This path is relative to the root of the site.
       },

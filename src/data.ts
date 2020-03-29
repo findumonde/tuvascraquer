@@ -170,7 +170,7 @@ const questions: Record<Slug, Question> = {
         points: 3,
       },
       {
-        label: "Rien de tout ça, je suis normal·e",
+        label: "Rien de tout ça",
         points: 3,
         unique: true,
       },
@@ -476,3 +476,5 @@ const questions: Record<Slug, Question> = {
 }
 
 export default questions
+
+export const RANGES = [-33, -12, 9, 31, 52, 73]

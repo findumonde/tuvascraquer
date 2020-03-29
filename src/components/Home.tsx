@@ -1,7 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 
-import { RESULTS, THEMES } from "src/helpers/constants"
+import { RESULTS, THEMES, START_DATE, ONE_DAY } from "src/helpers/constants"
 import { isBrowser } from "src/helpers/window"
 import NextButton from "./NextButton"
 
@@ -29,9 +29,6 @@ const Bottom = styled.div`
     }
   }
 `
-
-const START_DATE = new Date(2020, 2, 17)
-const ONE_DAY = 86400000
 
 const getDays = () => {
   const diff = Date.now() - START_DATE.getTime()
