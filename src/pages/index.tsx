@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 
 import Layout from "src/layout"
 import Background from "src/components/Background"
@@ -11,6 +11,10 @@ import Home from "src/components/Home"
 const IndexPage: GatsbyPage = () => {
   const [current, setCurrent] = useState<Question | undefined | "end">()
   const [total, setTotal] = useState(0)
+
+  useEffect(() => {
+    window.scroll(0, 0)
+  }, [current])
 
   if (current === "end") {
     return (
