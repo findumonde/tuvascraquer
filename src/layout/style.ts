@@ -26,6 +26,10 @@ export default css`
     -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
     border: none;
   }
+  a {
+    color: ${COLORS.black};
+    text-decoration-color: #aaa;
+  }
   @media (max-width: 350px) {
     body {
       font-size: 90%;

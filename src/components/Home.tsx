@@ -30,6 +30,11 @@ const Bottom = styled.div`
     }
   }
 `
+const About = styled.footer`
+  margin-top: 40px;
+  font-size: 10px;
+  line-height: 12px;
+`
 
 interface Props {
   start: () => void
@@ -49,6 +54,13 @@ const Home: React.FC<Props> = ({ start }) => {
           <Character key={index} />
         ))}
       </Bottom>
+      <About>
+        Ce questionnaire a été créé par
+        <br />
+        Margot Dauban, <a href="https://antoine.rousseau.im">Antoine Rousseau</a> et Raphaël Pi,
+        <br />
+        durant leur période de confinement.
+      </About>
     </>
   )
 }
