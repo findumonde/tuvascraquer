@@ -10,9 +10,9 @@ process.env.GATSBY_DEPLOY_DATE = new Date().toString()
 module.exports = {
   siteMetadata: {
     title: `Tu vas craquer ?`,
-    description: `Calculateur de craquage avant la fin du monde`,
+    description: `Confinement : le test`,
     locale: `fr_FR`,
-    siteUrl: `https://tuvascraquer.netlify.com`,
+    siteUrl: `https://tuvascraquer.fr`,
     keywords: ["coronavirus", "covid", "SARS-CoV-2", "fin du monde", "craquer", "confinement", "lockdown", "quiz"],
   },
   plugins: [

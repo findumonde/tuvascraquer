@@ -39,19 +39,19 @@ export const RESULTS: Result[] = [
   {
     Character: AverageCharacter,
     text:
-      "Passé l’euphorie des premiers apéro-visio, des applaudissements sur le balcon et des chamboule-tout de PQ, la folie te guette.",
+      "Passée l’euphorie des premiers apéro-visio, des applaudissements sur le balcon et des chamboule-tout de PQ, tu vas bientôt passer dans la quatrième dimension. ",
     color: THEMES.pink.color,
   },
   {
     Character: GoodCharacter,
     text:
-      "Glandeur dans l’âme, le confinement te va comme un gant, tu es en totale osmose avec ton canapé. On en reparle quand tu auras fait le tour de Netflix...",
+      "Glandeur dans l’âme, le confinement te va comme un gant, tu es en totale osmose avec ton canapé. On en reparle quand tu auras fait le tour de Netflix…",
     color: THEMES.green.color,
   },
   {
     Character: BestCharacter,
     text:
-      "Tu es né pour être confiné ! Si tu attrapes le coronavirus, mieux vaut qu’il se mette en quarantaine. Mais malheureusement, toutes les bonnes choses ont une fin...",
+      "Tu es né pour être confiné ! Si tu attrapes le coronavirus, mieux vaut qu’il se mette en quarantaine. Mais malheureusement, toutes les bonnes choses ont une fin…",
     color: THEMES.purple.color,
   },
 ]

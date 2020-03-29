@@ -40,19 +40,20 @@ const questions: Record<Slug, Question> = {
         points: 2,
       },
       {
-        label: "Dans caravane",
+        label: "Dans une caravane",
         points: 1,
       },
       {
-        label: "Dans bateau… de croisière",
+        label: "Dans un bateau… de croisière",
         points: -3,
       },
       {
-        label: "Dans bunker",
+        label: "Dans un bunker",
         points: -2,
       },
       {
         label: "Dans ton cul",
+        points: -1,
       },
     ],
   },
@@ -73,7 +74,7 @@ const questions: Record<Slug, Question> = {
   },
   outside2: {
     theme: "pink",
-    label: "Petit veinard ! Ques lieux plus précisément ?",
+    label: "Petit·e veinard·e ! Quels lieux plus précisément ?",
     multiple: true,
     next: () => "appliances",
     choices: [
@@ -86,10 +87,6 @@ const questions: Record<Slug, Question> = {
         points: 4,
       },
       {
-        label: "Une terrasse",
-        points: 2,
-      },
-      {
         label: "Un balcon",
         points: 1,
       },
@@ -98,12 +95,12 @@ const questions: Record<Slug, Question> = {
         points: 6,
       },
       {
-        label: "Une piscine",
-        points: 5,
-      },
-      {
         label: "Une piscine, mais je ne sais pas nager",
         points: 1,
+      },
+      {
+        label: "Ta mère",
+        points: -2,
       },
     ],
   },
@@ -310,11 +307,7 @@ const questions: Record<Slug, Question> = {
     next: () => "drink",
     choices: [
       {
-        label: "Je regarde Pandémie sur Netflix",
-        points: 1,
-      },
-      {
-        label: "Je surveille mon stock de PQ",
+        label: "T’avais remarqué que l’eau des WC s’échappe toujours dans le sens inverse des aiguilles d’une montre ?",
         points: -1,
       },
       {
@@ -347,12 +340,16 @@ const questions: Record<Slug, Question> = {
         points: 3,
       },
       {
-        label: "Je ponce mon Pornhub gratuit",
+        label: "Netflix, Pornhub, repeat",
         points: 1,
       },
       {
+        label: "Je me touche en regardant un match de Megan Rapinoe",
+        points: 2,
+      },
+      {
         label: "Rien. Je ne fais absolument rien.",
-        points: -2,
+        points: -3,
         unique: true,
       },
     ],
@@ -402,7 +399,7 @@ const questions: Record<Slug, Question> = {
         points: 4,
       },
       {
-        label: "Je me lève à 16h",
+        label: "Je me lève à 20h, les applaudissements me réveillent",
         points: -2,
       },
     ],
@@ -425,7 +422,7 @@ const questions: Record<Slug, Question> = {
         points: -1,
       },
       {
-        label: "Pour mon dernier rendez-vous Tinder",
+        label: "De mon dernier rendez-vous Tinder",
         points: -2,
       },
     ],
@@ -433,6 +430,7 @@ const questions: Record<Slug, Question> = {
   after: {
     theme: "orange",
     label: "Après le confinement…",
+    multiple: true,
     next: () => "end",
     choices: [
       {
@@ -454,7 +452,7 @@ const questions: Record<Slug, Question> = {
         points: 2,
       },
       {
-        label: "Je passe quelques jours traquille à la maison",
+        label: "Je passe quelques jours tranquille à la maison",
         points: 3,
       },
     ],
