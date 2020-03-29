@@ -1,7 +1,7 @@
 const questions: Record<Slug, Question> = {
   place: {
     theme: "red",
-    label: "Que vois-tu par la fenêtre ?",
+    label: "Que vois-tu par la fenêtre ?",
     next: () => "house",
     choices: [
       {
@@ -28,7 +28,7 @@ const questions: Record<Slug, Question> = {
   },
   house: {
     theme: "orange",
-    label: "Où es-tu confiné·e ?",
+    label: "Où es-tu confiné·e ?",
     next: () => "outside1",
     choices: [
       {
@@ -59,7 +59,7 @@ const questions: Record<Slug, Question> = {
   },
   outside1: {
     theme: "pink",
-    label: "As-tu accès à des espaces extérieurs privés ?",
+    label: "As-tu accès à des espaces extérieurs privés ?",
     choices: [
       {
         label: "Oui",
@@ -74,7 +74,7 @@ const questions: Record<Slug, Question> = {
   },
   outside2: {
     theme: "pink",
-    label: "Petit·e veinard·e ! Quels lieux plus précisément ?",
+    label: "Petit·e veinard·e ! Quels lieux plus précisément ?",
     multiple: true,
     next: () => "appliances",
     choices: [
@@ -163,7 +163,7 @@ const questions: Record<Slug, Question> = {
         points: -3,
       },
       {
-        label: "Quel confinement ?",
+        label: "Quel confinement ?",
         points: 3,
       },
       {
@@ -175,11 +175,11 @@ const questions: Record<Slug, Question> = {
   },
   situation: {
     theme: "red",
-    label: "Quelle est ta situation actuelle ?",
+    label: "Quelle est ta situation actuelle ?",
     next: () => "people",
     choices: [
       {
-        label: "Etudiant, j’explique à mes profs comment marche Discord",
+        label: "Etudiant·e, j’explique à mes profs comment marche Discord",
         points: 1,
       },
       {
@@ -191,7 +191,7 @@ const questions: Record<Slug, Question> = {
         points: 2,
       },
       {
-        label: "Enfin au chômage, on est quel jour aujourd’hui ?",
+        label: "Enfin au chômage, on est quel jour aujourd’hui ?",
         points: -1,
       },
       {
@@ -206,7 +206,7 @@ const questions: Record<Slug, Question> = {
   },
   people: {
     theme: "orange",
-    label: "Es-tu confiné·e seul·e ?",
+    label: "Es-tu confiné·e seul·e ?",
     choices: [
       {
         label: "Oui",
@@ -220,7 +220,7 @@ const questions: Record<Slug, Question> = {
   },
   alone: {
     theme: "orange",
-    label: "Es-tu un gros geek ?",
+    label: "Es-tu un gros geek ?",
     next: () => "days",
     choices: [
       {
@@ -234,12 +234,12 @@ const questions: Record<Slug, Question> = {
   },
   peopleYes: {
     theme: "orange",
-    label: "Avec qui partages-tu ton toit ?",
+    label: "Avec qui partages-tu ton toit ?",
     multiple: true,
     next: (answers) => (answers.some((index) => index < 6) ? "celebrities" : "days"),
     choices: [
       {
-        label: "Mon conjoint / ma conjointe",
+        label: "Mon/ma conjoint·e",
         points: 2,
       },
       {
@@ -283,7 +283,7 @@ const questions: Record<Slug, Question> = {
     next: () => "days",
     choices: [
       {
-        label: "Un cuisinier",
+        label: "Un·e cuisinier·ère",
         points: 3,
       },
       {
@@ -295,14 +295,14 @@ const questions: Record<Slug, Question> = {
         points: -1,
       },
       {
-        label: "Un porteur du coronavirus",
+        label: "Un·e porteur·se du coronavirus",
         points: -3,
       },
     ],
   },
   days: {
     theme: "pink",
-    label: "Rentrons dans le vif du sujet… Comment occupes-tu tes journées ?",
+    label: "Rentrons dans le vif du sujet… Comment occupes-tu tes journées ?",
     multiple: true,
     next: () => "drink",
     choices: [
@@ -336,7 +336,8 @@ const questions: Record<Slug, Question> = {
         points: 3,
       },
       {
-        label: "T’avais remarqué que l’eau des WC s’échappe toujours dans le sens inverse des aiguilles d’une montre ?",
+        label:
+          "T’avais remarqué que l’eau des toilettes s’échappe toujours dans le sens inverse des aiguilles d’une montre ?",
         points: -1,
       },
       {
@@ -380,7 +381,7 @@ const questions: Record<Slug, Question> = {
   },
   food: {
     theme: "purple",
-    label: "Qu’as-tu mangé hier midi ?",
+    label: "Qu’as-tu mangé hier midi ?",
     next: () => "shower",
     choices: [
       {
@@ -407,7 +408,7 @@ const questions: Record<Slug, Question> = {
   },
   shower: {
     theme: "red",
-    label: "De quand date ta dernière douche ?",
+    label: "De quand date ta dernière douche ?",
     next: () => "out",
     choices: [
       {
@@ -415,7 +416,7 @@ const questions: Record<Slug, Question> = {
         points: 2,
       },
       {
-        label: "Hier… ou avant-hier… on est quel jour ?",
+        label: "Hier… ou avant-hier… on est quel jour ?",
         points: 1,
       },
       {
@@ -472,14 +473,14 @@ const questions: Record<Slug, Question> = {
         points: 1,
       },
       {
-        label: "Je passe quelques jours tranquille à la maison",
+        label: "Je vais me faire quelques jours tranquille à la maison",
         points: 3,
       },
     ],
   },
   end: {
     theme: "green",
-    label: "Es-tu sûr·e de vouloir connaître le résultat de ce test ?",
+    label: "Es-tu sûr·e de vouloir connaître le résultat de ce test ?",
     choices: [
       {
         label: "Oui",
