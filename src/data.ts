@@ -6,7 +6,7 @@ const questions: Record<Slug, Question> = {
     choices: [
       {
         label: "Des immeubles, j’habite en ville",
-        points: 2,
+        points: -2,
       },
       {
         label: "Des champs, j’habite à la campagne",
@@ -18,11 +18,11 @@ const questions: Record<Slug, Question> = {
       },
       {
         label: "Un rassemblement religieux, j’habite à Mulhouse",
-        points: -1,
+        points: -3,
       },
       {
         label: "Je n’ai pas de fenêtre",
-        points: -2,
+        points: -5,
       },
     ],
   },
@@ -37,7 +37,7 @@ const questions: Record<Slug, Question> = {
       },
       {
         label: "Dans un appartement",
-        points: 2,
+        points: 1,
       },
       {
         label: "Dans une caravane",
@@ -53,7 +53,7 @@ const questions: Record<Slug, Question> = {
       },
       {
         label: "Dans ton cul",
-        points: -1,
+        points: -3,
       },
     ],
   },
@@ -112,7 +112,7 @@ const questions: Record<Slug, Question> = {
     choices: [
       {
         label: "Plusieurs fenêtres",
-        points: 2,
+        points: 0,
       },
       {
         label: "Un frigo",
@@ -148,7 +148,7 @@ const questions: Record<Slug, Question> = {
     choices: [
       {
         label: "Je faisais du sport plusieurs fois par semaine",
-        points: -1,
+        points: -3,
       },
       {
         label: "J’avais une vie sexuelle",
@@ -199,7 +199,7 @@ const questions: Record<Slug, Question> = {
         points: -2,
       },
       {
-        label: "Je ne crois pas qu’il y ait de bonnes ou de mauvaise situation",
+        label: "Je ne crois pas qu’il y ait de bonne ou de mauvaise situation",
         points: 3,
       },
     ],
@@ -244,15 +244,15 @@ const questions: Record<Slug, Question> = {
       },
       {
         label: "Un enfant",
-        points: -1,
+        points: -2,
       },
       {
         label: "Plusieurs enfants",
-        points: -3,
+        points: -5,
       },
       {
         label: "Ma belle-mère",
-        points: -2,
+        points: -4,
       },
       {
         label: "Ma belle-mère… mais je couche avec",
@@ -292,11 +292,11 @@ const questions: Record<Slug, Question> = {
       },
       {
         label: "Le Professeur Didier Raoult",
-        points: -1,
+        points: -2,
       },
       {
         label: "Un·e porteur·se du coronavirus",
-        points: -3,
+        points: -4,
       },
       {
         label: "Rien de tout cela",
@@ -310,8 +310,8 @@ const questions: Record<Slug, Question> = {
     next: () => "drink",
     choices: [
       {
-        label: "Je réponds à des questionnaire à la con",
-        points: 2,
+        label: "Je réponds à des questionnaires à la con",
+        points: 1,
       },
       {
         label: "Je travaille ma stratégie de belotte et mes attaques dans Risk",
@@ -323,7 +323,7 @@ const questions: Record<Slug, Question> = {
       },
       {
         label: "J’explique à ma mère comment installer HouseParty",
-        points: 2,
+        points: 1,
       },
       {
         label: "Cuisiner, manger, repeat",
@@ -463,6 +463,7 @@ const questions: Record<Slug, Question> = {
     choices: [
       {
         label: "Il n’y aura pas d’après",
+        points: 1,
       },
       {
         label: "Cette fois on sait qui est le père",
@@ -470,6 +471,7 @@ const questions: Record<Slug, Question> = {
       },
       {
         label: "Je claque au bar tout ce que j’ai pas dépensé",
+        points: -1,
       },
       {
         label: "Je vais voter écolo aux municipales",

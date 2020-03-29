@@ -9,14 +9,14 @@ import { START } from "src/helpers/constants"
 import Home from "src/components/Home"
 
 const IndexPage: GatsbyPage = () => {
-  const [current, setCurrent] = useState<Question | undefined | "end">()
+  const [current, setCurrent] = useState<Slug | undefined | "RESULT">()
   const [total, setTotal] = useState(0)
 
   useEffect(() => {
     window.scroll(0, 0)
   }, [current])
 
-  if (current === "end") {
+  if (current === "RESULT") {
     return (
       <Layout>
         <Result points={total} />
@@ -27,19 +27,21 @@ const IndexPage: GatsbyPage = () => {
   if (current) {
     const handleNext = (points: number, slug?: Slug) => {
       setTotal(total + points)
-      setCurrent(slug ? data[slug] : "end")
+      setCurrent(slug || "RESULT")
     }
+
+    const question = data[current]
 
     return (
       <Layout>
-        <Background theme={current.theme} />
-        <Question question={current} next={handleNext} />
+        <Background theme={question.theme} />
+        <Question key={current} question={question} next={handleNext} />
       </Layout>
     )
   }
 
   const handleStart = () => {
-    setCurrent(data[START])
+    setCurrent(START)
   }
 
   return (
