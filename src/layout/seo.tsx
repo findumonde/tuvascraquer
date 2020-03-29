@@ -34,7 +34,7 @@ const SEO: React.FC = () => {
       <meta property="og:locale" content={data.locale} />
       <meta property="og:site_name" content={data.title} />
       <meta property="og:url" content={data.siteUrl} />
-      <meta property="og:image" content={`${data.siteUrl}/icon.png`} />
+      <meta property="og:image" content={`${data.siteUrl}/virus.png`} />
     </Helmet>
   )
 }
