@@ -340,7 +340,7 @@ const questions: Record<Slug, Question> = {
         points: -1,
       },
       {
-        label: "Je me touche en regardant un match de Megan Rapinoe",
+        label: "Je me touche en regardant Megan Rapinoe jouer au foot",
         points: 2,
       },
       {
@@ -411,11 +411,11 @@ const questions: Record<Slug, Question> = {
     next: () => "after",
     choices: [
       {
-        label: "Il y a 1 heure",
+        label: "Il y a une heure",
         points: 2,
       },
       {
-        label: "Hier… ou avant-hier",
+        label: "Hier… ou avant-hier… on est quel jour ?",
         points: 1,
       },
       {
@@ -435,7 +435,7 @@ const questions: Record<Slug, Question> = {
     next: () => "end",
     choices: [
       {
-        label: "Il n’y a pas d’après",
+        label: "Il n’y aura pas d’après",
       },
       {
         label: "Cette fois on sait qui est le père",
@@ -447,10 +447,6 @@ const questions: Record<Slug, Question> = {
       {
         label: "Je vais voter écolo aux municipales",
         points: 1,
-      },
-      {
-        label: "J’oublie toutes les choses inutiles que j’ai apprises",
-        points: 2,
       },
       {
         label: "Je passe quelques jours tranquille à la maison",

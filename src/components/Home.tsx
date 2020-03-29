@@ -55,9 +55,11 @@ const Home: React.FC<Props> = ({ start }) => {
         ))}
       </Bottom>
       <About>
-        Ce questionnaire a été créé par
+        Ce quiz a été créé par
         <br />
-        Margot Dauban, <a href="https://antoine.rousseau.im">Antoine Rousseau</a> et Raphaël Pi,
+        <a href="https://www.malt.fr/profile/margotdauban">Margot Dauban</a>,{" "}
+        <a href="https://antoine.rousseau.im">Antoine Rousseau</a> et{" "}
+        <a href="https://www.malt.fr/profile/raphaelpi">Raphaël Pi</a>,
         <br />
         durant leur période de confinement.
       </About>

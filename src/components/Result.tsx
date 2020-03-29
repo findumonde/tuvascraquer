@@ -64,9 +64,12 @@ const getResult = (points: number) => {
   }
 }
 
+const DAYS_OFFSET = 15 // website was live on day 15
+const DAYS_WEIGHTER = 1.3 // 130 points => 100 days
+
 const Result: React.FC<Props> = ({ points }) => {
   const minDate = addDays(new Date(), 2)
-  let date = addDays(START_DATE, 12 + (points + 33))
+  let date = addDays(START_DATE, DAYS_OFFSET + (points - RANGES[0]) / DAYS_WEIGHTER)
   if (date.getTime() < minDate.getTime()) {
     date = minDate // cheating
   }
