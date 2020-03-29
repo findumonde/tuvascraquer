@@ -56,6 +56,17 @@ const trackSharing = (label: string) => {
   ga("send", "social", label, "share")
 }
 
+const DAYS_WEIGHTER = 1.5 // 150 points => 100 days
+
+const getDate = (points: number) => {
+  const now = new Date()
+  let date = addDays(START_DATE, (points - RANGES[0]) / DAYS_WEIGHTER)
+  if (date.getTime() < addDays(now, 5).getTime()) {
+    date = addDays(now, 2 - (RANGES[0] - points) / 6)
+  }
+  return format(date, "EEEE d MMMM", { locale: fr })
+}
+
 const getResult = (points: number) => {
   for (let i = 0; i < RESULTS.length; i++) {
     if ((points >= RANGES[i] || i === 0) && (points <= RANGES[i + 1] || i === RESULTS.length - 1)) {
@@ -64,16 +75,9 @@ const getResult = (points: number) => {
   }
 }
 
-const DAYS_WEIGHTER = 1.5 // 150 points => 100 days
-
 const Result: React.FC<Props> = ({ points }) => {
-  const minDate = addDays(new Date(), 2)
-  let date = addDays(START_DATE, (points - RANGES[0]) / DAYS_WEIGHTER)
-  if (date.getTime() < minDate.getTime()) {
-    date = addDays(minDate, -(RANGES[0] - points) / 5) // cheating
-  }
-  const dateStr = format(date, "EEEE d MMMM", { locale: fr })
-  const sharedText = `Je vais craquer ${dateStr} !\n#confinement #covid19`
+  const date = getDate(points)
+  const sharedText = `Je vais craquer ${date} !\n#confinement #covid19 #TuVasCraquer`
   const hasShareApi = isBrowser() && "share" in navigator
 
   const { slug, Character, color, text } = getResult(points)
@@ -95,7 +99,7 @@ const Result: React.FC<Props> = ({ points }) => {
         trackSharing("share")
       })
       .catch(() => {
-        // ignore
+        // user cancelled
       })
   }
 
@@ -124,7 +128,7 @@ const Result: React.FC<Props> = ({ points }) => {
         <Score>
           Tu vas craquer
           <br />
-          <span style={{ color }}>{dateStr} !</span>
+          <span style={{ color }}>{date} !</span>
         </Score>
         <Text>{text}</Text>
         <Share>
