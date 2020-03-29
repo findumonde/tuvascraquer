@@ -41,7 +41,7 @@ export const RESULTS: Result[] = [
     slug: "average",
     Character: AverageCharacter,
     text:
-      "Passée l’euphorie des premiers apéro-visio, des applaudissements sur le balcon et des chamboule-tout de PQ, tu vas bientôt passer dans la quatrième dimension. ",
+      "Passée l’euphorie des premiers apéro-visio, des applaudissements sur le balcon et des chamboule-tout de PQ, tu vas bientôt basculer dans la quatrième dimension.",
     color: THEMES.pink.color,
   },
   {
