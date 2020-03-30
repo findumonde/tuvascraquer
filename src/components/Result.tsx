@@ -5,7 +5,6 @@ import { fr } from "date-fns/locale"
 
 import { RESULTS, START_DATE } from "src/helpers/constants"
 import { isBrowser, openPopup } from "src/helpers/window"
-import { queryString } from "src/helpers/api"
 
 import ShareIcon from "src/images/share.svg"
 import FacebookIcon from "src/images/facebook.svg"
@@ -48,9 +47,10 @@ const ShareButton = styled.button`
   display: inline-block;
 `
 
-interface Props {
-  points: number
-}
+const queryString = (query: Record<string, string>) =>
+  Object.keys(query)
+    .map((key) => `${key}=${encodeURIComponent(query[key])}`)
+    .join("&")
 
 const trackSharing = (label: string) => {
   ga("send", "social", label, "share")
@@ -73,6 +73,10 @@ const getResult = (points: number) => {
       return RESULTS[i]
     }
   }
+}
+
+interface Props {
+  points: number
 }
 
 const Result: React.FC<Props> = ({ points }) => {

@@ -1,7 +1,5 @@
 require("dotenv").config()
 
-const { createProxyMiddleware } = require("http-proxy-middleware")
-
 // we need these in the browser for Bugsnag:
 process.env.GATSBY_DEPLOY_URL = process.env.DEPLOY_URL || "local" // from Netlify
 process.env.GATSBY_RELEASE = process.env.COMMIT_REF || "local" // from Netlify
@@ -62,15 +60,4 @@ module.exports = {
       },
     },
   ],
-  developMiddleware: (app) => {
-    app.use(
-      "/.netlify/functions/",
-      createProxyMiddleware({
-        target: "http://localhost:9000",
-        pathRewrite: {
-          "/.netlify/functions/": "",
-        },
-      })
-    )
-  },
 }
