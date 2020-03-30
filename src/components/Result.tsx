@@ -88,7 +88,8 @@ const Result: React.FC<Props> = ({ points }) => {
 
   useEffect(() => {
     ga("set", "dimension1", slug)
-    ga("set", "metric1", points)
+    ga("set", "dimension2", points)
+    ga("set", "metric1", 1)
     ga("send", "pageview", "result")
   }, [slug, points])
 
