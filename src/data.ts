@@ -259,6 +259,10 @@ const questions: Record<Slug, Question> = {
         points: 2,
       },
       {
+        label: "Mes parents",
+        points: -3,
+      },
+      {
         label: "Mes colocs",
         points: 2,
       },
@@ -501,4 +505,4 @@ const questions: Record<Slug, Question> = {
 
 export default questions
 
-export const RANGES = [-47, -22, 3, 28, 53, 78]
+export const RANGES = [-50, -24, 2, 28, 53, 78]
