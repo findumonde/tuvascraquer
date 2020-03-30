@@ -1,6 +1,6 @@
 import React, { useEffect } from "react"
 import styled from "styled-components"
-import { addDays, format } from "date-fns"
+import { addDays, differenceInDays, format } from "date-fns"
 import { fr } from "date-fns/locale"
 
 import { RESULTS, START_DATE } from "src/helpers/constants"
@@ -62,7 +62,7 @@ const getDate = (points: number) => {
   const now = new Date()
   let date = addDays(START_DATE, (points - RANGES[0]) / DAYS_WEIGHTER)
   if (date.getTime() < addDays(now, 5).getTime()) {
-    date = addDays(now, 2 - (RANGES[0] - points) / 6)
+    date = addDays(now, 3 - (RANGES[0] - points) / differenceInDays(now, START_DATE))
   }
   return format(date, "EEEE d MMMM", { locale: fr })
 }

@@ -55,7 +55,7 @@ export const RESULTS: Result[] = [
     slug: "best",
     Character: BestCharacter,
     text:
-      "Tu es né pour être confiné ! Si tu attrapes le coronavirus, mieux vaut qu’il se mette en quarantaine. Mais malheureusement, toutes les bonnes choses ont une fin…",
+      "Tu es né pour être confiné ! Si tu attrapes le coronavirus, mieux vaut qu’il se mette en quarantaine. Mais malheureusement, toutes les bonnes choses ont une fin…",
     color: THEMES.purple.color,
   },
 ]

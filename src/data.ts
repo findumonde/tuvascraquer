@@ -5,19 +5,19 @@ const questions: Record<Slug, Question> = {
     next: () => "house",
     choices: [
       {
-        label: "Des immeubles, j’habite en ville",
+        label: "Des immeubles, je suis en ville",
         points: -2,
       },
       {
-        label: "Des champs, j’habite à la campagne",
+        label: "Des champs, je suis à la campagne",
         points: 4,
       },
       {
-        label: "La mer, j’habite sur la côte",
+        label: "La mer, je suis sur la côte",
         points: 4,
       },
       {
-        label: "Un rassemblement religieux, j’habite à Mulhouse",
+        label: "Un rassemblement religieux, je suis à Mulhouse",
         points: -3,
       },
       {
@@ -450,7 +450,7 @@ const questions: Record<Slug, Question> = {
         points: -2,
       },
       {
-        label: "TU RESTES CHEZ TOI BORDEL !\n#RestezChezVous",
+        label: "TU RESTES CHEZ TOI BORDEL !\n#RestezChezVous",
         points: 2,
       },
     ],
