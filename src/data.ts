@@ -271,7 +271,7 @@ const questions: Record<Slug, Question> = {
         points: 2,
       },
       {
-        label: "Mon chien",
+        label: "Mon chien ou chat",
         points: 2,
       },
       {
