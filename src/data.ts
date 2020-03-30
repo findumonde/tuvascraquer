@@ -271,7 +271,7 @@ const questions: Record<Slug, Question> = {
         points: 2,
       },
       {
-        label: "Mon chien ou chat",
+        label: "Mon chien ou chat (ou cochon d’inde)",
         points: 2,
       },
       {
@@ -318,7 +318,7 @@ const questions: Record<Slug, Question> = {
         points: 1,
       },
       {
-        label: "Je travaille ma stratégie de belotte et mes attaques dans Risk",
+        label: "Je travaille ma stratégie de belote et mes attaques dans Risk",
         points: 3,
       },
       {
