@@ -28,7 +28,7 @@ export const RESULTS: Result[] = [
     slug: "worst",
     Character: WorstCharacter,
     text:
-      "Tu n’es vraiment pas beau à voir, tu commences à te transformer en pangolin. Tes voisins ont plus peur de te croiser que d’attraper le coronavirus.",
+      "Tu n’es vraiment pas beau/belle à voir, tu commences à te transformer en pangolin. Tes voisins ont plus peur de te croiser que d’attraper le coronavirus.",
     color: THEMES.red.color,
   },
   {
@@ -48,14 +48,14 @@ export const RESULTS: Result[] = [
     slug: "good",
     Character: GoodCharacter,
     text:
-      "Glandeur dans l’âme, le confinement te va comme un gant, tu es en totale osmose avec ton canapé. On en reparle quand tu auras fait le tour de Netflix…",
+      "Glandeur·se dans l’âme, le confinement te va comme un gant, tu es en totale osmose avec ton canapé. On en reparle quand tu auras fait le tour de Netflix…",
     color: THEMES.green.color,
   },
   {
     slug: "best",
     Character: BestCharacter,
     text:
-      "Tu es né pour être confiné ! Si tu attrapes le coronavirus, mieux vaut qu’il se mette en quarantaine. Mais malheureusement, toutes les bonnes choses ont une fin…",
+      "Tu es confi-né·e (haha) ! Si tu attrapes le coronavirus, mieux vaut qu’il se mette en quarantaine. Mais malheureusement, toutes les bonnes choses ont une fin…",
     color: THEMES.purple.color,
   },
 ]
