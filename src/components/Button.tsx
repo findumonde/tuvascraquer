@@ -25,6 +25,9 @@ const Button = styled.button<Props>`
     transform: translateY(2px);
     box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.2);
   }
+  &:focus {
+    box-shadow: 0 0 0 5px ${({ color }) => color || "#666666"}66;
+  }
 `
 
 export default Button
