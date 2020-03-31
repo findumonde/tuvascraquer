@@ -4,6 +4,7 @@ import styled from "styled-components"
 import ChoiceButton from "src/components/ChoiceButton"
 import { THEMES } from "src/helpers/constants"
 import NextButton from "src/components/NextButton"
+import { IQuestion, Slug } from "src/types"
 
 const Title = styled.h1``
 
@@ -20,11 +21,12 @@ const Disclaimer = styled.p`
 `
 
 interface QuestionProps {
-  question: Question
+  question: IQuestion
+  trad: Record<string, string>
   next: (points: number, slug?: Slug) => void
 }
 
-const Question: React.FC<QuestionProps> = ({ question, next }) => {
+const Question: React.FC<QuestionProps> = ({ question, next, trad }) => {
   const [answers, setAnswers] = useState<number[]>([])
   const { choices, multiple, label, theme } = question
   const { color } = THEMES[theme]
@@ -58,7 +60,12 @@ const Question: React.FC<QuestionProps> = ({ question, next }) => {
       return
     }
     const points = answers.reduce((total, index) => total + (choices[index].points || 0), 0)
-    const slug = question.next ? question.next(answers) : choices[answers[0]].next
+    let slug = question.next ? question.next : choices[answers[0]].next
+
+    if (question.next === "celebrities") {
+      slug = answers.some((index) => index < 6) ? "celebrities" : "days"
+    }
+
     answers.forEach((index) => {
       ga("send", "event", "answer", question.label, choices[index].label)
     })
@@ -69,7 +76,7 @@ const Question: React.FC<QuestionProps> = ({ question, next }) => {
   return (
     <>
       <Title>{label}</Title>
-      {multiple && <Disclaimer>Plusieurs réponses possibles</Disclaimer>}
+      {multiple && <Disclaimer>{trad.multiple}</Disclaimer>}
       <Choices>
         {choices.map((choice, index) => (
           <ChoiceButton

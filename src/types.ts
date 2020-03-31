@@ -1,28 +1,28 @@
-type Slug = string
+export type Slug = string
 
-type ThemeId = "pink" | "purple" | "green" | "red" | "orange"
+export type ThemeId = "pink" | "purple" | "green" | "red" | "orange"
 
-interface Theme {
+export interface Theme {
   color: string
   Virus: React.FC<React.SVGProps<SVGSVGElement>>
 }
 
-interface Question {
+export interface IQuestion {
   theme: ThemeId
   label: string
   multiple?: boolean
   choices: Choice[]
-  next?: (answers: number[]) => Slug
+  next?: Slug
 }
 
-interface Choice {
+export interface Choice {
   label: string
   unique?: boolean
   points?: number
   next?: Slug
 }
 
-interface Result {
+export interface Result {
   slug: "worst" | "bad" | "average" | "good" | "best"
   Character: React.FC<React.SVGProps<SVGSVGElement>>
   text: string

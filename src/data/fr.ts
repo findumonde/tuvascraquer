@@ -1,8 +1,10 @@
-const questions: Record<Slug, Question> = {
+import { IQuestion, Slug } from "src/types"
+
+const questions: Record<Slug, IQuestion> = {
   place: {
     theme: "red",
     label: "Que vois-tu par la fenêtre ?",
-    next: () => "house",
+    next: "house",
     choices: [
       {
         label: "Des immeubles, je suis en ville",
@@ -29,7 +31,7 @@ const questions: Record<Slug, Question> = {
   house: {
     theme: "orange",
     label: "Où es-tu confiné·e ?",
-    next: () => "outside1",
+    next: "outside1",
     choices: [
       {
         label: "Dans une maison",
@@ -76,7 +78,7 @@ const questions: Record<Slug, Question> = {
     theme: "pink",
     label: "Petit·e veinard·e ! Quels lieux plus précisément ?",
     multiple: true,
-    next: () => "appliances",
+    next: "appliances",
     choices: [
       {
         label: "Un jardin",
@@ -108,7 +110,7 @@ const questions: Record<Slug, Question> = {
     theme: "green",
     label: "Ton logement est équipé de…",
     multiple: true,
-    next: () => "before",
+    next: "before",
     choices: [
       {
         label: "Plusieurs fenêtres",
@@ -144,7 +146,7 @@ const questions: Record<Slug, Question> = {
     theme: "purple",
     label: "Avant le confinement…",
     multiple: true,
-    next: () => "situation",
+    next: "situation",
     choices: [
       {
         label: "Je faisais du sport plusieurs fois par semaine",
@@ -177,7 +179,7 @@ const questions: Record<Slug, Question> = {
     theme: "red",
     label: "Quelle est ta situation actuelle ?",
     multiple: true,
-    next: () => "people",
+    next: "people",
     choices: [
       {
         label: "Etudiant·e, j’explique à mes profs comment marche Discord",
@@ -222,7 +224,7 @@ const questions: Record<Slug, Question> = {
   alone: {
     theme: "orange",
     label: "Es-tu un gros geek ?",
-    next: () => "days",
+    next: "days",
     choices: [
       {
         label: "Oui",
@@ -237,7 +239,7 @@ const questions: Record<Slug, Question> = {
     theme: "orange",
     label: "Avec qui partages-tu ton toit ?",
     multiple: true,
-    next: (answers) => (answers.some((index) => index < 6) ? "celebrities" : "days"),
+    next: "celebrities",
     choices: [
       {
         label: "Mon/ma conjoint·e",
@@ -281,7 +283,7 @@ const questions: Record<Slug, Question> = {
     theme: "orange",
     label: "Parmi ces personnes, y a-t-il…",
     multiple: true,
-    next: () => "days",
+    next: "days",
     choices: [
       {
         label: "Un·e cuisinier·ère",
@@ -309,7 +311,7 @@ const questions: Record<Slug, Question> = {
     theme: "pink",
     label: "Rentrons dans le vif du sujet… Comment occupes-tu tes journées ?",
     multiple: true,
-    next: () => "drink",
+    next: "drink",
     choices: [
       {
         label: "Je réponds à des questionnaires à la con",
@@ -364,7 +366,7 @@ const questions: Record<Slug, Question> = {
     theme: "green",
     label: "A l’apéro tu bois…",
     multiple: true,
-    next: () => "food",
+    next: "food",
     choices: [
       {
         label: "De l’eau",
@@ -387,7 +389,7 @@ const questions: Record<Slug, Question> = {
   food: {
     theme: "purple",
     label: "Qu’as-tu mangé hier midi ?",
-    next: () => "shower",
+    next: "shower",
     choices: [
       {
         label: "Du PQ",
@@ -414,7 +416,7 @@ const questions: Record<Slug, Question> = {
   shower: {
     theme: "red",
     label: "De quand date ta dernière douche ?",
-    next: () => "out",
+    next: "out",
     choices: [
       {
         label: "Il y a une heure",
@@ -437,7 +439,7 @@ const questions: Record<Slug, Question> = {
   out: {
     theme: "orange",
     label: "Pour sortir…",
-    next: () => "after",
+    next: "after",
     choices: [
       {
         label: "Je remplis soigneusement mon attestation pour promener mon chien en peluche",
@@ -461,7 +463,7 @@ const questions: Record<Slug, Question> = {
     theme: "pink",
     label: "Après le confinement…",
     multiple: true,
-    next: () => "end",
+    next: "end",
     choices: [
       {
         label: "Il n’y aura pas d’après",
@@ -502,5 +504,8 @@ const questions: Record<Slug, Question> = {
 }
 
 export default questions
+<<<<<<< HEAD:src/data.ts
 
 export const RANGES = [-50, 0, 15, 35, 50, 78] // min = -67, max = 96
+=======
+>>>>>>> multilangue v1:src/data/fr.ts

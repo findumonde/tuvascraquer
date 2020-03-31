@@ -9,7 +9,7 @@ import { isBrowser, openPopup } from "src/helpers/window"
 import ShareIcon from "src/images/share.svg"
 import FacebookIcon from "src/images/facebook.svg"
 import TwitterIcon from "src/images/twitter.svg"
-import { RANGES } from "src/data"
+import { RANGES } from "src/helpers/constants"
 
 const Content = styled.div`
   min-height: calc(100vh - 90px);

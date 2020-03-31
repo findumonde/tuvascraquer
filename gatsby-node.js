@@ -3,8 +3,11 @@
  *
  * See: https://www.gatsbyjs.org/docs/node-apis/
  */
+require("source-map-support").install()
+require("ts-node").register() // beware: compile errors are sometimes hidden...
 
 const path = require("path")
+const onCreatePage = require("./src/gatsby/onCreatePage").default
 
 exports.onCreateWebpackConfig = ({ stage, actions }) => {
   const alias = {
@@ -19,3 +22,5 @@ exports.onCreateWebpackConfig = ({ stage, actions }) => {
     },
   })
 }
+
+exports.onCreatePage = onCreatePage

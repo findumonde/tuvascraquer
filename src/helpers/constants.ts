@@ -1,5 +1,6 @@
 import { GreenVirus, OrangeVirus, PinkVirus, PurpleVirus, RedVirus } from "src/images/virus"
 import { WorstCharacter, BadCharacter, AverageCharacter, GoodCharacter, BestCharacter } from "src/images/characters"
+import { ThemeId, Theme, Result } from "src/types"
 
 export const START_DATE = new Date(2020, 2, 17)
 
@@ -59,3 +60,5 @@ export const RESULTS: Result[] = [
     color: THEMES.purple.color,
   },
 ]
+
+export const RANGES = [-50, -24, 2, 28, 53, 78] // min = -50, max = 93

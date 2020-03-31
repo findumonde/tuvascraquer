@@ -1,5 +1,9 @@
 require("dotenv").config()
 
+if (!process.env.GATSBY_LANG) {
+  throw new Error("Env var LANG not found...")
+}
+
 // we need these in the browser for Bugsnag:
 process.env.GATSBY_DEPLOY_URL = process.env.DEPLOY_URL || "local" // from Netlify
 process.env.GATSBY_RELEASE = process.env.COMMIT_REF || "local" // from Netlify

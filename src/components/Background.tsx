@@ -1,6 +1,7 @@
 import React, { useState } from "react"
 import styled, { keyframes, css } from "styled-components"
 import { THEMES } from "src/helpers/constants"
+import { IQuestion } from "src/types"
 
 const NUM = 4
 const range = 100 / (NUM / 2)
@@ -120,7 +121,7 @@ Object.keys(THEMES).forEach((theme) => {
 })
 
 interface Props {
-  theme: Question["theme"]
+  theme: IQuestion["theme"]
 }
 
 const Background: React.FC<Props> = ({ theme }) => {
