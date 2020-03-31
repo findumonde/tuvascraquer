@@ -59,12 +59,13 @@ const Home: React.FC<Props> = ({ start, trad }) => {
         ))}
       </Bottom>
       <About>
-        ${trad.createdBy}
+        {trad.createdBy}
         <br />
         <a href="https://www.malt.fr/profile/margotdauban">Margot Dauban</a>,{" "}
         <a href="https://antoine.rousseau.im">Antoine Rousseau</a> et{" "}
         <a href="https://www.malt.fr/profile/raphaelpi">Raphaël Pi</a>,
-        <br />${trad.while}.
+        <br />
+        {trad.while}.
       </About>
     </>
   )

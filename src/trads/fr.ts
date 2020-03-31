@@ -16,6 +16,7 @@ const fr: Trad = {
     title: "Tu vas craquer ?",
     description: "Le quiz inutile (et donc indispensable) pour tester ta résistance au confinement",
     keywords: "coronavirus, covid, SARS-CoV-2, fin du monde, craquer, confinement, lockdown, quiz",
+    locale: "fr_FR",
   },
 }
 

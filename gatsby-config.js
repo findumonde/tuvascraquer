@@ -1,10 +1,11 @@
 require("dotenv").config()
+require("ts-node").register() // beware: compile errors are sometimes hidden...
 
 if (!process.env.GATSBY_LANG) {
   throw new Error("Env var LANG not found...")
 }
 
-const trads = require("./src/trads")
+const trads = require("./src/trads").default
 const trad = trads[process.env.GATSBY_LANG]
 
 // we need these in the browser for Bugsnag:
@@ -16,6 +17,7 @@ module.exports = {
   siteMetadata: {
     title: trad.meta.title,
     description: trad.meta.title,
+    locale: trad.meta.locale,
     siteUrl: `https://tuvascraquer.fr`,
     keywords: trad.meta.keywords.split(","),
   },
