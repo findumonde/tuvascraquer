@@ -4,7 +4,7 @@ import styled from "styled-components"
 import ChoiceButton from "src/components/ChoiceButton"
 import { THEMES } from "src/helpers/constants"
 import NextButton from "src/components/NextButton"
-import { IQuestion, Slug } from "src/types"
+import { IQuestion, Slug, Trad } from "src/types"
 
 const Title = styled.h1``
 
@@ -22,7 +22,7 @@ const Disclaimer = styled.p`
 
 interface QuestionProps {
   question: IQuestion
-  trad: Record<string, string>
+  trad: Trad
   next: (points: number, slug?: Slug) => void
 }
 
@@ -89,7 +89,7 @@ const Question: React.FC<QuestionProps> = ({ question, next, trad }) => {
         ))}
       </Choices>
       <NextButton disabled={!answers.length} color={color} onClick={handleNext}>
-        Suivant
+        {trad.next}
         <span />
       </NextButton>
     </>

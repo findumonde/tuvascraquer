@@ -10,6 +10,7 @@ import ShareIcon from "src/images/share.svg"
 import FacebookIcon from "src/images/facebook.svg"
 import TwitterIcon from "src/images/twitter.svg"
 import { RANGES } from "src/helpers/constants"
+import { Trad } from "src/types"
 
 const Content = styled.div`
   min-height: calc(100vh - 90px);
@@ -77,9 +78,10 @@ const getResult = (points: number) => {
 
 interface Props {
   points: number
+  trad: Trad
 }
 
-const Result: React.FC<Props> = ({ points }) => {
+const Result: React.FC<Props> = ({ points, trad }) => {
   const date = getDate(points)
   const sharedText = `Je vais craquer ${date} !\n#confinement #covid19 #TuVasCraquer`
   const hasShareApi = isBrowser() && "share" in navigator
@@ -131,15 +133,14 @@ const Result: React.FC<Props> = ({ points }) => {
       <Content style={{ minHeight: window.innerHeight - 100 }}>
         <Character />
         <Score>
-          Tu vas craquer
+          {trad.youWillCrack}
           <br />
           <span style={{ color }}>{date} !</span>
         </Score>
         <Text>{text}</Text>
         <Share>
-          Partage la nouvelle
-          <br />
-          avant qu’il ne soit trop tard
+          {trad.share1}
+          <br /> {trad.share2}
         </Share>
         {hasShareApi ? (
           <ShareButton onClick={handleShare}>

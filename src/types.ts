@@ -28,3 +28,5 @@ export interface Result {
   text: string
   color: string
 }
+
+export type Trad = Record<string, string | Record<string, string>>

@@ -20,7 +20,7 @@ const SEO: React.FC = () => {
   `)
 
   const htmlAttr = {
-    lang: data.locale.substr(0, 2),
+    lang: process.env.GATSBY_LANG,
   }
 
   return (

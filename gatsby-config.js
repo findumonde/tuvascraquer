@@ -4,6 +4,9 @@ if (!process.env.GATSBY_LANG) {
   throw new Error("Env var LANG not found...")
 }
 
+const trads = require("./src/trads")
+const trad = trads[process.env.GATSBY_LANG]
+
 // we need these in the browser for Bugsnag:
 process.env.GATSBY_DEPLOY_URL = process.env.DEPLOY_URL || "local" // from Netlify
 process.env.GATSBY_RELEASE = process.env.COMMIT_REF || "local" // from Netlify
@@ -11,11 +14,10 @@ process.env.GATSBY_DEPLOY_DATE = new Date().toString()
 
 module.exports = {
   siteMetadata: {
-    title: `Tu vas craquer ?`,
-    description: `Le quiz inutile (et donc indispensable) pour tester ta résistance au confinement`,
-    locale: `fr_FR`,
+    title: trad.meta.title,
+    description: trad.meta.title,
     siteUrl: `https://tuvascraquer.fr`,
-    keywords: ["coronavirus", "covid", "SARS-CoV-2", "fin du monde", "craquer", "confinement", "lockdown", "quiz"],
+    keywords: trad.meta.keywords.split(","),
   },
   plugins: [
     `gatsby-transformer-sharp`,
@@ -29,8 +31,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Tu vas craquer ?`,
-        short_name: `Tu vas craquer ?`,
+        name: trad.meta.title,
+        short_name: trad.meta.title,
         start_url: `/`,
         background_color: `#1B1A1A`,
         theme_color: `#1B1A1A`,

@@ -5,6 +5,7 @@ import { differenceInDays } from "date-fns"
 import { RESULTS, THEMES, START_DATE } from "src/helpers/constants"
 import { isBrowser } from "src/helpers/window"
 import NextButton from "./NextButton"
+import { Trad } from "src/types"
 
 const Title = styled.h1``
 const Subtitle = styled.h1`
@@ -37,16 +38,19 @@ const About = styled.footer`
 `
 
 interface Props {
+  trad: Trad
   start: () => void
 }
 
-const Home: React.FC<Props> = ({ start }) => {
+const Home: React.FC<Props> = ({ start, trad }) => {
   return (
     <>
-      <Title>Confinement{isBrowser() ? ` Jour ${differenceInDays(new Date(), START_DATE)}` : ""}</Title>
-      <Subtitle>Quand vas-tu craquer ?</Subtitle>
+      <Title>
+        {trad.lockdown} {isBrowser() ? ` ${trad.day} ${differenceInDays(new Date(), START_DATE)}` : ""}
+      </Title>
+      <Subtitle>{trad.subtitle}</Subtitle>
       <NextButton onClick={start}>
-        Démarrer
+        {trad.start}
         <span />
       </NextButton>
       <Bottom>
@@ -55,13 +59,12 @@ const Home: React.FC<Props> = ({ start }) => {
         ))}
       </Bottom>
       <About>
-        Ce quiz a été créé par
+        ${trad.createdBy}
         <br />
         <a href="https://www.malt.fr/profile/margotdauban">Margot Dauban</a>,{" "}
         <a href="https://antoine.rousseau.im">Antoine Rousseau</a> et{" "}
         <a href="https://www.malt.fr/profile/raphaelpi">Raphaël Pi</a>,
-        <br />
-        durant leur période de confinement.
+        <br />${trad.while}.
       </About>
     </>
   )

@@ -16,6 +16,7 @@ interface Props {
 const IndexPage: GatsbyPage<any, Props> = ({ pageContext }) => {
   const [current, setCurrent] = useState<undefined | Slug | "RESULT">()
   const [total, setTotal] = useState(0)
+  const trad = pageContext.trad
 
   useEffect(() => {
     window.scroll(0, 0)
@@ -24,7 +25,7 @@ const IndexPage: GatsbyPage<any, Props> = ({ pageContext }) => {
   if (current === "RESULT") {
     return (
       <Layout>
-        <Result points={total} />
+        <Result points={total} trad={trad} />
       </Layout>
     )
   }
@@ -36,9 +37,6 @@ const IndexPage: GatsbyPage<any, Props> = ({ pageContext }) => {
     }
 
     const question = pageContext.data[current]
-    const trad = pageContext.trad
-
-    console.log(current, pageContext.data)
 
     return (
       <Layout>
@@ -54,7 +52,7 @@ const IndexPage: GatsbyPage<any, Props> = ({ pageContext }) => {
 
   return (
     <Layout>
-      <Home start={handleStart} />
+      <Home start={handleStart} trad={trad} />
     </Layout>
   )
 }
