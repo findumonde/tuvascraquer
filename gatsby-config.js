@@ -8,7 +8,7 @@ process.env.GATSBY_DEPLOY_DATE = new Date().toString()
 module.exports = {
   siteMetadata: {
     title: `Tu vas craquer ?`,
-    description: `Confinement : le test`,
+    description: `Le quiz inutile (et donc indispensable) pour tester ta résistance au confinement`,
     locale: `fr_FR`,
     siteUrl: `https://tuvascraquer.fr`,
     keywords: ["coronavirus", "covid", "SARS-CoV-2", "fin du monde", "craquer", "confinement", "lockdown", "quiz"],
