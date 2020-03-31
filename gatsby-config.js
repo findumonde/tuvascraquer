@@ -41,7 +41,12 @@ module.exports = {
         displayName: process.env.NODE_ENV === "development",
       },
     },
-    `gatsby-plugin-netlify`,
+    {
+      resolve: `gatsby-plugin-netlify`,
+      options: {
+        allPageHeaders: ["Cache-Control: public, max-age=43200"], // 12-hour caching of html
+      },
+    },
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {

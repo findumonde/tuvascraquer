@@ -43,7 +43,7 @@ interface Props {
 const Home: React.FC<Props> = ({ start }) => {
   return (
     <>
-      <Title>Confinement{isBrowser() ? ` J+${differenceInDays(new Date(), START_DATE)}` : ""}</Title>
+      <Title>Confinement{isBrowser() ? ` Jour ${differenceInDays(new Date(), START_DATE)}` : ""}</Title>
       <Subtitle>Quand vas-tu craquer ?</Subtitle>
       <NextButton onClick={start}>
         Démarrer
