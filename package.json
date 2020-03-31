@@ -54,7 +54,7 @@
   "scripts": {
     "start": "rm -rf .cache && rm -rf public/ && gatsby develop",
     "build": "rm -rf .cache && rm -rf public/ && gatsby build",
-    "lint": "tsc --skipLibCheck ; eslint --fix \"**/*.{ts,tsx,js,jsx,json}\"",
+    "lint": "tsc --skipLibCheck && eslint --fix \"**/*.{ts,tsx,js,jsx,json}\"",
     "format": "prettier --write \"**/*.{ts,tsx,js,jsx,json,md}\"",
     "serve": "gatsby serve",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing \""

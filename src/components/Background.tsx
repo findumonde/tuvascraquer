@@ -1,12 +1,20 @@
-import React from "react"
-import styled from "styled-components"
+import React, { useState } from "react"
+import styled, { keyframes, css } from "styled-components"
 import { THEMES } from "src/helpers/constants"
 
 const NUM = 4
+const range = 100 / (NUM / 2)
 
 const Container = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: -1;
+  overflow: hidden;
+
   svg {
-    position: fixed;
+    position: absolute;
     z-index: -1;
     margin-bottom: -100px;
   }
@@ -14,29 +22,137 @@ const Container = styled.div`
 
 const random = (max: number, min = 0) => min + Math.round(Math.random() * (max - min))
 
-const getRandomStyle = (index: number) => {
-  const range = 100 / (NUM / 2)
-  const multiplier = Math.floor(index / 2)
-  const style: React.CSSProperties = {
-    [index % 2 ? "right" : "left"]: -random(35, 20),
-    transform: `rotate(${random(360)}deg)`,
-    top: `${random(range * (multiplier + 1), range * multiplier)}%`,
-    width: random(100, 40),
-  }
-  return style
+const getAnimation = (rotate: number) => {
+  const start = random(3, 1)
+  const rotateAnimation = `
+    0% {
+      transform: rotate(${rotate}deg);
+    }
+    ${start}0% {
+      transform: rotate(${rotate}deg);
+    }
+    ${start}1% {
+      transform: rotate(${rotate - 2}deg);
+    }
+    ${start}3% {
+      transform: rotate(${rotate + random(10, 5)}deg);
+    }
+    ${start}5% {
+      transform: rotate(${rotate - random(10, 5)}deg);
+    }
+    ${start}6% {
+      transform: rotate(${rotate - 1}deg);
+    }
+    100% {
+      transform: rotate(${rotate}deg);
+    }
+  `
+
+  const translateAnimation = `
+    0% {
+      transform: translateX(0px) rotate(${rotate}deg);
+    }
+    50% {
+      transform: translateX(${random(20, 10)}px) rotate(${rotate}deg);
+    }
+    100% {
+      transform: translateX(0px) rotate(${rotate}deg);
+    }
+  `
+
+  const scaleAnimation = `
+    0% {
+      transform: scaleY(1) scaleX(1) rotate(${rotate}deg);
+    }
+    50% {
+      transform: scaleY(1.4) scaleX(1.4) rotate(${rotate}deg);
+    }
+    100% {
+      transform: scaleY(1) scaleX(1) rotate(${rotate}deg);
+    }
+  `
+
+  const animations = [
+    {
+      keyFrame: keyframes`
+      ${rotateAnimation}
+    `,
+      duration: random(5, 2),
+      iteration: "1",
+    },
+    {
+      keyFrame: keyframes`
+      ${translateAnimation}
+    `,
+      duration: random(5, 3),
+      iteration: "infinite",
+    },
+    {
+      keyFrame: keyframes`
+      ${scaleAnimation}
+    `,
+      duration: random(10, 2),
+      iteration: "infinite",
+    },
+  ]
+
+  return animations[random(2)]
 }
+
+interface AnimatedVirusProps {
+  index: number
+  multiplier: number
+  rotate: number
+  animation: any
+}
+
+const AnimatedViruses = {}
+Object.keys(THEMES).forEach((theme) => {
+  AnimatedViruses[theme] = styled(THEMES[theme].Virus)<AnimatedVirusProps>`
+    top: ${({ multiplier }) => `${random(range * (multiplier + 1), range * multiplier)}`}%;
+    ${({ index }) => `${index % 2 ? "right" : "left"}: -${random(35, 20)}px;`};
+    ${({ animation }) =>
+      css`
+        animation: ${animation.keyFrame} ${animation.duration}s ease-in-out ${animation.iteration};
+      `};
+    transform: rotate(${({ rotate }) => rotate}deg);
+  `
+})
 
 interface Props {
   theme: Question["theme"]
 }
 
 const Background: React.FC<Props> = ({ theme }) => {
-  const { Virus } = THEMES[theme]
+  const [height, setHeight] = useState(document.body.clientHeight)
+
   return (
-    <Container>
-      {Array.from({ length: NUM }).map((_, index) => (
-        <Virus key={index} width={100} style={getRandomStyle(index)} />
-      ))}
+    <Container
+      ref={() => {
+        setHeight(Math.max(document.body.clientHeight, window.outerHeight))
+      }}
+      style={{
+        height,
+      }}
+    >
+      {Array.from({ length: NUM }).map((_, index) => {
+        const rotate = random(360)
+        const animation = getAnimation(rotate)
+        const multiplier = Math.floor(index / 2)
+        const width = random(100, 40)
+        const AnimatedVirus = AnimatedViruses[theme]
+
+        return (
+          <AnimatedVirus
+            key={index}
+            index={index}
+            multiplier={multiplier}
+            rotate={rotate}
+            animation={animation}
+            width={width}
+          />
+        )
+      })}
     </Container>
   )
 }
