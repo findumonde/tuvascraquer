@@ -30,6 +30,7 @@ const SEO: React.FC = () => {
       <meta name="description" property="og:description" content={data.description} />
       <meta property="og:type" content="website" />
       <meta name="twitter:card" content="summary" />
+      <meta name="twitter:description" content={data.description} />
       <meta name="keywords" content={data.keywords.join(", ")} />
       <meta property="og:locale" content={data.locale} />
       <meta property="og:site_name" content={data.title} />
