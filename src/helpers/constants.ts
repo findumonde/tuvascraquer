@@ -56,7 +56,7 @@ export const RESULTS: Result[] = [
     slug: "best",
     Character: BestCharacter,
     text:
-      "Tu es confi-né·e (haha) ! Si tu attrapes le coronavirus, mieux vaut qu’il se mette en quarantaine. Mais malheureusement, toutes les bonnes choses ont une fin…",
+      "Tu es confi-né·e (haha)\u00A0! Si tu attrapes le coronavirus, mieux vaut qu’il se mette en quarantaine. Mais malheureusement, toutes les bonnes choses ont une fin…",
     color: THEMES.purple.color,
   },
 ]

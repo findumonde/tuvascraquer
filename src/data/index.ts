@@ -1,9 +1,9 @@
 import fr from "./fr"
 import en from "./en"
 
-const datas = {
+const data = {
   fr,
   en,
 }
 
-export default datas
+export default data

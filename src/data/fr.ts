@@ -3,7 +3,7 @@ import { IQuestion, Slug } from "src/types"
 const questions: Record<Slug, IQuestion> = {
   place: {
     theme: "red",
-    label: "Que vois-tu par la fenêtre ?",
+    label: "Que vois-tu par la fenêtre\u00A0?",
     next: "house",
     choices: [
       {
@@ -30,7 +30,7 @@ const questions: Record<Slug, IQuestion> = {
   },
   house: {
     theme: "orange",
-    label: "Où es-tu confiné·e ?",
+    label: "Où es-tu confiné·e\u00A0?",
     next: "outside1",
     choices: [
       {
@@ -61,7 +61,7 @@ const questions: Record<Slug, IQuestion> = {
   },
   outside1: {
     theme: "pink",
-    label: "As-tu accès à des espaces extérieurs privés ?",
+    label: "As-tu accès à des espaces extérieurs privés\u00A0?",
     choices: [
       {
         label: "Oui",
@@ -76,7 +76,7 @@ const questions: Record<Slug, IQuestion> = {
   },
   outside2: {
     theme: "pink",
-    label: "Petit·e veinard·e ! Quels lieux plus précisément ?",
+    label: "Petit·e veinard·e ! Quels lieux plus précisément\u00A0?",
     multiple: true,
     next: "appliances",
     choices: [
@@ -165,7 +165,7 @@ const questions: Record<Slug, IQuestion> = {
         points: -3,
       },
       {
-        label: "Quel confinement ?",
+        label: "Quel confinement\u00A0?",
         points: 3,
       },
       {
@@ -177,7 +177,7 @@ const questions: Record<Slug, IQuestion> = {
   },
   situation: {
     theme: "red",
-    label: "Quelle est ta situation actuelle ?",
+    label: "Quelle est ta situation actuelle\u00A0?",
     multiple: true,
     next: "people",
     choices: [
@@ -194,7 +194,7 @@ const questions: Record<Slug, IQuestion> = {
         points: 2,
       },
       {
-        label: "Enfin au chômage, on est quel jour aujourd’hui ?",
+        label: "Enfin au chômage, on est quel jour aujourd’hui\u00A0?",
         points: -1,
       },
       {
@@ -209,7 +209,7 @@ const questions: Record<Slug, IQuestion> = {
   },
   people: {
     theme: "orange",
-    label: "Es-tu confiné·e seul·e ?",
+    label: "Es-tu confiné·e seul·e\u00A0?",
     choices: [
       {
         label: "Oui",
@@ -223,7 +223,7 @@ const questions: Record<Slug, IQuestion> = {
   },
   alone: {
     theme: "orange",
-    label: "Es-tu un gros geek ?",
+    label: "Es-tu un gros geek\u00A0?",
     next: "days",
     choices: [
       {
@@ -237,7 +237,7 @@ const questions: Record<Slug, IQuestion> = {
   },
   peopleYes: {
     theme: "orange",
-    label: "Avec qui partages-tu ton toit ?",
+    label: "Avec qui partages-tu ton toit\u00A0?",
     multiple: true,
     next: "celebrities",
     choices: [
@@ -309,7 +309,7 @@ const questions: Record<Slug, IQuestion> = {
   },
   days: {
     theme: "pink",
-    label: "Rentrons dans le vif du sujet… Comment occupes-tu tes journées ?",
+    label: "Rentrons dans le vif du sujet… Comment occupes-tu tes journées\u00A0?",
     multiple: true,
     next: "drink",
     choices: [
@@ -344,7 +344,7 @@ const questions: Record<Slug, IQuestion> = {
       },
       {
         label:
-          "T’avais remarqué que l’eau des toilettes s’échappe toujours dans le sens inverse des aiguilles d’une montre ?",
+          "T’avais remarqué que l’eau des toilettes s’échappe toujours dans le sens inverse des aiguilles d’une montre\u00A0?",
         points: -1,
       },
       {
@@ -388,7 +388,7 @@ const questions: Record<Slug, IQuestion> = {
   },
   food: {
     theme: "purple",
-    label: "Qu’as-tu mangé hier midi ?",
+    label: "Qu’as-tu mangé hier midi\u00A0?",
     next: "shower",
     choices: [
       {
@@ -415,7 +415,7 @@ const questions: Record<Slug, IQuestion> = {
   },
   shower: {
     theme: "red",
-    label: "De quand date ta dernière douche ?",
+    label: "De quand date ta dernière douche\u00A0?",
     next: "out",
     choices: [
       {
@@ -454,7 +454,7 @@ const questions: Record<Slug, IQuestion> = {
         points: -2,
       },
       {
-        label: "TU RESTES CHEZ TOI BORDEL !\n#RestezChezVous",
+        label: "TU RESTES CHEZ TOI BORDEL\u00A0!\n#RestezChezVous",
         points: 2,
       },
     ],
@@ -489,7 +489,7 @@ const questions: Record<Slug, IQuestion> = {
   },
   end: {
     theme: "green",
-    label: "Es-tu sûr·e de vouloir connaître le résultat de ce test ?",
+    label: "Es-tu sûr·e de vouloir connaître le résultat de ce test\u00A0?",
     choices: [
       {
         label: "Oui",
@@ -504,8 +504,3 @@ const questions: Record<Slug, IQuestion> = {
 }
 
 export default questions
-<<<<<<< HEAD:src/data.ts
-
-export const RANGES = [-50, 0, 15, 35, 50, 78] // min = -67, max = 96
-=======
->>>>>>> multilangue v1:src/data/fr.ts
