@@ -1,72 +1,72 @@
 const questions: Record<Slug, Question> = {
   place: {
     theme: "red",
-    label: "Que vois-tu par la fenêtre ?",
+    label: "What can you see from your window ?",
     next: () => "house",
     choices: [
       {
-        label: "Des immeubles, je suis en ville",
+        label: "Buildings, I'm in the city",
         points: -2,
       },
       {
-        label: "Des champs, je suis à la campagne",
+        label: "Fields, I'm in the country",
         points: 4,
       },
       {
-        label: "La mer, je suis sur la côte",
+        label: "The sea, I'm on the coast",
         points: 4,
       },
       {
-        label: "Un rassemblement religieux, je suis à Mulhouse",
+        label: "The racecourse, I'm in Cheltenham",
         points: -3,
       },
       {
-        label: "Je n’ai pas de fenêtre",
+        label: "I don't have a window",
         points: -5,
       },
     ],
   },
   house: {
     theme: "orange",
-    label: "Où es-tu confiné·e ?",
+    label: "Where are you on lockdown ?",
     next: () => "outside1",
     choices: [
       {
-        label: "Dans une maison",
+        label: "In a house",
         points: 4,
       },
       {
-        label: "Dans un appartement",
+        label: "In a flat",
         points: 1,
       },
       {
-        label: "Dans une caravane",
+        label: "In a caravan",
         points: 1,
       },
       {
-        label: "Dans un bateau… de croisière",
+        label: "On a ship...a cruise ship",
         points: -3,
       },
       {
-        label: "Dans un bunker",
+        label: "In a bunker",
         points: -2,
       },
       {
-        label: "Dans ton cul",
+        label: "Up your ass",
         points: -3,
       },
     ],
   },
   outside1: {
     theme: "pink",
-    label: "As-tu accès à des espaces extérieurs privés ?",
+    label: "Do you have access to outside space ?",
     choices: [
       {
-        label: "Oui",
+        label: "Yes",
         next: "outside2",
       },
       {
-        label: "Non",
+        label: "No",
         points: -3,
         next: "appliances",
       },
@@ -74,100 +74,100 @@ const questions: Record<Slug, Question> = {
   },
   outside2: {
     theme: "pink",
-    label: "Petit·e veinard·e ! Quels lieux plus précisément ?",
+    label: "Lucky bastard ! What spaces exactly ?",
     multiple: true,
     next: () => "appliances",
     choices: [
       {
-        label: "Un jardin",
+        label: "A garden",
         points: 3,
       },
       {
-        label: "Un terrain de pétanque",
+        label: "A croquet lawn",
         points: 4,
       },
       {
-        label: "Un balcon",
+        label: "A balcony",
         points: 1,
       },
       {
-        label: "Un potager",
+        label: "A kitchen garden",
         points: 6,
       },
       {
-        label: "Une piscine, mais je ne sais pas nager",
+        label: "A swimming pool, but I don't know how to swim",
         points: 1,
       },
       {
-        label: "Ta mère",
+        label: "Your mum",
         points: -2,
       },
     ],
   },
   appliances: {
     theme: "green",
-    label: "Ton logement est équipé de…",
+    label: "Your dwelling is equipped with",
     multiple: true,
     next: () => "before",
     choices: [
       {
-        label: "Plusieurs fenêtres",
+        label: "A number of windows",
         points: 0,
       },
       {
-        label: "Un frigo",
+        label: "A fridge",
         points: 2,
       },
       {
-        label: "Une machine à laver",
+        label: "A washing machine",
         points: 2,
       },
       {
-        label: "Un vélo d’appartement",
+        label: "An exercise bike",
         points: 1,
       },
       {
-        label: "Une imprimante",
+        label: "A printer",
         points: 1,
       },
       {
-        label: "Une connexion Internet",
+        label: "An internet connection",
         points: 3,
       },
       {
-        label: "Un vibro",
+        label: "A vibrator",
         points: 2,
       },
     ],
   },
   before: {
     theme: "purple",
-    label: "Avant le confinement…",
+    label: "Before the lockdown...",
     multiple: true,
     next: () => "situation",
     choices: [
       {
-        label: "Je faisais du sport plusieurs fois par semaine",
+        label: "I played sport a few times a week",
         points: -3,
       },
       {
-        label: "J’avais une vie sexuelle",
+        label: "I had a sex life",
         points: -1,
       },
       {
-        label: "Je n’avais jamais fait cuire de pâtes",
+        label: "I had never cooked pasta",
         points: -2,
       },
       {
-        label: "J’ai roulé une grosse pelle à un·e italien·ne qui a passé 6 mois en Chine",
+        label: "I played tonsil tennis with an Italian who'd just spent 6 months in China",
         points: -3,
       },
       {
-        label: "Quel confinement ?",
+        label: "What lockdown ?",
         points: 3,
       },
       {
-        label: "Rien de tout ça",
+        label: "None of the above",
         points: 3,
         unique: true,
       },
@@ -175,162 +175,162 @@ const questions: Record<Slug, Question> = {
   },
   situation: {
     theme: "red",
-    label: "Quelle est ta situation actuelle ?",
+    label: "What is your current status ?",
     next: () => "people",
     choices: [
       {
-        label: "Etudiant·e, j’explique à mes profs comment marche Discord",
+        label: "I'm a student, having to explain to my teachers how to use Zoom",
         points: 1,
       },
       {
-        label: "Je garde mes enfants, mais je me soigne",
+        label: "I'm looking after my kids, but also looking after myself",
         points: -3,
       },
       {
-        label: "En télétravail, du moins c’est ce que pense mon employeur",
+        label: "Working from home, at least that's what my employer thinks",
         points: 2,
       },
       {
-        label: "Enfin au chômage, on est quel jour aujourd’hui ?",
+        label: "Finally unemployed, what day are we on already ?",
         points: -1,
       },
       {
-        label: "Mon travail est utile… Je suis dans la merde",
+        label: "I'm a key worker... I'm screwed",
         points: -2,
       },
       {
-        label: "Je ne crois pas qu’il y ait de bonne ou de mauvaise situation",
+        label: "There is no good or bad, only thinking makes it so",
         points: 3,
       },
     ],
   },
   people: {
     theme: "orange",
-    label: "Es-tu confiné·e seul·e ?",
+    label: "Are you in lockdown alone ?",
     choices: [
       {
-        label: "Oui",
+        label: "Yes",
         next: "alone",
       },
       {
-        label: "Non",
+        label: "No",
         next: "peopleYes",
       },
     ],
   },
   alone: {
     theme: "orange",
-    label: "Es-tu un gros geek ?",
+    label: "Are you a major geek ?",
     next: () => "days",
     choices: [
       {
-        label: "Oui",
+        label: "Yes",
         points: 5,
       },
       {
-        label: "Non",
+        label: "No",
       },
     ],
   },
   peopleYes: {
     theme: "orange",
-    label: "Avec qui partages-tu ton toit ?",
+    label: "Who else is in your home ?",
     multiple: true,
     next: (answers) => (answers.some((index) => index < 6) ? "celebrities" : "days"),
     choices: [
       {
-        label: "Mon/ma conjoint·e",
+        label: "My partner",
         points: 2,
       },
       {
-        label: "Un enfant",
+        label: "A child",
         points: -2,
       },
       {
-        label: "Plusieurs enfants",
+        label: "More than one child",
         points: -5,
       },
       {
-        label: "Ma belle-mère",
+        label: "My mother in law",
         points: -4,
       },
       {
-        label: "Ma belle-mère… mais je couche avec",
+        label: "My mother in law...but I'm sleeping with her",
         points: 2,
       },
       {
-        label: "Mes parents",
+        label: "My parents",
         points: -3,
       },
       {
-        label: "Mes colocs",
+        label: "My housemates",
         points: 2,
       },
       {
-        label: "Ton frère",
+        label: "My brother",
         points: 2,
       },
       {
-        label: "Mon chien ou chat (ou cochon d’inde)",
+        label: "My cat or dog (or guinea pig)",
         points: 2,
       },
       {
-        label: "Mon ver solitaire",
+        label: "My tapeworm",
         points: -2,
       },
     ],
   },
   celebrities: {
     theme: "orange",
-    label: "Parmi ces personnes, y a-t-il…",
+    label: "Among those people, you have",
     multiple: true,
     next: () => "days",
     choices: [
       {
-        label: "Un·e cuisinier·ère",
+        label: "A cook",
         points: 3,
       },
       {
-        label: "Mike Horn",
+        label: "Bear Grylls",
         points: 4,
       },
       {
-        label: "Le Professeur Didier Raoult",
+        label: "Chris Whitty (pre-infection)",
         points: -2,
       },
       {
-        label: "Un·e porteur·se du coronavirus",
+        label: "A  Covid-19 carrier",
         points: -4,
       },
       {
-        label: "Rien de tout cela",
+        label: "None of the above",
       },
     ],
   },
   days: {
     theme: "pink",
-    label: "Rentrons dans le vif du sujet… Comment occupes-tu tes journées ?",
+    label: "Let's get back to the important things… How are you spending your time ?",
     multiple: true,
     next: () => "drink",
     choices: [
       {
-        label: "Je réponds à des questionnaires à la con",
+        label: "Doing endless stupid questionnaires",
         points: 1,
       },
       {
-        label: "Je travaille ma stratégie de belote et mes attaques dans Risk",
+        label: "I'm working on my Whist tactics et my Risk attacks",
         points: 3,
       },
       {
-        label: "Je chante sur le karaoké projeté sur l’immeuble d’en face",
+        label: "I'm singing karaoke projected onto the wall of the building opposite",
         points: 3,
       },
       {
-        label: "J’explique à ma mère comment installer HouseParty",
+        label: "I'm explaining to my Mum how to use HouseParty",
         points: 1,
       },
       {
-        label: "Cuisiner, manger, repeat",
+        label: "Cook, eat, repeat",
         points: 2,
       },
       {
@@ -339,24 +339,24 @@ const questions: Record<Slug, Question> = {
       },
       {
         label:
-          "J’apprends le japonais, je peaufine mes positions de yoga, je repeins la salle de bain, je relis mes classiques… Bref, je suis chiant·e",
+          "I'm learning Japonese, perfecting my yoga practice, repainting the bathroom, re-reading the classics...basically just being a real pain in the arse",
         points: 3,
       },
       {
         label:
-          "T’avais remarqué que l’eau des toilettes s’échappe toujours dans le sens inverse des aiguilles d’une montre ?",
+          "Have you noticed how the toilet always flushes in the opposite direction to the hands of a clock ?",
         points: -1,
       },
       {
-        label: "Je me touche en regardant Megan Rapinoe jouer au foot",
+        label: "I'm touching myself watching reruns of Megan Rapinoe playing football",
         points: 2,
       },
       {
-        label: "Je termine Tetris",
+        label: "I'm finishing Tetris",
         points: 2,
       },
       {
-        label: "Rien. Je ne fais absolument rien.",
+        label: "Nothing. I'm doing absolutely nothing.",
         points: -3,
         unique: true,
       },
@@ -364,139 +364,139 @@ const questions: Record<Slug, Question> = {
   },
   drink: {
     theme: "green",
-    label: "A l’apéro tu bois…",
+    label: "Time to have a drink. You have...",
     multiple: true,
     next: () => "food",
     choices: [
       {
-        label: "De l’eau",
+        label: "Water",
         points: 2,
       },
       {
-        label: "De la bière",
+        label: "Beer",
         points: 3,
       },
       {
-        label: "De l’absinthe",
+        label: "Gin",
         points: -1,
       },
       {
-        label: "De la chloroquine",
+        label: "Chloroquine",
         points: -5,
       },
     ],
   },
   food: {
     theme: "purple",
-    label: "Qu’as-tu mangé hier midi ?",
+    label: "What did you have for lunch yesterday ?",
     next: () => "shower",
     choices: [
       {
-        label: "Du PQ",
+        label: "Loo roll",
         points: -4,
       },
       {
-        label: "Du pain rassis et de la croûte de fromage",
+        label: "Toast and whatever spread was left in the cupboard",
         points: -3,
       },
       {
-        label: "Des pâtes 3 minutes",
+        label: "Quick cook noodles",
         points: -1,
       },
       {
-        label: "Une salade printanière, une blanquette de veau et un Saint-Honoré",
+        label: "A grilled halloumi salad, fresh pasta, and a chocolate fondant",
         points: 4,
       },
       {
-        label: "Je me lève à 20h, les applaudissements me réveillent",
+        label: "I only got up at 8pm, Clap for Carers woke me up",
         points: -2,
       },
     ],
   },
   shower: {
     theme: "red",
-    label: "De quand date ta dernière douche ?",
+    label: "When was your last shower ?",
     next: () => "out",
     choices: [
       {
-        label: "Il y a une heure",
+        label: "An hour ago",
         points: 2,
       },
       {
-        label: "Hier… ou avant-hier… je sais plus",
+        label: "Yesterday... or the day before... who knows",
         points: 1,
       },
       {
-        label: "La semaine dernière",
+        label: "Last week",
         points: -1,
       },
       {
-        label: "De mon dernier rendez-vous Tinder",
+        label: "When I had my last Tinder date",
         points: -2,
       },
     ],
   },
   out: {
     theme: "orange",
-    label: "Pour sortir…",
+    label: "To go out…",
     next: () => "after",
     choices: [
       {
-        label: "Je remplis soigneusement mon attestation pour promener mon chien en peluche",
+        label: "I carefully prepare my backstory to explain why all these Easter eggs I'm buying are necessary medical supplies for my sick aunt",
         points: -2,
       },
       {
-        label: "Je me déguise en sac poubelle",
+        label: "I disguise myself in gym kit so it looks like I might actually be exercising",
         points: -1,
       },
       {
-        label: "J’envoie mon gosse en éclaireur",
+        label: "I send the kids out to make sure everyone is social distancing before I leave the house",
         points: -2,
       },
       {
-        label: "TU RESTES CHEZ TOI BORDEL !\n#RestezChezVous",
+        label: "YOU STAY AT HOME FFS !\n#StayAtHome",
         points: 2,
       },
     ],
   },
   after: {
     theme: "pink",
-    label: "Après le confinement…",
+    label: "After lockdown…",
     multiple: true,
     next: () => "end",
     choices: [
       {
-        label: "Il n’y aura pas d’après",
+        label: "There will be no after",
         points: 1,
       },
       {
-        label: "Cette fois on sait qui est le père",
+        label: "At least this time we know who the father is",
         points: 1,
       },
       {
-        label: "Je claque au bar tout ce que j’ai pas dépensé",
+        label: "I'll blow everything I've saved at the pub",
         points: -1,
       },
       {
-        label: "Je vais voter écolo aux municipales",
+        label: "I'll vote greens in the local elections",
         points: 1,
       },
       {
-        label: "Je vais me faire quelques jours tranquille à la maison",
+        label: "I'll have a nice few quiet days at home",
         points: 3,
       },
     ],
   },
   end: {
     theme: "green",
-    label: "Es-tu sûr·e de vouloir connaître le résultat de ce test ?",
+    label: "Are you sure you want to know the results of this test ?",
     choices: [
       {
-        label: "Oui",
+        label: "Yes",
         points: 1,
       },
       {
-        label: "Non",
+        label: "No",
         points: -1,
       },
     ],
@@ -505,4 +505,4 @@ const questions: Record<Slug, Question> = {
 
 export default questions
 
-export const RANGES = [-50, -24, 2, 28, 53, 78] // min = -50, max = 93
+export const RANGES = [-50, -24, 2, 28, 53, 78]
