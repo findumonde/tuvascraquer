@@ -113,7 +113,7 @@ const questions: Record<Slug, IQuestion> = {
     next: "before",
     choices: [
       {
-        label: "A number of windows",
+        label: "Multiple windows",
         points: 0,
       },
       {
@@ -157,7 +157,7 @@ const questions: Record<Slug, IQuestion> = {
         points: -2,
       },
       {
-        label: "I played tonsil tennis with an Italian who'd just spent 6 months in China",
+        label: "I made out with an Italian who'd just come back from their gap year in China",
         points: -3,
       },
       {
@@ -181,15 +181,15 @@ const questions: Record<Slug, IQuestion> = {
         points: 1,
       },
       {
-        label: "I'm looking after my kids, but also looking after myself",
+        label: "I'm looking after my kids, and my therapist is looking after me",
         points: -3,
       },
       {
-        label: "Working from home, at least that's what my employer thinks",
+        label: "Working from home, at least that's what my boss thinks",
         points: 2,
       },
       {
-        label: "Finally unemployed, what day are we on already?",
+        label: "Unemployed at last! What day is it?",
         points: -1,
       },
       {
@@ -197,7 +197,8 @@ const questions: Record<Slug, IQuestion> = {
         points: -2,
       },
       {
-        label: "There is no good or bad, only thinking makes it so",
+        label:
+          "You know, I always say that where hope grows, miracles blossom. By unfolding, we heal. We need to open our souls to the majesty of the universe's mysteries",
         points: 3,
       },
     ],
@@ -308,11 +309,11 @@ const questions: Record<Slug, IQuestion> = {
     next: "drink",
     choices: [
       {
-        label: "Doing endless stupid questionnaires",
+        label: "I'm doing this stupid quiz",
         points: 1,
       },
       {
-        label: "I'm working on my Whist tactics et my Risk attacks",
+        label: "I’m learning crochet and fine-tuning my strategies for Risk",
         points: 3,
       },
       {
@@ -333,11 +334,11 @@ const questions: Record<Slug, IQuestion> = {
       },
       {
         label:
-          "I'm learning Japonese, perfecting my yoga practice, repainting the bathroom, re-reading the classics...basically just being a real pain in the arse",
+          "I’m learning Japanese, perfecting my yoga poses, painting the bathroom, reading the classics... I’m basically boring as hell",
         points: 3,
       },
       {
-        label: "Have you noticed how the toilet always flushes in the opposite direction to the hands of a clock?",
+        label: "Have you ever noticed that toilet water flushes anti-clockwise?",
         points: -1,
       },
       {
@@ -389,15 +390,15 @@ const questions: Record<Slug, IQuestion> = {
         points: -4,
       },
       {
-        label: "Toast and whatever spread was left in the cupboard",
+        label: "Cold chips and marmalade",
         points: -3,
       },
       {
-        label: "Quick cook noodles",
+        label: "Instant ramen",
         points: -1,
       },
       {
-        label: "A grilled halloumi salad, beef bourguignon, and a chocolate fondant",
+        label: "Seared scallops, beef bourguignon and panna cotta with a raspberry coulis",
         points: 4,
       },
       {
@@ -436,11 +437,11 @@ const questions: Record<Slug, IQuestion> = {
     choices: [
       {
         label:
-          "I carefully prepare my backstory to explain why all these Easter eggs I'm buying are necessary medical supplies for my sick aunt",
+          "I carefully rehearse my backstory about why all the Easter eggs I’m buying are essential medical supplies for my sick aunt",
         points: -2,
       },
       {
-        label: "I disguise myself in gym kit so it looks like I might actually be exercising",
+        label: "I put on my gym kit so it looks like I might actually be exercising",
         points: -1,
       },
       {
@@ -455,7 +456,7 @@ const questions: Record<Slug, IQuestion> = {
   },
   after: {
     theme: "pink",
-    label: "After lockdown…",
+    label: "What comes after the lockdown?",
     multiple: true,
     next: "end",
     choices: [
@@ -464,7 +465,7 @@ const questions: Record<Slug, IQuestion> = {
         points: 1,
       },
       {
-        label: "At least this time we know who the father is",
+        label: "At least this time we'll know who the father is",
         points: 1,
       },
       {
@@ -476,7 +477,7 @@ const questions: Record<Slug, IQuestion> = {
         points: 1,
       },
       {
-        label: "I'll have a nice few quiet days at home",
+        label: "I might chill at home for a bit.",
         points: 3,
       },
     ],

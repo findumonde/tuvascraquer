@@ -77,7 +77,7 @@ const Home: React.FC<Props> = ({ start, translation }) => {
             {translation.translatedBy}
             <br />
             {Object.keys(translation.translators).map((translator, index) => (
-              <a key={index} href={translation.translators[translator]} rel="noopener">
+              <a key={index} href={translation.translators[translator]}>
                 {translator}
               </a>
             ))}
