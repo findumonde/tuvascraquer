@@ -14,7 +14,7 @@ interface Props {
 }
 
 const IndexPage: GatsbyPage<any, Props> = ({ pageContext: { translation, data } }) => {
-  const [current, setCurrent] = useState<undefined | Slug | "RESULT">("RESULT")
+  const [current, setCurrent] = useState<undefined | Slug | "RESULT">()
   const [total, setTotal] = useState(0)
 
   useEffect(() => {

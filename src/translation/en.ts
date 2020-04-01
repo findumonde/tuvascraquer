@@ -35,7 +35,7 @@ const en: Translation = {
     url: `https://whenwillyoucrack.com/`,
   },
   translators: {
-    "Lexi dillistone": "https://www.linkedin.com/in/lexi-dillistone-0385871a5/",
+    "Lexi Dillistone": "https://www.linkedin.com/in/lexi-dillistone-0385871a5/",
     "Catherine Murray": "https://preply.com/fr/tuteur/205648/",
   },
 }
