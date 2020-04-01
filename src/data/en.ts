@@ -3,7 +3,7 @@ import { IQuestion, Slug } from "src/types"
 const questions: Record<Slug, IQuestion> = {
   place: {
     theme: "red",
-    label: "What can you see from your window ?",
+    label: "What can you see from your window?",
     next: "house",
     choices: [
       {
@@ -30,7 +30,7 @@ const questions: Record<Slug, IQuestion> = {
   },
   house: {
     theme: "orange",
-    label: "Where are you on lockdown ?",
+    label: "Where are you on lockdown?",
     next: "outside1",
     choices: [
       {
@@ -61,7 +61,7 @@ const questions: Record<Slug, IQuestion> = {
   },
   outside1: {
     theme: "pink",
-    label: "Do you have access to outside space ?",
+    label: "Do you have access to outside space?",
     choices: [
       {
         label: "Yes",
@@ -76,7 +76,7 @@ const questions: Record<Slug, IQuestion> = {
   },
   outside2: {
     theme: "pink",
-    label: "Lucky bastard ! What spaces exactly ?",
+    label: "Lucky bastard! What spaces exactly?",
     multiple: true,
     next: "appliances",
     choices: [
@@ -165,7 +165,7 @@ const questions: Record<Slug, IQuestion> = {
         points: -3,
       },
       {
-        label: "What lockdown ?",
+        label: "What lockdown?",
         points: 3,
       },
       {
@@ -177,7 +177,7 @@ const questions: Record<Slug, IQuestion> = {
   },
   situation: {
     theme: "red",
-    label: "What is your current status ?",
+    label: "What is your current status?",
     next: "people",
     choices: [
       {
@@ -193,7 +193,7 @@ const questions: Record<Slug, IQuestion> = {
         points: 2,
       },
       {
-        label: "Finally unemployed, what day are we on already ?",
+        label: "Finally unemployed, what day are we on already?",
         points: -1,
       },
       {
@@ -208,7 +208,7 @@ const questions: Record<Slug, IQuestion> = {
   },
   people: {
     theme: "orange",
-    label: "Are you in lockdown alone ?",
+    label: "Are you in lockdown alone?",
     choices: [
       {
         label: "Yes",
@@ -222,7 +222,7 @@ const questions: Record<Slug, IQuestion> = {
   },
   alone: {
     theme: "orange",
-    label: "Are you a major geek ?",
+    label: "Are you a major geek?",
     next: "days",
     choices: [
       {
@@ -236,7 +236,7 @@ const questions: Record<Slug, IQuestion> = {
   },
   peopleYes: {
     theme: "orange",
-    label: "Who else is in your home ?",
+    label: "Who else is in your home?",
     multiple: true,
     next: "celebrities",
     choices: [
@@ -311,7 +311,7 @@ const questions: Record<Slug, IQuestion> = {
   },
   days: {
     theme: "pink",
-    label: "Let's get back to the important things… How are you spending your time ?",
+    label: "Let's get back to the important things… How are you spending your time?",
     multiple: true,
     next: "drink",
     choices: [
@@ -328,7 +328,7 @@ const questions: Record<Slug, IQuestion> = {
         points: 3,
       },
       {
-        label: "I'm explaining to my Mum how to use HouseParty",
+        label: "I'm explaining to my dad how to use HouseParty",
         points: 1,
       },
       {
@@ -345,7 +345,7 @@ const questions: Record<Slug, IQuestion> = {
         points: 3,
       },
       {
-        label: "Have you noticed how the toilet always flushes in the opposite direction to the hands of a clock ?",
+        label: "Have you noticed how the toilet always flushes in the opposite direction to the hands of a clock?",
         points: -1,
       },
       {
@@ -389,7 +389,7 @@ const questions: Record<Slug, IQuestion> = {
   },
   food: {
     theme: "purple",
-    label: "What did you have for lunch yesterday ?",
+    label: "What did you have for lunch yesterday?",
     next: "shower",
     choices: [
       {
@@ -416,7 +416,7 @@ const questions: Record<Slug, IQuestion> = {
   },
   shower: {
     theme: "red",
-    label: "When was your last shower ?",
+    label: "When was your last shower?",
     next: "out",
     choices: [
       {
@@ -491,7 +491,7 @@ const questions: Record<Slug, IQuestion> = {
   },
   end: {
     theme: "green",
-    label: "Are you sure you want to know the results of this test ?",
+    label: "Are you sure you want to know the results of this test?",
     choices: [
       {
         label: "Yes",

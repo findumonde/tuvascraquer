@@ -1,7 +1,7 @@
 import React, { useEffect } from "react"
 import styled from "styled-components"
 import { addDays, differenceInDays, format } from "date-fns"
-import { fr } from "date-fns/locale"
+import { fr, enGB } from "date-fns/locale"
 
 import { RESULTS, START_DATE } from "src/helpers/constants"
 import { isBrowser, openPopup } from "src/helpers/window"
@@ -12,6 +12,12 @@ import TwitterIcon from "src/images/twitter.svg"
 import { RANGES } from "src/helpers/constants"
 import { Trad } from "src/types"
 
+const DATE_LOCALES = {
+  fr,
+  en: enGB,
+}
+const DATE_LOCALE = DATE_LOCALES[process.env.GATSBY_LANG]
+
 const Content = styled.div`
   min-height: calc(100vh - 90px);
   padding-bottom: 30px;
@@ -21,7 +27,9 @@ const Text = styled.p`
   max-width: 500px;
   margin: 0 auto;
 `
-const Share = styled.h2``
+const Share = styled.h2`
+  white-space: pre-line;
+`
 const Bottom = styled.div`
   height: 40px;
   display: flex;
@@ -65,7 +73,7 @@ const getDate = (points: number) => {
   if (date.getTime() < addDays(now, 5).getTime()) {
     date = addDays(now, 3 - (RANGES[0] - points) / differenceInDays(now, START_DATE))
   }
-  return format(date, "EEEE d MMMM", { locale: fr })
+  return date
 }
 
 const getResult = (points: number) => {
@@ -82,8 +90,8 @@ interface Props {
 }
 
 const Result: React.FC<Props> = ({ points, trad }) => {
-  const date = getDate(points)
-  const sharedText = `Je vais craquer ${date} !\n#confinement #covid19 #TuVasCraquer`
+  const date = format(getDate(points), trad.date as string, { locale: DATE_LOCALE })
+  const sharedText = (trad.shareText as string).replace("%date%", date)
   const hasShareApi = isBrowser() && "share" in navigator
 
   const { slug, Character, color, text } = getResult(points)
@@ -122,7 +130,7 @@ const Result: React.FC<Props> = ({ points, trad }) => {
   const handleTwitter = () => {
     const params = {
       url: location.href,
-      text: sharedText + "\n",
+      text: sharedText,
     }
     openPopup("twitter", `https://twitter.com/intent/tweet?${queryString(params)}`, 275)
     trackSharing("twitter")
@@ -135,13 +143,10 @@ const Result: React.FC<Props> = ({ points, trad }) => {
         <Score>
           {trad.youWillCrack}
           <br />
-          <span style={{ color }}>{date} !</span>
+          <span style={{ color }}>{date}</span>
         </Score>
         <Text>{text}</Text>
-        <Share>
-          {trad.share1}
-          <br /> {trad.share2}
-        </Share>
+        <Share>{trad.share}</Share>
         {hasShareApi ? (
           <ShareButton onClick={handleShare}>
             <ShareIcon />

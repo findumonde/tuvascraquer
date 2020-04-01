@@ -2,7 +2,7 @@ require("dotenv").config()
 require("ts-node").register() // beware: compile errors are sometimes hidden...
 
 if (!process.env.GATSBY_LANG) {
-  throw new Error("Env var LANG not found...")
+  throw new Error("Env var GATSBY_LANG not found")
 }
 
 const trads = require("./src/trads").default
@@ -19,7 +19,7 @@ module.exports = {
     description: trad.meta.title,
     locale: trad.meta.locale,
     siteUrl: `https://tuvascraquer.fr`,
-    keywords: trad.meta.keywords.split(","),
+    keywords: trad.meta.keywords,
   },
   plugins: [
     `gatsby-transformer-sharp`,

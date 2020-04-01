@@ -10,8 +10,9 @@ const fr: Trad = {
   createdBy: "Ce quiz a été créé par",
   while: "durant leur période de confinement",
   youWillCrack: "Tu vas craquer",
-  share1: "Partage la nouvelle",
-  share2: "avant qu’il ne soit trop tard",
+  date: "EEEE d MMMM !",
+  share: "Partage la nouvelle\navant qu’il ne soit trop tard",
+  shareText: "Je vais craquer %date%\n#confinement #covid19 #TuVasCraquer",
   meta: {
     title: "Tu vas craquer ?",
     description: "Le quiz inutile (et donc indispensable) pour tester ta résistance au confinement",

@@ -13,10 +13,9 @@ interface Props {
   trad: Record<string, string>
 }
 
-const IndexPage: GatsbyPage<any, Props> = ({ pageContext }) => {
+const IndexPage: GatsbyPage<any, Props> = ({ pageContext: { trad, data } }) => {
   const [current, setCurrent] = useState<undefined | Slug | "RESULT">()
   const [total, setTotal] = useState(0)
-  const trad = pageContext.trad
 
   useEffect(() => {
     window.scroll(0, 0)
@@ -36,7 +35,7 @@ const IndexPage: GatsbyPage<any, Props> = ({ pageContext }) => {
       setCurrent(slug || "RESULT")
     }
 
-    const question = pageContext.data[current]
+    const question = data[current]
 
     return (
       <Layout>

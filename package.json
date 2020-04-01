@@ -54,6 +54,7 @@
   "license": "MIT",
   "scripts": {
     "start": "rm -rf .cache && rm -rf public/ && gatsby develop",
+    "develop": "gatsby develop",
     "build": "rm -rf .cache && rm -rf public/ && gatsby build",
     "lint": "tsc --skipLibCheck && eslint --fix \"**/*.{ts,tsx,js,jsx,json}\"",
     "format": "prettier --write \"**/*.{ts,tsx,js,jsx,json,md}\"",
