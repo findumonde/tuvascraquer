@@ -1,16 +1,12 @@
 import styled, { keyframes } from "styled-components"
+
 import Worst from "./worst.svg"
 import Bad from "./bad.svg"
 import Average from "./average.svg"
 import Good from "./good.svg"
 import Best from "./best.svg"
-import { random } from "src/helpers/utils"
 
-export const WorstCharacter = Worst
-export const BadCharacter = Bad
-export const AverageCharacter = Average
-export const GoodCharacter = Good
-export const BestCharacter = Best
+import { random } from "src/helpers/utils"
 
 const scale = keyframes`
 0% {
@@ -24,9 +20,11 @@ const scale = keyframes`
 }
 `
 
-export const AnimatedCharacters = [Worst, Bad, Average, Good, Best].map(
+const Characters = [Worst, Bad, Average, Good, Best].map(
   (Character) =>
     styled(Character)`
       animation: ${scale} ${random(5, 2)}s ease-in-out infinite;
     `
 )
+
+export default Characters

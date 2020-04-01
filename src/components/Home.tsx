@@ -2,11 +2,12 @@ import React from "react"
 import styled from "styled-components"
 import { differenceInDays } from "date-fns"
 
-import { THEMES, START_DATE } from "src/helpers/constants"
-import { isBrowser } from "src/helpers/window"
-import NextButton from "./NextButton"
 import { Translation } from "src/types"
-import { AnimatedCharacters } from "src/images/characters"
+import { THEMES, START_DATE, AUTHORS } from "src/helpers/constants"
+import { isBrowser } from "src/helpers/window"
+import NextButton from "src/components/NextButton"
+import Authors from "src/components/Authors"
+import Characters from "src/images/characters"
 
 const Title = styled.h1``
 const Subtitle = styled.h1`
@@ -36,9 +37,6 @@ const About = styled.footer`
   margin-top: 40px;
   font-size: 10px;
   line-height: 12px;
-  a {
-    margin-left: 3px;
-  }
 `
 
 interface Props {
@@ -58,16 +56,14 @@ const Home: React.FC<Props> = ({ start, translation }) => {
         <span />
       </NextButton>
       <Bottom>
-        {AnimatedCharacters.map((Character, index) => (
+        {Characters.map((Character, index) => (
           <Character key={index} />
         ))}
       </Bottom>
       <About>
         {translation.createdBy}
         <br />
-        <a href="https://www.malt.fr/profile/margotdauban">Margot Dauban</a>,
-        <a href="https://antoine.rousseau.im">Antoine Rousseau</a> {translation.and}
-        <a href="https://www.malt.fr/profile/raphaelpi">Raphaël Pi</a>,
+        <Authors authors={AUTHORS} />
         <br />
         {translation.while}.
         {translation.translators && (
@@ -76,11 +72,7 @@ const Home: React.FC<Props> = ({ start, translation }) => {
             <br />
             {translation.translatedBy}
             <br />
-            {Object.keys(translation.translators).map((translator, index) => (
-              <a key={index} href={translation.translators[translator]}>
-                {translator}
-              </a>
-            ))}
+            <Authors authors={translation.translators as Record<string, string>} />
           </>
         )}
       </About>

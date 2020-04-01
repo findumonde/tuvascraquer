@@ -8,7 +8,6 @@ const en: Translation = {
   subtitle: "When will you crack?",
   multiple: "You can select multiple answers",
   createdBy: "This quiz was created by",
-  translatedBy: "Translated with love by",
   while: "during their lockdown in France",
   youWillCrack: "You will crack on",
   date: "EEEE, d MMMM!",
@@ -34,6 +33,7 @@ const en: Translation = {
     locale: "en_GB",
     siteUrl: `https://whenwillyoucrack.com`,
   },
+  translatedBy: "Translated with ❤︎ by",
   translators: {
     "Catherine Murray": "https://preply.com/fr/tuteur/205648/",
     Maw: "",

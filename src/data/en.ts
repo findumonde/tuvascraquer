@@ -11,7 +11,7 @@ const questions: Record<Slug, IQuestion> = {
         points: -2,
       },
       {
-        label: "Fields, I'm in the country",
+        label: "Sheep, I'm in the country",
         points: 4,
       },
       {

@@ -1,3 +1,5 @@
+import { StyledComponent } from "styled-components"
+
 export type Slug = string
 
 export type ThemeId = "pink" | "purple" | "green" | "red" | "orange"
@@ -24,7 +26,7 @@ export interface Choice {
 
 export interface Result {
   slug: "worst" | "bad" | "average" | "good" | "best"
-  Character: React.FC<React.SVGProps<SVGSVGElement>>
+  Character: StyledComponent<any, any>
   color: string
 }
 
