@@ -176,6 +176,7 @@ const questions: Record<Slug, Question> = {
   situation: {
     theme: "red",
     label: "Quelle est ta situation actuelle ?",
+    multiple: true,
     next: () => "people",
     choices: [
       {
@@ -243,11 +244,7 @@ const questions: Record<Slug, Question> = {
         points: 2,
       },
       {
-        label: "Un enfant",
-        points: -2,
-      },
-      {
-        label: "Plusieurs enfants",
+        label: "Un ou plusieurs enfan$%&#$qeorzbyqezpr",
         points: -5,
       },
       {
@@ -271,7 +268,7 @@ const questions: Record<Slug, Question> = {
         points: 2,
       },
       {
-        label: "Mon chien ou chat (ou cochon d’inde)",
+        label: "Mon chien ou chat (ou cochon d’Inde)",
         points: 2,
       },
       {
@@ -304,6 +301,7 @@ const questions: Record<Slug, Question> = {
       },
       {
         label: "Rien de tout cela",
+        unique: true,
       },
     ],
   },
@@ -357,7 +355,7 @@ const questions: Record<Slug, Question> = {
       },
       {
         label: "Rien. Je ne fais absolument rien.",
-        points: -3,
+        points: -5,
         unique: true,
       },
     ],
@@ -505,4 +503,4 @@ const questions: Record<Slug, Question> = {
 
 export default questions
 
-export const RANGES = [-50, 0, 15, 35, 50, 78] // min = -64, max = 93
+export const RANGES = [-50, 0, 15, 35, 50, 78] // min = -67, max = 96
