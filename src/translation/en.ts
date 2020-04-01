@@ -25,7 +25,7 @@ const en: Translation = {
     good:
       "You're a real bum at heart, and confinement is your true calling. You and your couch were meant to be. Let's check in once you've seen everything there is to see on Netflix…",
     best:
-      "You were born for this\u00A0! If you catch the coronavirus, it had better self-isolate from you. Sadly, though, all good things must come to an end…",
+      "You were born for this! If you catch the coronavirus, it had better self-isolate from you. Sadly, though, all good things must come to an end…",
   },
   meta: {
     title: "When will you crack?",
