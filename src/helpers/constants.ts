@@ -61,4 +61,4 @@ export const RESULTS: Result[] = [
   },
 ]
 
-export const RANGES = [-50, -24, 2, 28, 53, 78] // min = -50, max = 93
+export const RANGES = [-40, 0, 15, 35, 50, 80] // min = -64, max = 93
