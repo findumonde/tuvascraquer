@@ -5,8 +5,8 @@ if (!process.env.GATSBY_LANG) {
   throw new Error("Env var GATSBY_LANG not found")
 }
 
-const trads = require("./src/trads").default
-const trad = trads[process.env.GATSBY_LANG]
+const translations = require("./src/translation").default
+const translation = translations[process.env.GATSBY_LANG]
 
 // we need these in the browser for Bugsnag:
 process.env.GATSBY_DEPLOY_URL = process.env.DEPLOY_URL || "local" // from Netlify
@@ -15,11 +15,11 @@ process.env.GATSBY_DEPLOY_DATE = new Date().toString()
 
 module.exports = {
   siteMetadata: {
-    title: trad.meta.title,
-    description: trad.meta.title,
-    locale: trad.meta.locale,
-    siteUrl: `https://tuvascraquer.fr`,
-    keywords: trad.meta.keywords,
+    title: translation.meta.title,
+    description: translation.meta.title,
+    locale: translation.meta.locale,
+    siteUrl: translation.meta.url,
+    keywords: translation.meta.keywords,
   },
   plugins: [
     `gatsby-transformer-sharp`,
@@ -33,8 +33,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: trad.meta.title,
-        short_name: trad.meta.title,
+        name: translation.meta.title,
+        short_name: translation.meta.title,
         start_url: `/`,
         background_color: `#1B1A1A`,
         theme_color: `#1B1A1A`,

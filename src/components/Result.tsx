@@ -10,7 +10,7 @@ import ShareIcon from "src/images/share.svg"
 import FacebookIcon from "src/images/facebook.svg"
 import TwitterIcon from "src/images/twitter.svg"
 import { RANGES } from "src/helpers/constants"
-import { Trad } from "src/types"
+import { Translation } from "src/types"
 
 const DATE_LOCALES = {
   fr,
@@ -86,15 +86,15 @@ const getResult = (points: number) => {
 
 interface Props {
   points: number
-  trad: Trad
+  translation: Translation
 }
 
-const Result: React.FC<Props> = ({ points, trad }) => {
-  const date = format(getDate(points), trad.date as string, { locale: DATE_LOCALE })
-  const sharedText = (trad.shareText as string).replace("%date%", date)
+const Result: React.FC<Props> = ({ points, translation }) => {
+  const date = format(getDate(points), translation.date as string, { locale: DATE_LOCALE })
+  const sharedText = (translation.shareText as string).replace("%date%", date)
   const hasShareApi = isBrowser() && "share" in navigator
 
-  const { slug, Character, color, text } = getResult(points)
+  const { slug, Character, color } = getResult(points)
 
   useEffect(() => {
     ga("set", "dimension1", slug)
@@ -141,12 +141,12 @@ const Result: React.FC<Props> = ({ points, trad }) => {
       <Content style={{ minHeight: window.innerHeight - 100 }}>
         <Character />
         <Score>
-          {trad.youWillCrack}
+          {translation.youWillCrack}
           <br />
           <span style={{ color }}>{date}</span>
         </Score>
-        <Text>{text}</Text>
-        <Share>{trad.share}</Share>
+        <Text>{translation.persona[slug]}</Text>
+        <Share>{translation.share}</Share>
         {hasShareApi ? (
           <ShareButton onClick={handleShare}>
             <ShareIcon />

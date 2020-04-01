@@ -129,10 +129,6 @@ const questions: Record<Slug, IQuestion> = {
         points: 1,
       },
       {
-        label: "A printer",
-        points: 1,
-      },
-      {
         label: "An internet connection",
         points: 3,
       },
@@ -245,11 +241,7 @@ const questions: Record<Slug, IQuestion> = {
         points: 2,
       },
       {
-        label: "A child",
-        points: -2,
-      },
-      {
-        label: "More than one child",
+        label: "One or more childr$%&#$qeorzbyqezpr",
         points: -5,
       },
       {

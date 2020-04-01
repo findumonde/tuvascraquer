@@ -4,7 +4,7 @@ import styled from "styled-components"
 import ChoiceButton from "src/components/ChoiceButton"
 import { THEMES } from "src/helpers/constants"
 import NextButton from "src/components/NextButton"
-import { IQuestion, Slug, Trad } from "src/types"
+import { IQuestion, Slug, Translation } from "src/types"
 
 const Title = styled.h1``
 
@@ -22,11 +22,11 @@ const Disclaimer = styled.p`
 
 interface QuestionProps {
   question: IQuestion
-  trad: Trad
+  translation: Translation
   next: (points: number, slug?: Slug) => void
 }
 
-const Question: React.FC<QuestionProps> = ({ question, next, trad }) => {
+const Question: React.FC<QuestionProps> = ({ question, next, translation }) => {
   const [answers, setAnswers] = useState<number[]>([])
   const { choices, multiple, label, theme } = question
   const { color } = THEMES[theme]
@@ -76,7 +76,7 @@ const Question: React.FC<QuestionProps> = ({ question, next, trad }) => {
   return (
     <>
       <Title>{label}</Title>
-      {multiple && <Disclaimer>{trad.multiple}</Disclaimer>}
+      {multiple && <Disclaimer>{translation.multiple}</Disclaimer>}
       <Choices>
         {choices.map((choice, index) => (
           <ChoiceButton
@@ -89,7 +89,7 @@ const Question: React.FC<QuestionProps> = ({ question, next, trad }) => {
         ))}
       </Choices>
       <NextButton disabled={!answers.length} color={color} onClick={handleNext}>
-        {trad.next}
+        {translation.next}
         <span />
       </NextButton>
     </>

@@ -25,8 +25,7 @@ export interface Choice {
 export interface Result {
   slug: "worst" | "bad" | "average" | "good" | "best"
   Character: React.FC<React.SVGProps<SVGSVGElement>>
-  text: string
   color: string
 }
 
-export type Trad = Record<string, string | Record<string, string>>
+export type Translation = Record<string, string | Record<string, string>>

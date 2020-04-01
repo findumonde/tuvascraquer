@@ -5,7 +5,7 @@ import { differenceInDays } from "date-fns"
 import { RESULTS, THEMES, START_DATE } from "src/helpers/constants"
 import { isBrowser } from "src/helpers/window"
 import NextButton from "./NextButton"
-import { Trad } from "src/types"
+import { Translation } from "src/types"
 
 const Title = styled.h1``
 const Subtitle = styled.h1`
@@ -38,19 +38,19 @@ const About = styled.footer`
 `
 
 interface Props {
-  trad: Trad
+  translation: Translation
   start: () => void
 }
 
-const Home: React.FC<Props> = ({ start, trad }) => {
+const Home: React.FC<Props> = ({ start, translation }) => {
   return (
     <>
       <Title>
-        {trad.lockdown} {isBrowser() ? ` ${trad.day} ${differenceInDays(new Date(), START_DATE)}` : ""}
+        {translation.lockdown} {isBrowser() ? ` ${translation.day} ${differenceInDays(new Date(), START_DATE)}` : ""}
       </Title>
-      <Subtitle>{trad.subtitle}</Subtitle>
+      <Subtitle>{translation.subtitle}</Subtitle>
       <NextButton onClick={start}>
-        {trad.start}
+        {translation.start}
         <span />
       </NextButton>
       <Bottom>
@@ -59,13 +59,13 @@ const Home: React.FC<Props> = ({ start, trad }) => {
         ))}
       </Bottom>
       <About>
-        {trad.createdBy}
+        {translation.createdBy}
         <br />
         <a href="https://www.malt.fr/profile/margotdauban">Margot Dauban</a>,{" "}
         <a href="https://antoine.rousseau.im">Antoine Rousseau</a> et{" "}
         <a href="https://www.malt.fr/profile/raphaelpi">Raphaël Pi</a>,
         <br />
-        {trad.while}.
+        {translation.while}.
       </About>
     </>
   )

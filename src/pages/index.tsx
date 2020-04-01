@@ -6,14 +6,14 @@ import Question from "src/components/Question"
 import Result from "src/components/Result"
 import { START } from "src/helpers/constants"
 import Home from "src/components/Home"
-import { Slug, IQuestion } from "src/types"
+import { Slug, IQuestion, Translation } from "src/types"
 
 interface Props {
   data: Record<Slug, IQuestion>
-  trad: Record<string, string>
+  translation: Translation
 }
 
-const IndexPage: GatsbyPage<any, Props> = ({ pageContext: { trad, data } }) => {
+const IndexPage: GatsbyPage<any, Props> = ({ pageContext: { translation, data } }) => {
   const [current, setCurrent] = useState<undefined | Slug | "RESULT">()
   const [total, setTotal] = useState(0)
 
@@ -24,7 +24,7 @@ const IndexPage: GatsbyPage<any, Props> = ({ pageContext: { trad, data } }) => {
   if (current === "RESULT") {
     return (
       <Layout>
-        <Result points={total} trad={trad} />
+        <Result points={total} translation={translation} />
       </Layout>
     )
   }
@@ -40,7 +40,7 @@ const IndexPage: GatsbyPage<any, Props> = ({ pageContext: { trad, data } }) => {
     return (
       <Layout>
         <Background theme={question.theme} />
-        <Question key={current} question={question} next={handleNext} trad={trad} />
+        <Question key={current} question={question} next={handleNext} translation={translation} />
       </Layout>
     )
   }
@@ -51,7 +51,7 @@ const IndexPage: GatsbyPage<any, Props> = ({ pageContext: { trad, data } }) => {
 
   return (
     <Layout>
-      <Home start={handleStart} trad={trad} />
+      <Home start={handleStart} translation={translation} />
     </Layout>
   )
 }
