@@ -12,19 +12,21 @@ export const AverageCharacter = Average
 export const GoodCharacter = Good
 export const BestCharacter = Best
 
+const scale = keyframes`
+0% {
+  transform: scaleY(1) scaleX(1);
+}
+50% {
+  transform: scaleY(1.1) scaleX(1.1);
+}
+100% {
+  transform: scaleY(1) scaleX(1);
+}
+`
+
 export const AnimatedCharacters = [Worst, Bad, Average, Good, Best].map(
   (Character) =>
     styled(Character)`
-      animation: ${keyframes`
-      0% {
-        transform: scaleY(1) scaleX(1);
-      }
-      50% {
-        transform: scaleY(1.1) scaleX(1.1);
-      }
-      100% {
-        transform: scaleY(1) scaleX(1);
-      }
-    `} ${random(5, 3)}s ease-in-out infinite;
+      animation: ${scale} ${random(5, 2)}s ease-in-out infinite;
     `
 )
