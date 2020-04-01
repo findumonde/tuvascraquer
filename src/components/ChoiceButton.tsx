@@ -3,6 +3,7 @@ import styled from "styled-components"
 
 import { COLORS } from "src/helpers/constants"
 import BaseButton from "src/components/Button"
+import { Choice } from "src/types"
 
 const Button = styled(BaseButton)<{ selected?: boolean; color: string }>`
   flex: 1 0 100%;

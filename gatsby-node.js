@@ -5,6 +5,7 @@
  */
 
 const path = require("path")
+const onCreatePage = require("./src/gatsby/onCreatePage").default
 
 exports.onCreateWebpackConfig = ({ stage, actions }) => {
   const alias = {
@@ -19,3 +20,5 @@ exports.onCreateWebpackConfig = ({ stage, actions }) => {
     },
   })
 }
+
+exports.onCreatePage = onCreatePage

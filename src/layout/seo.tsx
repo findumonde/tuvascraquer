@@ -20,7 +20,7 @@ const SEO: React.FC = () => {
   `)
 
   const htmlAttr = {
-    lang: data.locale.substr(0, 2),
+    lang: process.env.GATSBY_LANG,
   }
 
   return (
@@ -31,7 +31,7 @@ const SEO: React.FC = () => {
       <meta property="og:type" content="website" />
       <meta name="twitter:card" content="summary" />
       <meta name="twitter:description" content={data.description} />
-      <meta name="keywords" content={data.keywords.join(", ")} />
+      <meta name="keywords" content={data.keywords} />
       <meta property="og:locale" content={data.locale} />
       <meta property="og:site_name" content={data.title} />
       <meta property="og:url" content={data.siteUrl} />

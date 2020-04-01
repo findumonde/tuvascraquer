@@ -2,9 +2,12 @@ import React from "react"
 import styled from "styled-components"
 import { differenceInDays } from "date-fns"
 
-import { RESULTS, THEMES, START_DATE } from "src/helpers/constants"
+import { Translation } from "src/types"
+import { THEMES, START_DATE, AUTHORS } from "src/helpers/constants"
 import { isBrowser } from "src/helpers/window"
-import NextButton from "./NextButton"
+import NextButton from "src/components/NextButton"
+import Authors from "src/components/Authors"
+import Characters from "src/images/characters"
 
 const Title = styled.h1``
 const Subtitle = styled.h1`
@@ -37,31 +40,41 @@ const About = styled.footer`
 `
 
 interface Props {
+  translation: Translation
   start: () => void
 }
 
-const Home: React.FC<Props> = ({ start }) => {
+const Home: React.FC<Props> = ({ start, translation }) => {
+  const day = isBrowser() ? ` ${translation.day} ${differenceInDays(new Date(), START_DATE)}` : ""
+
   return (
     <>
-      <Title>Confinement{isBrowser() ? ` Jour ${differenceInDays(new Date(), START_DATE)}` : ""}</Title>
-      <Subtitle>Quand vas-tu craquer ?</Subtitle>
+      <Title>{(translation.lockdown as string).replace("%day%", day)}</Title>
+      <Subtitle>{translation.subtitle}</Subtitle>
       <NextButton onClick={start}>
-        Démarrer
+        {translation.start}
         <span />
       </NextButton>
       <Bottom>
-        {RESULTS.map(({ Character }, index) => (
+        {Characters.map((Character, index) => (
           <Character key={index} />
         ))}
       </Bottom>
       <About>
-        Ce quiz a été créé par
+        {translation.createdBy}
         <br />
-        <a href="https://www.malt.fr/profile/margotdauban">Margot Dauban</a>,{" "}
-        <a href="https://antoine.rousseau.im">Antoine Rousseau</a> et{" "}
-        <a href="https://www.malt.fr/profile/raphaelpi">Raphaël Pi</a>,
+        <Authors authors={AUTHORS} />
         <br />
-        durant leur période de confinement.
+        {translation.while}.
+        {translation.translators && (
+          <>
+            <br />
+            <br />
+            {translation.translatedBy}
+            <br />
+            <Authors authors={translation.translators as Record<string, string>} />
+          </>
+        )}
       </About>
     </>
   )

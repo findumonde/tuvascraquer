@@ -1,7 +1,7 @@
 import React, { useEffect } from "react"
 import styled from "styled-components"
 import { addDays, differenceInDays, format } from "date-fns"
-import { fr } from "date-fns/locale"
+import { fr, enGB } from "date-fns/locale"
 
 import { RESULTS, START_DATE } from "src/helpers/constants"
 import { isBrowser, openPopup } from "src/helpers/window"
@@ -9,7 +9,15 @@ import { isBrowser, openPopup } from "src/helpers/window"
 import ShareIcon from "src/images/share.svg"
 import FacebookIcon from "src/images/facebook.svg"
 import TwitterIcon from "src/images/twitter.svg"
-import { RANGES } from "src/data"
+import { RANGES } from "src/helpers/constants"
+import { Translation } from "src/types"
+import Characters from "src/images/characters"
+
+const DATE_LOCALES = {
+  fr,
+  en: enGB,
+}
+const DATE_LOCALE = DATE_LOCALES[process.env.GATSBY_LANG]
 
 const Content = styled.div`
   min-height: calc(100vh - 90px);
@@ -20,7 +28,9 @@ const Text = styled.p`
   max-width: 500px;
   margin: 0 auto;
 `
-const Share = styled.h2``
+const Share = styled.h2`
+  white-space: pre-line;
+`
 const Bottom = styled.div`
   height: 40px;
   display: flex;
@@ -64,7 +74,7 @@ const getDate = (points: number) => {
   if (date.getTime() < addDays(now, 5).getTime()) {
     date = addDays(now, 3 - (RANGES[0] - points) / differenceInDays(now, START_DATE))
   }
-  return format(date, "EEEE d MMMM", { locale: fr })
+  return date
 }
 
 const getResult = (points: number) => {
@@ -77,14 +87,15 @@ const getResult = (points: number) => {
 
 interface Props {
   points: number
+  translation: Translation
 }
 
-const Result: React.FC<Props> = ({ points }) => {
-  const date = getDate(points)
-  const sharedText = `Je vais craquer ${date} !\n#confinement #covid19 #TuVasCraquer`
+const Result: React.FC<Props> = ({ points, translation }) => {
+  const date = format(getDate(points), translation.date as string, { locale: DATE_LOCALE })
+  const sharedText = (translation.shareText as string).replace("%date%", date)
   const hasShareApi = isBrowser() && "share" in navigator
 
-  const { slug, Character, color, text } = getResult(points)
+  const { slug, Character, color } = getResult(points)
 
   useEffect(() => {
     ga("set", "dimension1", slug)
@@ -120,7 +131,7 @@ const Result: React.FC<Props> = ({ points }) => {
   const handleTwitter = () => {
     const params = {
       url: location.href,
-      text: sharedText + "\n",
+      text: sharedText,
     }
     openPopup("twitter", `https://twitter.com/intent/tweet?${queryString(params)}`, 275)
     trackSharing("twitter")
@@ -131,16 +142,12 @@ const Result: React.FC<Props> = ({ points }) => {
       <Content style={{ minHeight: window.innerHeight - 100 }}>
         <Character />
         <Score>
-          Tu vas craquer
+          {translation.youWillCrack}
           <br />
-          <span style={{ color }}>{date} !</span>
+          <span style={{ color }}>{date}</span>
         </Score>
-        <Text>{text}</Text>
-        <Share>
-          Partage la nouvelle
-          <br />
-          avant qu’il ne soit trop tard
-        </Share>
+        <Text>{translation.persona[slug]}</Text>
+        <Share>{translation.share}</Share>
         {hasShareApi ? (
           <ShareButton onClick={handleShare}>
             <ShareIcon />
@@ -157,7 +164,7 @@ const Result: React.FC<Props> = ({ points }) => {
         )}
       </Content>
       <Bottom>
-        {RESULTS.map(({ Character }, index) => (
+        {Characters.map((Character, index) => (
           <Character key={index} />
         ))}
       </Bottom>

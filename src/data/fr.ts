@@ -1,15 +1,17 @@
-const questions: Record<Slug, Question> = {
+import { IQuestion, Slug } from "src/types"
+
+const questions: Record<Slug, IQuestion> = {
   place: {
     theme: "red",
-    label: "Que vois-tu par la fenêtre ?",
-    next: () => "house",
+    label: "Que vois-tu par la fenêtre\u00A0?",
+    next: "house",
     choices: [
       {
         label: "Des immeubles, je suis en ville",
         points: -2,
       },
       {
-        label: "Des champs, je suis à la campagne",
+        label: "Des moutons, je suis à la campagne",
         points: 4,
       },
       {
@@ -28,8 +30,8 @@ const questions: Record<Slug, Question> = {
   },
   house: {
     theme: "orange",
-    label: "Où es-tu confiné·e ?",
-    next: () => "outside1",
+    label: "Où es-tu confiné·e\u00A0?",
+    next: "outside1",
     choices: [
       {
         label: "Dans une maison",
@@ -59,7 +61,7 @@ const questions: Record<Slug, Question> = {
   },
   outside1: {
     theme: "pink",
-    label: "As-tu accès à des espaces extérieurs privés ?",
+    label: "As-tu accès à des espaces extérieurs privés\u00A0?",
     choices: [
       {
         label: "Oui",
@@ -74,9 +76,9 @@ const questions: Record<Slug, Question> = {
   },
   outside2: {
     theme: "pink",
-    label: "Petit·e veinard·e ! Quels lieux plus précisément ?",
+    label: "Petit·e veinard·e ! Quels lieux plus précisément\u00A0?",
     multiple: true,
-    next: () => "appliances",
+    next: "appliances",
     choices: [
       {
         label: "Un jardin",
@@ -108,7 +110,7 @@ const questions: Record<Slug, Question> = {
     theme: "green",
     label: "Ton logement est équipé de…",
     multiple: true,
-    next: () => "before",
+    next: "before",
     choices: [
       {
         label: "Plusieurs fenêtres",
@@ -144,7 +146,7 @@ const questions: Record<Slug, Question> = {
     theme: "purple",
     label: "Avant le confinement…",
     multiple: true,
-    next: () => "situation",
+    next: "situation",
     choices: [
       {
         label: "Je faisais du sport plusieurs fois par semaine",
@@ -163,7 +165,7 @@ const questions: Record<Slug, Question> = {
         points: -3,
       },
       {
-        label: "Quel confinement ?",
+        label: "Quel confinement\u00A0?",
         points: 3,
       },
       {
@@ -175,9 +177,9 @@ const questions: Record<Slug, Question> = {
   },
   situation: {
     theme: "red",
-    label: "Quelle est ta situation actuelle ?",
+    label: "Quelle est ta situation actuelle\u00A0?",
     multiple: true,
-    next: () => "people",
+    next: "people",
     choices: [
       {
         label: "Etudiant·e, j’explique à mes profs comment marche Discord",
@@ -192,7 +194,7 @@ const questions: Record<Slug, Question> = {
         points: 2,
       },
       {
-        label: "Enfin au chômage, on est quel jour aujourd’hui ?",
+        label: "Enfin au chômage, on est quel jour aujourd’hui\u00A0?",
         points: -1,
       },
       {
@@ -207,7 +209,7 @@ const questions: Record<Slug, Question> = {
   },
   people: {
     theme: "orange",
-    label: "Es-tu confiné·e seul·e ?",
+    label: "Es-tu confiné·e seul·e\u00A0?",
     choices: [
       {
         label: "Oui",
@@ -221,8 +223,8 @@ const questions: Record<Slug, Question> = {
   },
   alone: {
     theme: "orange",
-    label: "Es-tu un gros geek ?",
-    next: () => "days",
+    label: "Es-tu un gros geek\u00A0?",
+    next: "days",
     choices: [
       {
         label: "Oui",
@@ -235,9 +237,9 @@ const questions: Record<Slug, Question> = {
   },
   peopleYes: {
     theme: "orange",
-    label: "Avec qui partages-tu ton toit ?",
+    label: "Avec qui partages-tu ton toit\u00A0?",
     multiple: true,
-    next: (answers) => (answers.some((index) => index < 6) ? "celebrities" : "days"),
+    next: "celebrities",
     choices: [
       {
         label: "Mon/ma conjoint·e",
@@ -281,7 +283,7 @@ const questions: Record<Slug, Question> = {
     theme: "orange",
     label: "Parmi ces personnes, y a-t-il…",
     multiple: true,
-    next: () => "days",
+    next: "days",
     choices: [
       {
         label: "Un·e cuisinier·ère",
@@ -307,9 +309,9 @@ const questions: Record<Slug, Question> = {
   },
   days: {
     theme: "pink",
-    label: "Rentrons dans le vif du sujet… Comment occupes-tu tes journées ?",
+    label: "Rentrons dans le vif du sujet… Comment occupes-tu tes journées\u00A0?",
     multiple: true,
-    next: () => "drink",
+    next: "drink",
     choices: [
       {
         label: "Je réponds à des questionnaires à la con",
@@ -342,7 +344,7 @@ const questions: Record<Slug, Question> = {
       },
       {
         label:
-          "T’avais remarqué que l’eau des toilettes s’échappe toujours dans le sens inverse des aiguilles d’une montre ?",
+          "T’avais remarqué que l’eau des toilettes s’échappe toujours dans le sens inverse des aiguilles d’une montre\u00A0?",
         points: -1,
       },
       {
@@ -364,7 +366,7 @@ const questions: Record<Slug, Question> = {
     theme: "green",
     label: "A l’apéro tu bois…",
     multiple: true,
-    next: () => "food",
+    next: "food",
     choices: [
       {
         label: "De l’eau",
@@ -386,8 +388,8 @@ const questions: Record<Slug, Question> = {
   },
   food: {
     theme: "purple",
-    label: "Qu’as-tu mangé hier midi ?",
-    next: () => "shower",
+    label: "Qu’as-tu mangé hier midi\u00A0?",
+    next: "shower",
     choices: [
       {
         label: "Du PQ",
@@ -413,8 +415,8 @@ const questions: Record<Slug, Question> = {
   },
   shower: {
     theme: "red",
-    label: "De quand date ta dernière douche ?",
-    next: () => "out",
+    label: "De quand date ta dernière douche\u00A0?",
+    next: "out",
     choices: [
       {
         label: "Il y a une heure",
@@ -437,7 +439,7 @@ const questions: Record<Slug, Question> = {
   out: {
     theme: "orange",
     label: "Pour sortir…",
-    next: () => "after",
+    next: "after",
     choices: [
       {
         label: "Je remplis soigneusement mon attestation pour promener mon chien en peluche",
@@ -452,7 +454,7 @@ const questions: Record<Slug, Question> = {
         points: -2,
       },
       {
-        label: "TU RESTES CHEZ TOI BORDEL !\n#RestezChezVous",
+        label: "TU RESTES CHEZ TOI BORDEL\u00A0!\n#RestezChezVous",
         points: 2,
       },
     ],
@@ -461,7 +463,7 @@ const questions: Record<Slug, Question> = {
     theme: "pink",
     label: "Après le confinement…",
     multiple: true,
-    next: () => "end",
+    next: "end",
     choices: [
       {
         label: "Il n’y aura pas d’après",
@@ -487,7 +489,7 @@ const questions: Record<Slug, Question> = {
   },
   end: {
     theme: "green",
-    label: "Es-tu sûr·e de vouloir connaître le résultat de ce test ?",
+    label: "Es-tu sûr·e de vouloir connaître le résultat de ce test\u00A0?",
     choices: [
       {
         label: "Oui",
@@ -502,5 +504,3 @@ const questions: Record<Slug, Question> = {
 }
 
 export default questions
-
-export const RANGES = [-50, 0, 15, 35, 50, 78] // min = -67, max = 96
