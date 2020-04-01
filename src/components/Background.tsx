@@ -2,6 +2,7 @@ import React, { useState } from "react"
 import styled, { keyframes, css } from "styled-components"
 import { THEMES } from "src/helpers/constants"
 import { IQuestion } from "src/types"
+import { random } from "src/helpers/utils"
 
 const NUM = 4
 const range = 100 / (NUM / 2)
@@ -20,8 +21,6 @@ const Container = styled.div`
     margin-bottom: -100px;
   }
 `
-
-const random = (max: number, min = 0) => min + Math.round(Math.random() * (max - min))
 
 const getAnimation = (rotate: number) => {
   const start = random(3, 1)

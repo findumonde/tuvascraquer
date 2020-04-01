@@ -1,7 +1,7 @@
 import { Translation } from "src/types"
 
 const fr: Translation = {
-  lockdown: "Confinement",
+  lockdown: "Confinement %day%",
   day: "Jour",
   start: "Démarrer",
   next: "Suivant",
@@ -13,6 +13,7 @@ const fr: Translation = {
   date: "EEEE d MMMM !",
   share: "Partage la nouvelle\navant qu’il ne soit trop tard",
   shareText: "Je vais craquer %date%\n#confinement #covid19 #TuVasCraquer",
+  and: "et",
   persona: {
     worst:
       "Tu n’es vraiment pas beau/belle à voir, tu commences à te transformer en pangolin. Tes voisins ont plus peur de te croiser que d’attraper le coronavirus.",

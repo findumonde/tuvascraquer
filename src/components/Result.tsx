@@ -11,6 +11,7 @@ import FacebookIcon from "src/images/facebook.svg"
 import TwitterIcon from "src/images/twitter.svg"
 import { RANGES } from "src/helpers/constants"
 import { Translation } from "src/types"
+import { AnimatedCharacters } from "src/images/characters"
 
 const DATE_LOCALES = {
   fr,
@@ -163,7 +164,7 @@ const Result: React.FC<Props> = ({ points, translation }) => {
         )}
       </Content>
       <Bottom>
-        {RESULTS.map(({ Character }, index) => (
+        {AnimatedCharacters.map((Character, index) => (
           <Character key={index} />
         ))}
       </Bottom>

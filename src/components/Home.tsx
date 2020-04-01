@@ -2,10 +2,11 @@ import React from "react"
 import styled from "styled-components"
 import { differenceInDays } from "date-fns"
 
-import { RESULTS, THEMES, START_DATE } from "src/helpers/constants"
+import { THEMES, START_DATE } from "src/helpers/constants"
 import { isBrowser } from "src/helpers/window"
 import NextButton from "./NextButton"
 import { Translation } from "src/types"
+import { AnimatedCharacters } from "src/images/characters"
 
 const Title = styled.h1``
 const Subtitle = styled.h1`
@@ -46,7 +47,10 @@ const Home: React.FC<Props> = ({ start, translation }) => {
   return (
     <>
       <Title>
-        {translation.lockdown} {isBrowser() ? ` ${translation.day} ${differenceInDays(new Date(), START_DATE)}` : ""}
+        {(translation.lockdown as string).replace(
+          "%day%",
+          isBrowser() ? ` ${translation.day} ${differenceInDays(new Date(), START_DATE)}` : ""
+        )}
       </Title>
       <Subtitle>{translation.subtitle}</Subtitle>
       <NextButton onClick={start}>
@@ -54,7 +58,7 @@ const Home: React.FC<Props> = ({ start, translation }) => {
         <span />
       </NextButton>
       <Bottom>
-        {RESULTS.map(({ Character }, index) => (
+        {AnimatedCharacters.map((Character, index) => (
           <Character key={index} />
         ))}
       </Bottom>
@@ -62,10 +66,27 @@ const Home: React.FC<Props> = ({ start, translation }) => {
         {translation.createdBy}
         <br />
         <a href="https://www.malt.fr/profile/margotdauban">Margot Dauban</a>,{" "}
-        <a href="https://antoine.rousseau.im">Antoine Rousseau</a> et{" "}
+        <a href="https://antoine.rousseau.im">Antoine Rousseau</a> {translation.and}{" "}
         <a href="https://www.malt.fr/profile/raphaelpi">Raphaël Pi</a>,
         <br />
         {translation.while}.
+        {translation.translators && (
+          <>
+            <br />
+            <br />
+            {translation.translatedBy}
+            <br />
+            {Object.keys(translation.translators).map((translator, index) => (
+              <React.Fragment key={index}>
+                {translation.translators[translator] ? (
+                  <a href={translation.translators[translator]}>{translator}</a>
+                ) : (
+                  translator
+                )}{" "}
+              </React.Fragment>
+            ))}
+          </>
+        )}
       </About>
     </>
   )

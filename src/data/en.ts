@@ -241,7 +241,7 @@ const questions: Record<Slug, IQuestion> = {
         points: 2,
       },
       {
-        label: "One or more childr$%&#$qeorzbyqezpr",
+        label: "One or several childr$%&#$qeorzbyqezpr",
         points: -5,
       },
       {
@@ -265,7 +265,7 @@ const questions: Record<Slug, IQuestion> = {
         points: 2,
       },
       {
-        label: "My cat or dog (or guinea pig)",
+        label: "My cat or dog (or donkey)",
         points: 2,
       },
       {
@@ -397,7 +397,7 @@ const questions: Record<Slug, IQuestion> = {
         points: -1,
       },
       {
-        label: "A grilled halloumi salad, fresh pasta, and a chocolate fondant",
+        label: "A grilled halloumi salad, beef bourguignon, and a chocolate fondant",
         points: 4,
       },
       {

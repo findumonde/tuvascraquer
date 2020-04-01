@@ -1,18 +1,20 @@
 import { Translation } from "src/types"
 
 const en: Translation = {
-  lockdown: "Lockdown",
+  lockdown: "Lockdown Countdown",
   day: "Day",
   start: "Start",
   next: "Next",
   subtitle: "When will you crack?",
   multiple: "You can select multiple answers",
-  createdBy: "This quiz war created by",
+  createdBy: "This quiz was created by",
+  translatedBy: "Translated by",
   while: "during their lockdown in France",
   youWillCrack: "You will crack on",
   date: "EEEE, d MMMM!",
   share: "Share the news\nbefore it's too late!",
   shareText: "I'll crack on %date%\n#lockdown #covid19 #WhenWillYouCrack",
+  and: "and",
   persona: {
     worst:
       "You’re not a pretty sight - you’re actually growing scales. Your neighbours are more scared of running into you than they are of coronavirus.",
@@ -31,6 +33,10 @@ const en: Translation = {
     keywords: "lockdown, coronavirus, covid, SARS-CoV-2, crack, breakdown, quiz, end of the world",
     locale: "en_GB",
     url: `https://whenwillyoucrack.com/`,
+  },
+  translators: {
+    "Lexi dillistone": "https://www.linkedin.com/in/lexi-dillistone-0385871a5/",
+    "Catherine Murray": "https://preply.com/fr/tuteur/205648/",
   },
 }
 
