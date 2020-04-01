@@ -6,7 +6,8 @@
   "contributors": [
     "Margot Dauban <dauban.margot@gmail.com>",
     "Raphaël Pi <pi.raph@gmail.com>",
-    "Antoine Rousseau <antoine@rousseau.im>"
+    "Antoine Rousseau <antoine@rousseau.im>",
+    "Lexi Dillistone <dillistonelexi@gmail.com>"
   ],
   "dependencies": {
     "@babel/preset-typescript": "^7.9.0",
