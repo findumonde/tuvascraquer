@@ -46,7 +46,7 @@ const questions: Record<Slug, IQuestion> = {
         points: 1,
       },
       {
-        label: "On a ship...a cruise ship",
+        label: "On a ship. A cruise ship",
         points: -3,
       },
       {
@@ -174,6 +174,7 @@ const questions: Record<Slug, IQuestion> = {
   situation: {
     theme: "red",
     label: "What is your current status?",
+    multiple: true,
     next: "people",
     choices: [
       {
@@ -262,7 +263,7 @@ const questions: Record<Slug, IQuestion> = {
         points: 2,
       },
       {
-        label: "My brother",
+        label: "Your brother",
         points: 2,
       },
       {
@@ -313,7 +314,7 @@ const questions: Record<Slug, IQuestion> = {
         points: 1,
       },
       {
-        label: "I’m learning crochet and fine-tuning my strategies for Risk",
+        label: "I'm working on my Whist tactics and fine-tuning my strategies for Risk",
         points: 3,
       },
       {
@@ -334,7 +335,7 @@ const questions: Record<Slug, IQuestion> = {
       },
       {
         label:
-          "I’m learning Japanese, perfecting my yoga poses, painting the bathroom, reading the classics... I’m basically boring as hell",
+          "I'm learning Japanese, perfecting my yoga poses, painting the bathroom, reading the classics... I'm basically boring as hell",
         points: 3,
       },
       {
@@ -437,7 +438,7 @@ const questions: Record<Slug, IQuestion> = {
     choices: [
       {
         label:
-          "I carefully rehearse my backstory about why all the Easter eggs I’m buying are essential medical supplies for my sick aunt",
+          "I carefully rehearse my backstory about why all the Easter eggs I'm buying are essential medical supplies for my sick aunt",
         points: -2,
       },
       {
