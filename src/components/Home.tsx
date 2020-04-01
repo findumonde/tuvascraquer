@@ -36,6 +36,9 @@ const About = styled.footer`
   margin-top: 40px;
   font-size: 10px;
   line-height: 12px;
+  a {
+    margin-left: 3px;
+  }
 `
 
 interface Props {
@@ -44,14 +47,11 @@ interface Props {
 }
 
 const Home: React.FC<Props> = ({ start, translation }) => {
+  const day = isBrowser() ? ` ${translation.day} ${differenceInDays(new Date(), START_DATE)}` : ""
+
   return (
     <>
-      <Title>
-        {(translation.lockdown as string).replace(
-          "%day%",
-          isBrowser() ? ` ${translation.day} ${differenceInDays(new Date(), START_DATE)}` : ""
-        )}
-      </Title>
+      <Title>{(translation.lockdown as string).replace("%day%", day)}</Title>
       <Subtitle>{translation.subtitle}</Subtitle>
       <NextButton onClick={start}>
         {translation.start}
@@ -65,8 +65,8 @@ const Home: React.FC<Props> = ({ start, translation }) => {
       <About>
         {translation.createdBy}
         <br />
-        <a href="https://www.malt.fr/profile/margotdauban">Margot Dauban</a>,{" "}
-        <a href="https://antoine.rousseau.im">Antoine Rousseau</a> {translation.and}{" "}
+        <a href="https://www.malt.fr/profile/margotdauban">Margot Dauban</a>,
+        <a href="https://antoine.rousseau.im">Antoine Rousseau</a> {translation.and}
         <a href="https://www.malt.fr/profile/raphaelpi">Raphaël Pi</a>,
         <br />
         {translation.while}.
@@ -77,13 +77,9 @@ const Home: React.FC<Props> = ({ start, translation }) => {
             {translation.translatedBy}
             <br />
             {Object.keys(translation.translators).map((translator, index) => (
-              <React.Fragment key={index}>
-                {translation.translators[translator] ? (
-                  <a href={translation.translators[translator]}>{translator}</a>
-                ) : (
-                  translator
-                )}{" "}
-              </React.Fragment>
+              <a key={index} href={translation.translators[translator]} rel="noopener">
+                {translator}
+              </a>
             ))}
           </>
         )}

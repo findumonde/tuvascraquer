@@ -32,7 +32,7 @@ const en: Translation = {
     description: "The useless quiz (thus essential) to measure your resistance to lockdown",
     keywords: "lockdown, coronavirus, covid, SARS-CoV-2, crack, breakdown, quiz, end of the world",
     locale: "en_GB",
-    url: `https://whenwillyoucrack.com/`,
+    siteUrl: `https://whenwillyoucrack.com`,
   },
   translators: {
     "Lexi Dillistone": "https://www.linkedin.com/in/lexi-dillistone-0385871a5/",

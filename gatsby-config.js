@@ -14,13 +14,7 @@ process.env.GATSBY_RELEASE = process.env.COMMIT_REF || "local" // from Netlify
 process.env.GATSBY_DEPLOY_DATE = new Date().toString()
 
 module.exports = {
-  siteMetadata: {
-    title: translation.meta.title,
-    description: translation.meta.title,
-    locale: translation.meta.locale,
-    siteUrl: translation.meta.url,
-    keywords: translation.meta.keywords,
-  },
+  siteMetadata: translation.meta,
   plugins: [
     `gatsby-transformer-sharp`,
     {

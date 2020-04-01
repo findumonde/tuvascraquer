@@ -30,7 +30,7 @@ const fr: Translation = {
     description: "Le quiz inutile (et donc indispensable) pour tester ta résistance au confinement",
     keywords: "coronavirus, covid, SARS-CoV-2, fin du monde, craquer, confinement, lockdown, quiz",
     locale: "fr_FR",
-    url: `https://tuvascraquer.fr`,
+    siteUrl: `https://tuvascraquer.fr`,
   },
 }
 
