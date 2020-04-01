@@ -7,7 +7,7 @@ const en: Translation = {
   next: "Next",
   subtitle: "When will you crack?",
   multiple: "You can select multiple answers",
-  createdBy: "This quiz was created by",
+  createdBy: "This quiz was created with 🧻 by",
   while: "during their lockdown in France",
   youWillCrack: "You will crack on",
   date: "EEEE, d MMMM!",
@@ -28,7 +28,7 @@ const en: Translation = {
   },
   meta: {
     title: "When will you crack?",
-    description: "The useless quiz (thus essential) to measure your resistance to lockdown",
+    description: "The useless (and therefore essential) quiz to test your resistance to the lockdown",
     keywords: "lockdown, coronavirus, covid, SARS-CoV-2, crack, breakdown, quiz, StayAtHome",
     locale: "en_GB",
     siteUrl: `https://whenwillyoucrack.com`,
