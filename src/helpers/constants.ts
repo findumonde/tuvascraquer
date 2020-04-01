@@ -52,7 +52,7 @@ export const RESULTS: Result[] = [
   },
 ]
 
-export const RANGES = [-50, 0, 15, 35, 50, 78] // min = -64, max = 93
+export const RANGES = [-50, 0, 15, 35, 50, 78] // min = -67, max = 96
 
 export const AUTHORS = {
   "Margot Dauban": "https://www.malt.fr/profile/margotdauban",

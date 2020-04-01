@@ -63,7 +63,7 @@ const Question: React.FC<QuestionProps> = ({ question, next, translation }) => {
     let slug = question.next ? question.next : choices[answers[0]].next
 
     if (question.next === "celebrities") {
-      slug = answers.some((index) => index < 6) ? "celebrities" : "days"
+      slug = answers.some((index) => index < 7) ? "celebrities" : "days"
     }
 
     answers.forEach((index) => {

@@ -29,7 +29,7 @@ const en: Translation = {
   meta: {
     title: "When will you crack?",
     description: "The useless quiz (thus essential) to measure your resistance to lockdown",
-    keywords: "lockdown, coronavirus, covid, SARS-CoV-2, crack, breakdown, quiz, stay at home",
+    keywords: "lockdown, coronavirus, covid, SARS-CoV-2, crack, breakdown, quiz, StayAtHome",
     locale: "en_GB",
     siteUrl: `https://whenwillyoucrack.com`,
   },
