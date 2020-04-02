@@ -53,7 +53,7 @@ const getAnimation = (rotate: number) => {
       transform: translateX(0px) rotate(${rotate}deg);
     }
     50% {
-      transform: translateX(${random(20, 10)}px) rotate(${rotate}deg);
+      transform: translateX(${random(30, 10)}px) rotate(${rotate}deg);
     }
     100% {
       transform: translateX(0px) rotate(${rotate}deg);
@@ -78,6 +78,7 @@ const getAnimation = (rotate: number) => {
       ${rotateAnimation}
     `,
       duration: random(5, 2),
+      delay: 0,
       iteration: "1",
     },
     {
@@ -85,6 +86,7 @@ const getAnimation = (rotate: number) => {
       ${translateAnimation}
     `,
       duration: random(5, 3),
+      delay: random(1),
       iteration: "infinite",
     },
     {
@@ -92,6 +94,7 @@ const getAnimation = (rotate: number) => {
       ${scaleAnimation}
     `,
       duration: random(10, 2),
+      delay: 0,
       iteration: "infinite",
     },
   ]
@@ -110,10 +113,10 @@ const AnimatedViruses = {}
 Object.keys(THEMES).forEach((theme) => {
   AnimatedViruses[theme] = styled(THEMES[theme].Virus)<AnimatedVirusProps>`
     top: ${({ multiplier }) => `${random(range * (multiplier + 1), range * multiplier)}`}%;
-    ${({ index }) => `${index % 2 ? "right" : "left"}: -${random(35, 20)}px;`};
+    ${({ index }) => `${index % 2 ? "right" : "left"}: -${random(25, 10)}px;`};
     ${({ animation }) =>
       css`
-        animation: ${animation.keyFrame} ${animation.duration}s ease-in-out ${animation.iteration};
+        animation: ${animation.keyFrame} ${animation.duration}s ease-in-out ${animation.delay}s ${animation.iteration};
       `};
     transform: rotate(${({ rotate }) => rotate}deg);
   `

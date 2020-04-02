@@ -8,6 +8,7 @@ import { isBrowser } from "src/helpers/window"
 import NextButton from "src/components/NextButton"
 import Authors from "src/components/Authors"
 import Characters from "src/images/characters"
+import Flag from "./Flag"
 
 const Title = styled.h1``
 const Subtitle = styled.h1`
@@ -49,6 +50,7 @@ const Home: React.FC<Props> = ({ start, translation }) => {
 
   return (
     <>
+      {process.env.GATSBY_LANG === "fr" && <Flag />}
       <Title>{(translation.lockdown as string).replace("%day%", day)}</Title>
       <Subtitle>{translation.subtitle}</Subtitle>
       <NextButton onClick={start}>
