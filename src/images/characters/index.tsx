@@ -23,7 +23,7 @@ const scale = keyframes`
 const Characters = [Worst, Bad, Average, Good, Best].map(
   (Character) =>
     styled(Character)`
-      animation: ${scale} ${random(5, 2)}s ease-in-out infinite;
+      animation: ${scale} ${random(5, 2)}s ease-in-out ${random(0, 1)}s infinite;
     `
 )
 
