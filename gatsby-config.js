@@ -46,7 +46,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-netlify`,
       options: {
-        allPageHeaders: ["Cache-Control: public, max-age=43200"], // 12-hour caching of html
+        // allPageHeaders: ["Cache-Control: public, max-age=43200"], // 12-hour caching of html
       },
     },
     {
