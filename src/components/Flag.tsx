@@ -10,7 +10,7 @@ const Link = styled.a`
 
 const Flag: React.FC = () => {
   return (
-    <Link href="https://whenwillyoucrack.com/" title="Version UK">
+    <Link href="https://whenwillyoucrack.com/" title="UK Version">
       <Icon width={50} />
     </Link>
   )
