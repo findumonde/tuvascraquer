@@ -19,7 +19,10 @@ const questions: Record<Slug, IQuestion> = {
         points: 4,
       },
       {
-        label: "The racecourse, I'm in Cheltenham",
+        label: "The racecourse, I'm in Cheltenham", // TODO: en_US
+        localized: {
+          "en_GB, en_IE": "The racecourse, I'm in Cheltenham",
+        },
         points: -3,
       },
       {
@@ -38,7 +41,10 @@ const questions: Record<Slug, IQuestion> = {
         points: 4,
       },
       {
-        label: "In a flat",
+        label: "In an apartment",
+        localized: {
+          "en_GB, en_IE": "In a flat",
+        },
         points: 1,
       },
       {
@@ -61,7 +67,10 @@ const questions: Record<Slug, IQuestion> = {
   },
   outside1: {
     theme: "pink",
-    label: "Do you have access to outside space?",
+    label: "Do you have access to any outdoor spaces?",
+    localized: {
+      "en_GB, en_IE": "Do you have access to outside space?",
+    },
     choices: [
       {
         label: "Yes",
@@ -76,7 +85,10 @@ const questions: Record<Slug, IQuestion> = {
   },
   outside2: {
     theme: "pink",
-    label: "Lucky bastard! What spaces exactly?",
+    label: "Well look at you, you lucky bastard! What type of outdoor space?",
+    localized: {
+      "en_GB, en_IE": "Lucky bastard! What spaces exactly?",
+    },
     multiple: true,
     next: "appliances",
     choices: [
@@ -108,7 +120,10 @@ const questions: Record<Slug, IQuestion> = {
   },
   appliances: {
     theme: "green",
-    label: "Your dwelling is equipped with",
+    label: "Your dwelling is equipped with", // TODO: en_US
+    localized: {
+      "en_GB, en_IE": "Your dwelling is equipped with",
+    },
     multiple: true,
     next: "before",
     choices: [
@@ -291,7 +306,10 @@ const questions: Record<Slug, IQuestion> = {
         points: 4,
       },
       {
-        label: "Chris Whitty (pre-infection)",
+        label: "Chris Whitty (pre-infection)", // TODO: en_US
+        localized: {
+          "en_GB, en_IE": "Your dwelling is equipped with",
+        },
         points: -2,
       },
       {
@@ -314,7 +332,10 @@ const questions: Record<Slug, IQuestion> = {
         points: 1,
       },
       {
-        label: "I'm working on my Whist tactics and fine-tuning my strategies for Risk",
+        label: "I'm working on my Whist tactics and fine-tuning my strategies for Risk", // TODO: en_US
+        localized: {
+          "en_GB, en_IE": "I'm working on my Whist tactics and fine-tuning my strategies for Risk",
+        },
         points: 3,
       },
       {
@@ -387,11 +408,17 @@ const questions: Record<Slug, IQuestion> = {
     next: "shower",
     choices: [
       {
-        label: "Loo roll",
+        label: "Toilet Paper",
+        localized: {
+          "en_GB, en_IE": "Loo roll",
+        },
         points: -4,
       },
       {
-        label: "Cold chips and marmalade",
+        label: "Cold chips and marmalade", // TODO: en_US
+        localized: {
+          "en_GB, en_IE": "Cold chips and marmalade",
+        },
         points: -3,
       },
       {
@@ -474,7 +501,10 @@ const questions: Record<Slug, IQuestion> = {
         points: -1,
       },
       {
-        label: "I'll vote greens in the local elections",
+        label: "I'll vote greens in the local elections", // TODO: en_US
+        localized: {
+          "en_GB, en_IE": "I'll vote greens in the local elections",
+        },
         points: 1,
       },
       {
