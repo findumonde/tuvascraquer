@@ -33,7 +33,7 @@ const en: Translation = {
     title: "When will you crack?",
     description: "The useless (and therefore essential) quiz to test your resistance to the lockdown",
     keywords: "lockdown, coronavirus, covid, SARS-CoV-2, crack, breakdown, quiz, StayAtHome",
-    locale: "en_GB",
+    locale: "en_US",
     siteUrl: `https://whenwillyoucrack.com`,
   },
   translators: {

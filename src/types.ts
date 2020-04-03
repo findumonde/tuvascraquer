@@ -5,7 +5,7 @@ export type Slug = string
 export type ThemeId = "pink" | "purple" | "green" | "red" | "orange"
 
 export type Translation = Record<string, Record<string, string>>
-export type Locales = string // e.g. "en_GB,en_IE"
+export type Locales = string // e.g. "en-GB,en-IE"
 export type Localized = Record<Locales, string>
 
 export interface Theme {
