@@ -48,6 +48,8 @@ const Home: React.FC<Props> = ({ start }) => {
   const { translate, getTranslation } = useTranslate()
   const day = isBrowser() ? ` ${translate("day")} ${differenceInDays(new Date(), START_DATE)}` : ""
 
+  const translators = getTranslation("translators")
+
   return (
     <>
       {process.env.GATSBY_LANG === "fr" && <Flag />}
@@ -68,13 +70,13 @@ const Home: React.FC<Props> = ({ start }) => {
         <Authors authors={AUTHORS} />
         <br />
         {translate("while")}.
-        {translate("translators") && (
+        {translators && (
           <>
             <br />
             <br />
             {translate("translatedBy")}
             <br />
-            <Authors authors={getTranslation("translators")} />
+            <Authors authors={translators} />
           </>
         )}
       </About>
