@@ -23,14 +23,14 @@ const Button = styled(BaseButton)<{ selected?: boolean; color: string }>`
 `
 
 interface Props extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  choice: Choice
+  label: string
   color: string
   selected: boolean
 }
 
-const ChoiceButton: React.FC<Props> = ({ choice, color, selected, ...props }) => (
+const ChoiceButton: React.FC<Props> = ({ label, color, selected, ...props }) => (
   <Button color={color} selected={selected} {...props}>
-    {choice.label}
+    {label}
   </Button>
 )
 

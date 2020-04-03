@@ -14,6 +14,7 @@ export interface GatsbyNode {
   id: string
   parent: string
   children: string[]
+  [key: string]: any
   internal: {
     type: string
     contentDigest: string

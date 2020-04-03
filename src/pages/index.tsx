@@ -7,13 +7,13 @@ import Result from "src/components/Result"
 import { START } from "src/helpers/constants"
 import Home from "src/components/Home"
 import { Slug, IQuestion, Translation } from "src/types"
+import { LangProvider } from "src/components/LangContext"
 
-interface Props {
+interface ContentProps {
   data: Record<Slug, IQuestion>
-  translation: Translation
 }
 
-const IndexPage: GatsbyPage<any, Props> = ({ pageContext: { translation, data } }) => {
+const Content: React.FC<ContentProps> = ({ data }) => {
   const [current, setCurrent] = useState<undefined | Slug | "RESULT">()
   const [total, setTotal] = useState(0)
 
@@ -22,11 +22,7 @@ const IndexPage: GatsbyPage<any, Props> = ({ pageContext: { translation, data } 
   }, [current])
 
   if (current === "RESULT") {
-    return (
-      <Layout>
-        <Result points={total} translation={translation} />
-      </Layout>
-    )
+    return <Result points={total} />
   }
 
   if (current) {
@@ -38,10 +34,10 @@ const IndexPage: GatsbyPage<any, Props> = ({ pageContext: { translation, data } 
     const question = data[current]
 
     return (
-      <Layout>
+      <>
         <Background theme={question.theme} />
-        <Question key={current} question={question} next={handleNext} translation={translation} />
-      </Layout>
+        <Question key={current} question={question} next={handleNext} />
+      </>
     )
   }
 
@@ -49,9 +45,20 @@ const IndexPage: GatsbyPage<any, Props> = ({ pageContext: { translation, data } 
     setCurrent(START)
   }
 
+  return <Home start={handleStart} />
+}
+
+interface Props {
+  data: Record<Slug, IQuestion>
+  translation: Translation
+}
+
+const IndexPage: GatsbyPage<any, Props> = ({ pageContext: { data, translation } }) => {
   return (
     <Layout>
-      <Home start={handleStart} translation={translation} />
+      <LangProvider value={{ translation }}>
+        <Content data={data} />
+      </LangProvider>
     </Layout>
   )
 }

@@ -308,7 +308,7 @@ const questions: Record<Slug, IQuestion> = {
       {
         label: "Chris Whitty (pre-infection)", // TODO: en_US
         localized: {
-          "en_GB, en_IE": "Your dwelling is equipped with",
+          "en_GB, en_IE": "Chris Whitty (pre-infection)",
         },
         points: -2,
       },
