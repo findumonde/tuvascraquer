@@ -120,7 +120,7 @@ const questions: Record<Slug, IQuestion> = {
   },
   appliances: {
     theme: "green",
-    label: "Your dwelling is equipped with", // TODO: en_US
+    label: "Your home is equipped with",
     localized: {
       "en_GB, en_IE": "Your dwelling is equipped with",
     },
