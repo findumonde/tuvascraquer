@@ -19,7 +19,7 @@ const questions: Record<Slug, IQuestion> = {
         points: 4,
       },
       {
-        label: "Empty streets, I live in New York", // TODO: en-US
+        label: "Zombies, I live in New York", // TODO: en-US
         localized: {
           "en-GB,en-IE": "The racecourse, I'm in Cheltenham",
         },
@@ -289,7 +289,10 @@ const questions: Record<Slug, IQuestion> = {
         points: 2,
       },
       {
-        label: "My tapeworm",
+        label: "My dead grand parents… saving the economy",
+        localized: {
+          "en-GB,en-IE": "My tapeworm",
+        },
         points: -2,
       },
     ],
@@ -309,14 +312,14 @@ const questions: Record<Slug, IQuestion> = {
         points: 4,
       },
       {
-        label: "Chris Whitty (pre-infection)", // TODO: en-US
+        label: "Another 'Imagine' singer", // TODO: en-US
         localized: {
           "en-GB,en-IE": "Chris Whitty (pre-infection)",
         },
         points: -2,
       },
       {
-        label: "A  Covid-19 carrier",
+        label: "A Covid-19 carrier",
         points: -4,
       },
       {
@@ -335,14 +338,14 @@ const questions: Record<Slug, IQuestion> = {
         points: 1,
       },
       {
-        label: "I'm working on my Whist tactics and fine-tuning my strategies for Risk", // TODO: en-US
+        label: "I'm working on my Texas Hold'em tactics", // TODO: en-US
         localized: {
           "en-GB,en-IE": "I'm working on my Whist tactics and fine-tuning my strategies for Risk",
         },
         points: 3,
       },
       {
-        label: "I'm explaining to my dad how to use HouseParty",
+        label: "I'm explaining to my dad how to use Zoom",
         points: 1,
       },
       {
@@ -420,7 +423,7 @@ const questions: Record<Slug, IQuestion> = {
         points: -4,
       },
       {
-        label: "Cold fries and marmalade", // TODO: en-US
+        label: "Cold fries and peanut butter", // TODO: en-US
         localized: {
           "en-GB,en-IE": "Cold chips and marmalade",
         },
@@ -435,7 +438,7 @@ const questions: Record<Slug, IQuestion> = {
         points: 4,
       },
       {
-        label: "I only got up at 8pm, Clap for Carers woke me up", // TODO: en-US
+        label: "I only got up at 5pm", // TODO: en-US
         localized: {
           "en-GB,en-IE": "I only got up at 8pm, Clap for Carers woke me up",
         },
@@ -472,8 +475,11 @@ const questions: Record<Slug, IQuestion> = {
     next: "after",
     choices: [
       {
-        label:
-          "I carefully rehearse my backstory about why all the Easter eggs I'm buying are essential medical supplies for my sick aunt",
+        label: "I put on my mask stolen from the French",
+        localized: {
+          "en-GB,en-IE":
+            "I carefully rehearse my backstory about why all the Easter eggs I'm buying are essential medical supplies for my sick aunt",
+        },
         points: -2,
       },
       {
