@@ -220,7 +220,11 @@ const questions: Record<Slug, IQuestion> = {
       },
       {
         label:
-          "You know, I always say that where hope grows, miracles blossom. By unfolding, we heal. We need to open our souls to the majesty of the universe's mysteries.",
+          "You see, in this world, there is two kinds of people, my friend: those with loaded guns and those who dig",
+        localized: {
+          "en-GB,en-IE,en-IN":
+            "You know, I always say that where hope grows, miracles blossom. By unfolding, we heal. We need to open our souls to the majesty of the universe's mysteries",
+        },
         points: 3,
       },
     ],
