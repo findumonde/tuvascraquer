@@ -4,7 +4,8 @@ import styled from "styled-components"
 import ChoiceButton from "src/components/ChoiceButton"
 import { THEMES } from "src/helpers/constants"
 import NextButton from "src/components/NextButton"
-import { IQuestion, Slug, Translation } from "src/types"
+import { useTranslate, localize } from "src/components/LangContext"
+import { IQuestion, Slug } from "src/types"
 
 const Title = styled.h1``
 
@@ -22,13 +23,13 @@ const Disclaimer = styled.p`
 
 interface QuestionProps {
   question: IQuestion
-  translation: Translation
   next: (points: number, slug?: Slug) => void
 }
 
-const Question: React.FC<QuestionProps> = ({ question, next, translation }) => {
+const Question: React.FC<QuestionProps> = ({ question, next }) => {
+  const { translate } = useTranslate()
   const [answers, setAnswers] = useState<number[]>([])
-  const { choices, multiple, label, theme } = question
+  const { choices, multiple, theme } = question
   const { color } = THEMES[theme]
 
   useEffect(() => {
@@ -75,13 +76,13 @@ const Question: React.FC<QuestionProps> = ({ question, next, translation }) => {
 
   return (
     <>
-      <Title>{label}</Title>
-      {multiple && <Disclaimer>{translation.multiple}</Disclaimer>}
+      <Title>{localize(question)}</Title>
+      {multiple && <Disclaimer>{translate("multiple")}</Disclaimer>}
       <Choices>
         {choices.map((choice, index) => (
           <ChoiceButton
             key={index}
-            choice={choice}
+            label={localize(choice)}
             color={color}
             onClick={handleClick(index)}
             selected={answers.includes(index)}
@@ -89,7 +90,7 @@ const Question: React.FC<QuestionProps> = ({ question, next, translation }) => {
         ))}
       </Choices>
       <NextButton disabled={!answers.length} color={color} onClick={handleNext}>
-        {translation.next}
+        {translate("next")}
         <span />
       </NextButton>
     </>

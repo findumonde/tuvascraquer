@@ -326,7 +326,7 @@ const questions: Record<Slug, IQuestion> = {
         points: 3,
       },
       {
-        label: "J’explique à mon père comment installer HouseParty",
+        label: "J’explique à mon père comment installer Zoom",
         points: 1,
       },
       {

@@ -1,19 +1,22 @@
 import { Translation } from "src/types"
 
 const en: Translation = {
-  lockdown: "Lockdown Countdown",
-  day: "Day",
-  start: "Start",
-  next: "Next",
-  subtitle: "When will you crack?",
-  multiple: "You can select multiple answers",
-  createdBy: "This quiz was created with 🧻 by",
-  while: "during their lockdown in France",
-  youWillCrack: "You will crack on",
-  date: "EEEE, d MMMM!",
-  share: "Share the news\nbefore it's too late!",
-  shareText: "I'll crack on %date%\n#lockdown #covid19 #WhenWillYouCrack",
-  and: "and",
+  _root: {
+    lockdown: "Lockdown Countdown",
+    day: "Day",
+    start: "Start",
+    next: "Next",
+    subtitle: "When will you crack?",
+    multiple: "You can select multiple answers",
+    createdBy: "This quiz was created with 🧻 by",
+    while: "during their lockdown in France",
+    youWillCrack: "You will crack on",
+    date: "EEEE, MMMM d!",
+    share: "Share the news\nbefore it's too late!",
+    shareText: "I'll crack on %date%\n#lockdown #covid19 #WhenWillYouCrack",
+    and: "and",
+    translatedBy: "Translated with ❤︎ by",
+  },
   persona: {
     worst:
       "You're not a pretty sight - you're actually growing scales. Your neighbours are more scared of running into you than they are of coronavirus.",
@@ -30,10 +33,9 @@ const en: Translation = {
     title: "When will you crack?",
     description: "The useless (and therefore essential) quiz to test your resistance to the lockdown",
     keywords: "lockdown, coronavirus, covid, SARS-CoV-2, crack, breakdown, quiz, StayAtHome",
-    locale: "en_GB",
+    locale: "en_US",
     siteUrl: `https://whenwillyoucrack.com`,
   },
-  translatedBy: "Translated with ❤︎ by",
   translators: {
     "Catherine Murray": "https://preply.com/fr/tuteur/205648/",
     Maw: "",

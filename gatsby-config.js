@@ -5,7 +5,7 @@ if (!process.env.GATSBY_LANG) {
   throw new Error("Env var GATSBY_LANG not found")
 }
 
-const translations = require("./src/translation").default
+const translations = require("./src/translations").default
 const translation = translations[process.env.GATSBY_LANG]
 
 // we need these in the browser for Bugsnag:

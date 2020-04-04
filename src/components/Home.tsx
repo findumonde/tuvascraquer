@@ -2,13 +2,13 @@ import React from "react"
 import styled from "styled-components"
 import { differenceInDays } from "date-fns"
 
-import { Translation } from "src/types"
 import { THEMES, START_DATE, AUTHORS } from "src/helpers/constants"
 import { isBrowser } from "src/helpers/window"
+import { useTranslate } from "src/components/LangContext"
 import NextButton from "src/components/NextButton"
 import Authors from "src/components/Authors"
+import Flag from "src/components/Flag"
 import Characters from "src/images/characters"
-import Flag from "./Flag"
 
 const Title = styled.h1``
 const Subtitle = styled.h1`
@@ -41,20 +41,22 @@ const About = styled.footer`
 `
 
 interface Props {
-  translation: Translation
   start: () => void
 }
 
-const Home: React.FC<Props> = ({ start, translation }) => {
-  const day = isBrowser() ? ` ${translation.day} ${differenceInDays(new Date(), START_DATE)}` : ""
+const Home: React.FC<Props> = ({ start }) => {
+  const { translate, getTranslation } = useTranslate()
+  const day = isBrowser() ? ` ${translate("day")} ${differenceInDays(new Date(), START_DATE)}` : ""
+
+  const translators = getTranslation("translators")
 
   return (
     <>
       {process.env.GATSBY_LANG === "fr" && <Flag />}
-      <Title>{(translation.lockdown as string).replace("%day%", day)}</Title>
-      <Subtitle>{translation.subtitle}</Subtitle>
+      <Title>{translate("lockdown").replace("%day%", day)}</Title>
+      <Subtitle>{translate("subtitle")}</Subtitle>
       <NextButton onClick={start}>
-        {translation.start}
+        {translate("start")}
         <span />
       </NextButton>
       <Bottom>
@@ -63,18 +65,18 @@ const Home: React.FC<Props> = ({ start, translation }) => {
         ))}
       </Bottom>
       <About>
-        {translation.createdBy}
+        {translate("createdBy")}
         <br />
         <Authors authors={AUTHORS} />
         <br />
-        {translation.while}.
-        {translation.translators && (
+        {translate("while")}.
+        {translators && (
           <>
             <br />
             <br />
-            {translation.translatedBy}
+            {translate("translatedBy")}
             <br />
-            <Authors authors={translation.translators as Record<string, string>} />
+            <Authors authors={translators} />
           </>
         )}
       </About>

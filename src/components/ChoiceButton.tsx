@@ -3,7 +3,6 @@ import styled from "styled-components"
 
 import { COLORS } from "src/helpers/constants"
 import BaseButton from "src/components/Button"
-import { Choice } from "src/types"
 
 const Button = styled(BaseButton)<{ selected?: boolean; color: string }>`
   flex: 1 0 100%;
@@ -23,14 +22,14 @@ const Button = styled(BaseButton)<{ selected?: boolean; color: string }>`
 `
 
 interface Props extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  choice: Choice
+  label: string
   color: string
   selected: boolean
 }
 
-const ChoiceButton: React.FC<Props> = ({ choice, color, selected, ...props }) => (
+const ChoiceButton: React.FC<Props> = ({ label, color, selected, ...props }) => (
   <Button color={color} selected={selected} {...props}>
-    {choice.label}
+    {label}
   </Button>
 )
 

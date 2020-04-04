@@ -4,6 +4,10 @@ export type Slug = string
 
 export type ThemeId = "pink" | "purple" | "green" | "red" | "orange"
 
+export type Translation = Record<string, Record<string, string>>
+export type Locales = string // e.g. "en-GB,en-IE"
+export type Localized = Record<Locales, string>
+
 export interface Theme {
   color: string
   Virus: React.FC<React.SVGProps<SVGSVGElement>>
@@ -12,6 +16,7 @@ export interface Theme {
 export interface IQuestion {
   theme: ThemeId
   label: string
+  localized?: Localized
   multiple?: boolean
   choices: Choice[]
   next?: Slug
@@ -19,6 +24,7 @@ export interface IQuestion {
 
 export interface Choice {
   label: string
+  localized?: Localized
   unique?: boolean
   points?: number
   next?: Slug
@@ -29,5 +35,3 @@ export interface Result {
   Character: StyledComponent<any, any>
   color: string
 }
-
-export type Translation = Record<string, string | Record<string, string>>

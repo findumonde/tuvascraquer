@@ -1,23 +1,23 @@
 import React, { useEffect } from "react"
 import styled from "styled-components"
 import { addDays, differenceInDays, format } from "date-fns"
-import { fr, enGB } from "date-fns/locale"
+import { fr, enUS } from "date-fns/locale"
 
-import { RESULTS, START_DATE } from "src/helpers/constants"
+import { RESULTS, START_DATE, RANGES } from "src/helpers/constants"
 import { isBrowser, openPopup } from "src/helpers/window"
+import { useTranslate } from "src/components/LangContext"
 
 import ShareIcon from "src/images/share.svg"
 import FacebookIcon from "src/images/facebook.svg"
 import TwitterIcon from "src/images/twitter.svg"
-import { RANGES } from "src/helpers/constants"
-import { Translation } from "src/types"
 import Characters from "src/images/characters"
 
 const DATE_LOCALES = {
   fr,
-  en: enGB,
+  en: enUS,
 }
 const DATE_LOCALE = DATE_LOCALES[process.env.GATSBY_LANG]
+const EUROPEAN_ENGLISH = ["en-GB", "en-IE"]
 
 const Content = styled.div`
   min-height: calc(100vh - 90px);
@@ -87,12 +87,13 @@ const getResult = (points: number) => {
 
 interface Props {
   points: number
-  translation: Translation
 }
 
-const Result: React.FC<Props> = ({ points, translation }) => {
-  const date = format(getDate(points), translation.date as string, { locale: DATE_LOCALE })
-  const sharedText = (translation.shareText as string).replace("%date%", date)
+const Result: React.FC<Props> = ({ points }) => {
+  const { translate } = useTranslate()
+  const dateFormat = EUROPEAN_ENGLISH.includes(navigator.language) ? "EEEE, do MMMM!" : translate("date")
+  const date = format(getDate(points), dateFormat, { locale: DATE_LOCALE })
+  const sharedText = translate("shareText").replace("%date%", date)
   const hasShareApi = isBrowser() && "share" in navigator
 
   const { slug, Character, color } = getResult(points)
@@ -142,12 +143,12 @@ const Result: React.FC<Props> = ({ points, translation }) => {
       <Content style={{ minHeight: window.innerHeight - 100 }}>
         <Character />
         <Score>
-          {translation.youWillCrack}
+          {translate("youWillCrack")}
           <br />
           <span style={{ color }}>{date}</span>
         </Score>
-        <Text>{translation.persona[slug]}</Text>
-        <Share>{translation.share}</Share>
+        <Text>{translate(slug, "persona")}</Text>
+        <Share>{translate("share")}</Share>
         {hasShareApi ? (
           <ShareButton onClick={handleShare}>
             <ShareIcon />
