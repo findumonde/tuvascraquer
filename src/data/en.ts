@@ -19,9 +19,9 @@ const questions: Record<Slug, IQuestion> = {
         points: 4,
       },
       {
-        label: "Zombies, I live in New York", // TODO: en-US
+        label: "Zombies, I live in New York",
         localized: {
-          "en-GB,en-IE": "The racecourse, I'm in Cheltenham",
+          "en-GB,en-IE,en-IN": "The racecourse, I'm in Cheltenham",
         },
         points: -3,
       },
@@ -43,7 +43,7 @@ const questions: Record<Slug, IQuestion> = {
       {
         label: "In an apartment",
         localized: {
-          "en-GB,en-IE": "In a flat",
+          "en-GB,en-IE,en-IN": "In a flat",
         },
         points: 1,
       },
@@ -69,7 +69,7 @@ const questions: Record<Slug, IQuestion> = {
     theme: "pink",
     label: "Do you have access to any outdoor spaces?",
     localized: {
-      "en-GB,en-IE": "Do you have access to outside space?",
+      "en-GB,en-IE,en-IN": "Do you have access to outside space?",
     },
     choices: [
       {
@@ -87,7 +87,7 @@ const questions: Record<Slug, IQuestion> = {
     theme: "pink",
     label: "Well look at you, you lucky bastard! What type of outdoor space?",
     localized: {
-      "en-GB,en-IE": "Lucky bastard! What spaces exactly?",
+      "en-GB,en-IE,en-IN": "Lucky bastard! What spaces exactly?",
     },
     multiple: true,
     next: "appliances",
@@ -97,9 +97,9 @@ const questions: Record<Slug, IQuestion> = {
         points: 3,
       },
       {
-        label: "A croquet lawn",
+        label: "A football field",
         localized: {
-          "en-GB,en-IE": "A a vegetable patch",
+          "en-GB,en-IE,en-IN": "A croquet lawn",
         },
         points: 4,
       },
@@ -108,7 +108,10 @@ const questions: Record<Slug, IQuestion> = {
         points: 1,
       },
       {
-        label: "A kitchen garden",
+        label: "A vegetable patch",
+        localized: {
+          "en-GB,en-IE,en-IN": "A kitchen garden",
+        },
         points: 6,
       },
       {
@@ -125,7 +128,7 @@ const questions: Record<Slug, IQuestion> = {
     theme: "green",
     label: "Your home is equipped with",
     localized: {
-      "en-GB,en-IE": "Your dwelling is equipped with",
+      "en-GB,en-IE,en-IN": "Your dwelling is equipped with",
     },
     multiple: true,
     next: "before",
@@ -196,7 +199,7 @@ const questions: Record<Slug, IQuestion> = {
     next: "people",
     choices: [
       {
-        label: "I'm a student, having to explain to my teachers how to use Zoom",
+        label: "I'm a student, having to explain to my teachers how to use Discord",
         points: 1,
       },
       {
@@ -291,7 +294,7 @@ const questions: Record<Slug, IQuestion> = {
       {
         label: "My dead grand parents… saving the economy",
         localized: {
-          "en-GB,en-IE": "My tapeworm",
+          "en-GB,en-IE,en-IN": "My tapeworm",
         },
         points: -2,
       },
@@ -312,9 +315,9 @@ const questions: Record<Slug, IQuestion> = {
         points: 4,
       },
       {
-        label: "Another 'Imagine' singer", // TODO: en-US
+        label: "Another lame 'Imagine' singer",
         localized: {
-          "en-GB,en-IE": "Chris Whitty (pre-infection)",
+          "en-GB,en-IE,en-IN": "Chris Whitty (pre-infection)",
         },
         points: -2,
       },
@@ -338,9 +341,9 @@ const questions: Record<Slug, IQuestion> = {
         points: 1,
       },
       {
-        label: "I'm working on my Texas Hold'em tactics", // TODO: en-US
+        label: "I'm working on my Texas Hold'em tactics",
         localized: {
-          "en-GB,en-IE": "I'm working on my Whist tactics and fine-tuning my strategies for Risk",
+          "en-GB,en-IE,en-IN": "I'm working on my Whist tactics and fine-tuning my strategies for Risk",
         },
         points: 3,
       },
@@ -368,7 +371,7 @@ const questions: Record<Slug, IQuestion> = {
       {
         label: "I'm touching myself watching reruns of Megan Rapinoe playing soccer",
         localized: {
-          "en-GB,en-IE": "I'm touching myself watching reruns of Megan Rapinoe playing football",
+          "en-GB,en-IE,en-IN": "I'm touching myself watching reruns of Megan Rapinoe playing football",
         },
         points: 2,
       },
@@ -400,7 +403,7 @@ const questions: Record<Slug, IQuestion> = {
       {
         label: "Bourbon",
         localized: {
-          "en-GB,en-IE": "Gin",
+          "en-GB,en-IE,en-IN": "Gin",
         },
         points: -1,
       },
@@ -418,14 +421,14 @@ const questions: Record<Slug, IQuestion> = {
       {
         label: "Toilet Paper",
         localized: {
-          "en-GB,en-IE": "Loo roll",
+          "en-GB,en-IE,en-IN": "Loo roll",
         },
         points: -4,
       },
       {
-        label: "Cold fries and peanut butter", // TODO: en-US
+        label: "Cold fries and peanut butter",
         localized: {
-          "en-GB,en-IE": "Cold chips and marmalade",
+          "en-GB,en-IE,en-IN": "Cold chips and marmalade",
         },
         points: -3,
       },
@@ -438,9 +441,9 @@ const questions: Record<Slug, IQuestion> = {
         points: 4,
       },
       {
-        label: "I only got up at 5pm", // TODO: en-US
+        label: "I only got up at 5pm",
         localized: {
-          "en-GB,en-IE": "I only got up at 8pm, Clap for Carers woke me up",
+          "en-GB,en-IE,en-IN": "I only got up at 8pm, Clap for Carers woke me up",
         },
         points: -2,
       },
@@ -477,7 +480,7 @@ const questions: Record<Slug, IQuestion> = {
       {
         label: "I put on my mask stolen from the French",
         localized: {
-          "en-GB,en-IE":
+          "en-GB,en-IE,en-IN":
             "I carefully rehearse my backstory about why all the Easter eggs I'm buying are essential medical supplies for my sick aunt",
         },
         points: -2,
@@ -513,14 +516,14 @@ const questions: Record<Slug, IQuestion> = {
       {
         label: "I'll blow everything I've saved at the bar",
         localized: {
-          "en-GB,en-IE": "I'll blow everything I've saved at the pub",
+          "en-GB,en-IE,en-IN": "I'll blow everything I've saved at the pub",
         },
         points: -1,
       },
       {
-        label: "I'll sue Trump's ass", // TODO: en-US
+        label: "I'll sue Trump's ass",
         localized: {
-          "en-GB,en-IE": "I'll vote greens in the local elections",
+          "en-GB,en-IE,en-IN": "I'll vote greens in the local elections",
         },
         points: 1,
       },
