@@ -1,6 +1,6 @@
 import { GatsbyOnCreatePage } from "../gatsby"
 import datas from "../data"
-import translations from "../translation"
+import translations from "../translations"
 
 const lang = process.env.GATSBY_LANG
 const onCreatePage: GatsbyOnCreatePage = ({ page, actions }) => {

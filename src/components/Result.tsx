@@ -1,7 +1,7 @@
 import React, { useEffect } from "react"
 import styled from "styled-components"
 import { addDays, differenceInDays, format } from "date-fns"
-import { fr, enGB } from "date-fns/locale"
+import { fr, enUS } from "date-fns/locale"
 
 import { RESULTS, START_DATE, RANGES } from "src/helpers/constants"
 import { isBrowser, openPopup } from "src/helpers/window"
@@ -14,9 +14,10 @@ import Characters from "src/images/characters"
 
 const DATE_LOCALES = {
   fr,
-  en: enGB,
+  en: enUS,
 }
 const DATE_LOCALE = DATE_LOCALES[process.env.GATSBY_LANG]
+const EUROPEAN_ENGLISH = ["en-GB", "en-IE"]
 
 const Content = styled.div`
   min-height: calc(100vh - 90px);
@@ -90,7 +91,8 @@ interface Props {
 
 const Result: React.FC<Props> = ({ points }) => {
   const { translate } = useTranslate()
-  const date = format(getDate(points), translate("date"), { locale: DATE_LOCALE })
+  const dateFormat = EUROPEAN_ENGLISH.includes(navigator.language) ? "EEEE, do MMMM!" : translate("date")
+  const date = format(getDate(points), dateFormat, { locale: DATE_LOCALE })
   const sharedText = translate("shareText").replace("%date%", date)
   const hasShareApi = isBrowser() && "share" in navigator
 

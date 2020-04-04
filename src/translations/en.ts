@@ -11,7 +11,7 @@ const en: Translation = {
     createdBy: "This quiz was created with 🧻 by",
     while: "during their lockdown in France",
     youWillCrack: "You will crack on",
-    date: "EEEE, d MMMM!",
+    date: "EEEE, MMMM d!",
     share: "Share the news\nbefore it's too late!",
     shareText: "I'll crack on %date%\n#lockdown #covid19 #WhenWillYouCrack",
     and: "and",

@@ -19,7 +19,7 @@ const questions: Record<Slug, IQuestion> = {
         points: 4,
       },
       {
-        label: "The racecourse, I'm in Cheltenham", // TODO: en-US
+        label: "Empty streets, I live in New York", // TODO: en-US
         localized: {
           "en-GB,en-IE": "The racecourse, I'm in Cheltenham",
         },
@@ -98,6 +98,9 @@ const questions: Record<Slug, IQuestion> = {
       },
       {
         label: "A croquet lawn",
+        localized: {
+          "en-GB,en-IE": "A a vegetable patch",
+        },
         points: 4,
       },
       {
@@ -155,7 +158,7 @@ const questions: Record<Slug, IQuestion> = {
   },
   before: {
     theme: "purple",
-    label: "Before the lockdown...",
+    label: "Before the lockdown…",
     multiple: true,
     next: "situation",
     choices: [
@@ -209,12 +212,12 @@ const questions: Record<Slug, IQuestion> = {
         points: -1,
       },
       {
-        label: "I'm a key worker... I'm screwed",
+        label: "I'm a key worker… I'm screwed",
         points: -2,
       },
       {
         label:
-          "You know, I always say that where hope grows, miracles blossom. By unfolding, we heal. We need to open our souls to the majesty of the universe's mysteries",
+          "You know, I always say that where hope grows, miracles blossom. By unfolding, we heal. We need to open our souls to the majesty of the universe's mysteries.",
         points: 3,
       },
     ],
@@ -258,7 +261,7 @@ const questions: Record<Slug, IQuestion> = {
         points: 2,
       },
       {
-        label: "One or several childr$%&#$qeorzbyqezpr",
+        label: "One or several childr%&#$qeorzbyqezpr",
         points: -5,
       },
       {
@@ -266,7 +269,7 @@ const questions: Record<Slug, IQuestion> = {
         points: -4,
       },
       {
-        label: "My mother in law...but I'm sleeping with her",
+        label: "My mother in law… but I'm sleeping with her",
         points: 2,
       },
       {
@@ -339,10 +342,6 @@ const questions: Record<Slug, IQuestion> = {
         points: 3,
       },
       {
-        label: "I'm singing karaoke projected onto the wall of the building opposite",
-        points: 3,
-      },
-      {
         label: "I'm explaining to my dad how to use HouseParty",
         points: 1,
       },
@@ -356,7 +355,7 @@ const questions: Record<Slug, IQuestion> = {
       },
       {
         label:
-          "I'm learning Japanese, perfecting my yoga poses, painting the bathroom, reading the classics... I'm basically boring as hell",
+          "I'm learning Japanese, perfecting my yoga poses, painting the bathroom, reading the classics… Yeah I'm boring as hell",
         points: 3,
       },
       {
@@ -364,7 +363,10 @@ const questions: Record<Slug, IQuestion> = {
         points: -1,
       },
       {
-        label: "I'm touching myself watching reruns of Megan Rapinoe playing football",
+        label: "I'm touching myself watching reruns of Megan Rapinoe playing soccer",
+        localized: {
+          "en-GB,en-IE": "I'm touching myself watching reruns of Megan Rapinoe playing football",
+        },
         points: 2,
       },
       {
@@ -380,7 +382,7 @@ const questions: Record<Slug, IQuestion> = {
   },
   drink: {
     theme: "green",
-    label: "Time to have a drink. You have...",
+    label: "Time to have a drink. You have…",
     multiple: true,
     next: "food",
     choices: [
@@ -393,7 +395,10 @@ const questions: Record<Slug, IQuestion> = {
         points: 3,
       },
       {
-        label: "Gin",
+        label: "Bourbon",
+        localized: {
+          "en-GB,en-IE": "Gin",
+        },
         points: -1,
       },
       {
@@ -415,7 +420,7 @@ const questions: Record<Slug, IQuestion> = {
         points: -4,
       },
       {
-        label: "Cold chips and marmalade", // TODO: en-US
+        label: "Cold fries and marmalade", // TODO: en-US
         localized: {
           "en-GB,en-IE": "Cold chips and marmalade",
         },
@@ -430,7 +435,10 @@ const questions: Record<Slug, IQuestion> = {
         points: 4,
       },
       {
-        label: "I only got up at 8pm, Clap for Carers woke me up",
+        label: "I only got up at 8pm, Clap for Carers woke me up", // TODO: en-US
+        localized: {
+          "en-GB,en-IE": "I only got up at 8pm, Clap for Carers woke me up",
+        },
         points: -2,
       },
     ],
@@ -445,7 +453,7 @@ const questions: Record<Slug, IQuestion> = {
         points: 2,
       },
       {
-        label: "Yesterday... or the day before... who knows",
+        label: "Yesterday… or the day before… who knows",
         points: 1,
       },
       {
@@ -477,7 +485,7 @@ const questions: Record<Slug, IQuestion> = {
         points: -2,
       },
       {
-        label: "YOU STAY AT HOME FFS !\n#StayAtHome",
+        label: "YOU STAY AT HOME FFS!\n#StayAtHome",
         points: 2,
       },
     ],
@@ -497,18 +505,21 @@ const questions: Record<Slug, IQuestion> = {
         points: 1,
       },
       {
-        label: "I'll blow everything I've saved at the pub",
+        label: "I'll blow everything I've saved at the bar",
+        localized: {
+          "en-GB,en-IE": "I'll blow everything I've saved at the pub",
+        },
         points: -1,
       },
       {
-        label: "I'll vote greens in the local elections", // TODO: en-US
+        label: "I'll sue Trump's ass", // TODO: en-US
         localized: {
           "en-GB,en-IE": "I'll vote greens in the local elections",
         },
         points: 1,
       },
       {
-        label: "I might chill at home for a bit.",
+        label: "I might chill at home for a bit",
         points: 3,
       },
     ],
