@@ -31,11 +31,11 @@ exports.onPostBuild = async () => {
   const hash = md5("replace-with-your-own-hash")
 
   const jsonFiles = glob.sync(`${publicPath}/page-data/**/page-data.json`)
-  console.log("[onPostBuild] Renaming the following files:")
+  console.log("[onPostBuild] Copying the following files:")
   for (let file of jsonFiles) {
     console.log(file)
     const newFilename = file.replace(`page-data.json`, `page-data.${hash}.json`)
-    await fs.rename(file, newFilename)
+    await fs.copyFile(file, newFilename)
   }
 
   const htmlAndJSFiles = glob.sync(`${publicPath}/**/*.{html,js}`)
