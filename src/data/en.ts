@@ -199,7 +199,7 @@ const questions: Record<Slug, IQuestion> = {
     next: "people",
     choices: [
       {
-        label: "I'm a student, having to explain to my teachers how to use Discord",
+        label: "I'm a student, trying to explain Discord to my teachers",
         points: 1,
       },
       {
@@ -220,7 +220,7 @@ const questions: Record<Slug, IQuestion> = {
       },
       {
         label:
-          "You see, in this world, there is two kinds of people, my friend: those with loaded guns and those who dig",
+          "You see, in this world, there is two kinds of people, my friend: those with loaded guns and those who dig.",
         localized: {
           "en-GB,en-IE,en-IN":
             "You know, I always say that where hope grows, miracles blossom. By unfolding, we heal. We need to open our souls to the majesty of the universe's mysteries",
@@ -352,11 +352,11 @@ const questions: Record<Slug, IQuestion> = {
         points: 3,
       },
       {
-        label: "I'm explaining to my dad how to use Zoom",
+        label: "I'm trying to have a video chat with my parents nostrils",
         points: 1,
       },
       {
-        label: "Cook, eat, repeat",
+        label: "Cook, eat, weight myself in the morning, cry, repeat",
         points: 2,
       },
       {
