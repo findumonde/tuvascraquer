@@ -39,6 +39,7 @@ exports.onPostBuild = async () => {
   }
 
   const htmlAndJSFiles = glob.sync(`${publicPath}/**/*.{html,js}`)
+  htmlAndJSFiles.push(`${publicPath}/_headers`)
   console.log("[onPostBuild] Replacing page-data.json references in the following files:")
   for (const file of htmlAndJSFiles) {
     const stats = await fs.stat(file, "utf8")
