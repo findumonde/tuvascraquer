@@ -32,7 +32,16 @@ export const LangProvider = LangContext.Provider
 export const useTranslate = () => {
   const { translation } = useContext(LangContext)
   return {
-    translate: (key: string, cat = "_root") => translation[cat][key] || key,
+    translate: (key: string, cat = "_root") => {
+      const messages = translation[cat]
+      if (!messages) {
+        if (isBrowser() && !location.search.includes("reloaded")) {
+          location.replace("/?reloaded")
+        }
+        return ""
+      }
+      return messages[key] || key
+    },
     getTranslation: (cat: string) => translation[cat],
   }
 }
