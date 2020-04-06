@@ -8,7 +8,7 @@ import Footer from "./footer"
 const Content = styled.main`
   max-width: 1000px;
   margin: 0 auto;
-  padding: 30px 30px 20px;
+  padding: 30px 30px 80px;
 `
 
 const Layout: React.FC = ({ children }) => (
