@@ -32,24 +32,17 @@ const Share = styled.h2`
   white-space: pre-line;
 `
 const Bottom = styled.div`
-  height: 40px;
+  height: 60px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   @media (max-width: 500px) {
-    height: 30px;
+    height: 40px;
   }
   svg {
     flex: 1 0 auto;
     width: 10%;
     height: 100%;
-  }
-  svg:first-of-type {
-    height: 120%;
-  }
-  svg:last-of-type {
-    height: 150%;
-    margin-top: -15px;
   }
 `
 
@@ -141,7 +134,7 @@ const Result: React.FC<Props> = ({ points }) => {
 
   return (
     <>
-      <Content style={{ minHeight: window.innerHeight - 100 }}>
+      <Content style={{ minHeight: window.innerHeight - 120 }}>
         <Character />
         <Score>
           {translate("youWillCrack")}

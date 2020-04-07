@@ -22,14 +22,6 @@ const Bottom = styled.div`
   svg {
     display: block;
     margin: 50px auto;
-    height: 80px;
-    :first-of-type {
-      height: 90px;
-      vertical-align: -3px;
-    }
-    :last-of-type {
-      height: 110px;
-    }
   }
   @media (min-width: 900px) {
     svg {
@@ -69,7 +61,7 @@ const Home: React.FC<Props> = ({ start }) => {
       )}
       <Bottom>
         {Characters.map((Character, index) => (
-          <Character key={index} />
+          <Character key={index} height={100} />
         ))}
       </Bottom>
       <About>
