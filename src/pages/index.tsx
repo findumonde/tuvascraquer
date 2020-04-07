@@ -56,7 +56,7 @@ interface Props {
 const IndexPage: GatsbyPage<any, Props> = ({ pageContext: { data, translation } }) => {
   return (
     <Layout>
-      <LangProvider value={{ translation }}>
+      <LangProvider translation={translation}>
         <Content data={data} />
       </LangProvider>
     </Layout>

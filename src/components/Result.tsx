@@ -3,9 +3,9 @@ import styled from "styled-components"
 import { addDays, differenceInDays, format } from "date-fns"
 import { fr, enUS } from "date-fns/locale"
 
-import { RESULTS, START_DATE, RANGES } from "src/helpers/constants"
+import { RESULTS, RANGES, getStartDate } from "src/helpers/constants"
 import { isBrowser, openPopup } from "src/helpers/window"
-import { useTranslate } from "src/components/LangContext"
+import { useTranslate, useCountry } from "src/components/LangContext"
 
 import ShareIcon from "src/images/share.svg"
 import FacebookIcon from "src/images/facebook.svg"
@@ -68,11 +68,12 @@ const trackSharing = (label: string) => {
 
 const DAYS_WEIGHTER = 1.5 // 150 points => 100 days
 
-const getDate = (points: number) => {
+const getDate = (points: number, country: string) => {
   const now = new Date()
-  let date = addDays(START_DATE, (points - RANGES[0]) / DAYS_WEIGHTER)
+  const startDate = getStartDate(country)
+  let date = addDays(startDate, (points - RANGES[0]) / DAYS_WEIGHTER)
   if (date.getTime() < addDays(now, 5).getTime()) {
-    date = addDays(now, 3 - (RANGES[0] - points) / differenceInDays(now, START_DATE))
+    date = addDays(now, 3 - (RANGES[0] - points) / differenceInDays(now, startDate))
   }
   return date
 }
@@ -91,8 +92,9 @@ interface Props {
 
 const Result: React.FC<Props> = ({ points }) => {
   const { translate } = useTranslate()
+  const { country } = useCountry()
   const dateFormat = EUROPEAN_ENGLISH.includes(navigator.language) ? "EEEE, do MMMM!" : translate("date")
-  const date = format(getDate(points), dateFormat, { locale: DATE_LOCALE })
+  const date = format(getDate(points, country), dateFormat, { locale: DATE_LOCALE })
   const sharedText = translate("shareText").replace("%date%", date)
   const hasShareApi = isBrowser() && "share" in navigator
 
