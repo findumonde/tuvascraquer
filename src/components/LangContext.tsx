@@ -30,10 +30,9 @@ export const localize = (data: Data) => {
 
 export const LangProvider: React.FC<{ translation: Translation }> = ({ translation, children }) => {
   const [country, setCountry] = useState("")
-  const server = "https://www.cloudflare.com"
 
   useEffect(() => {
-    fetch(`${server}/cdn-cgi/trace`)
+    fetch(`/cdn-cgi/trace`)
       .then((response) => response.text())
       .then((data) => {
         const match = data.match(/loc=([A-Z]+)\n/)
