@@ -1,11 +1,14 @@
 import React, { useContext, useState, useEffect } from "react"
 
-import { Localized, Translation } from "src/types"
+import { Localized } from "src/types"
 
 import { isBrowser } from "src/helpers/window"
+import { DEFAULT_COUNTRY } from "src/helpers/constants"
+import TRANSLATIONS from "src/translations"
+
+export const translation = TRANSLATIONS[process.env.GATSBY_LANG]
 
 interface ILangContext {
-  translation: Translation
   country: string
 }
 
@@ -28,42 +31,27 @@ export const localize = (data: Data) => {
   return data.label
 }
 
-interface Props {
-  translation: Translation
-}
-
-export const LangProvider: React.FC<Props> = ({ translation, children }) => {
-  const [country, setCountry] = useState("")
+export const LangProvider: React.FC = ({ children }) => {
+  const [country, setCountry] = useState<string>()
 
   useEffect(() => {
     fetch(`/cdn-cgi/trace`)
       .then((response) => response.text())
       .then((data) => {
-        const match = data.match(/loc=([A-Z]+)\n/)
-        setCountry(match && match.length > 0 ? match[1] : "FR")
+        const match = data.match(/loc=([A-Z]+)$/m)
+        setCountry((match && match[1]) || DEFAULT_COUNTRY)
       })
-      .catch(() => setCountry("FR"))
+      .catch(() => {
+        setCountry(DEFAULT_COUNTRY)
+      })
   }, [])
 
-  return <LangContext.Provider value={{ translation, country }}>{children}</LangContext.Provider>
+  return <LangContext.Provider value={{ country }}>{children}</LangContext.Provider>
 }
 
 export const useCountry = () => useContext(LangContext).country
 
-export const useTranslate = () => {
-  const { translation } = useContext(LangContext)
-
-  return {
-    translate: (key: string, cat = "_root") => {
-      const messages = translation[cat]
-      if (!messages) {
-        if (isBrowser() && !location.search.includes("reloaded")) {
-          location.replace("/?reloaded")
-        }
-        return ""
-      }
-      return messages[key] || key
-    },
-    getTranslation: (cat: string) => translation[cat],
-  }
+export const translate = (key: string, cat = "_root") => {
+  const messages = translation[cat]
+  return (messages && messages[key]) || key
 }

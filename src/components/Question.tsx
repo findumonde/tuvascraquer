@@ -4,7 +4,7 @@ import styled from "styled-components"
 import ChoiceButton from "src/components/ChoiceButton"
 import { THEMES } from "src/helpers/constants"
 import NextButton from "src/components/NextButton"
-import { useTranslate, localize } from "src/components/LangContext"
+import { translate, localize } from "src/components/LangContext"
 import { IQuestion, Slug } from "src/types"
 
 const Title = styled.h1``
@@ -27,7 +27,6 @@ interface QuestionProps {
 }
 
 const Question: React.FC<QuestionProps> = ({ question, next }) => {
-  const { translate } = useTranslate()
   const [answers, setAnswers] = useState<number[]>([])
   const { choices, multiple, theme } = question
   const { color } = THEMES[theme]

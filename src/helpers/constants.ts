@@ -2,6 +2,8 @@ import { GreenVirus, OrangeVirus, PinkVirus, PurpleVirus, RedVirus } from "src/i
 import Characters from "src/images/characters"
 import { ThemeId, Theme, Result } from "src/types"
 
+export const DEFAULT_COUNTRY = "FR"
+
 export const START_DATES = {
   FR: new Date(2020, 2, 17),
   GB: new Date(2020, 2, 24),
@@ -13,7 +15,7 @@ export const START_DATES = {
   LB: new Date(2020, 2, 15),
   IT: new Date(2020, 2, 9),
 }
-export const getStartDate = (country: string) => START_DATES[country] || START_DATES.FR
+export const getStartDate = (country: string) => START_DATES[country] || START_DATES[DEFAULT_COUNTRY]
 
 export const COLORS = {
   white: "#ffffff",

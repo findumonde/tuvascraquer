@@ -5,7 +5,7 @@ import { fr, enUS } from "date-fns/locale"
 
 import { RESULTS, RANGES, getStartDate } from "src/helpers/constants"
 import { isBrowser, openPopup } from "src/helpers/window"
-import { useTranslate, useCountry } from "src/components/LangContext"
+import { translate, useCountry } from "src/components/LangContext"
 
 import ShareIcon from "src/images/share.svg"
 import FacebookIcon from "src/images/facebook.svg"
@@ -91,7 +91,6 @@ interface Props {
 }
 
 const Result: React.FC<Props> = ({ points }) => {
-  const { translate } = useTranslate()
   const country = useCountry()
   const dateFormat = EUROPEAN_ENGLISH.includes(navigator.language) ? "EEEE, do MMMM!" : translate("date")
   const date = format(getDate(points, country), dateFormat, { locale: DATE_LOCALE })
