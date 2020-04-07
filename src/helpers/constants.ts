@@ -13,8 +13,7 @@ export const START_DATES = {
   LB: new Date(2020, 2, 15),
   IT: new Date(2020, 2, 9),
 }
-export const DEFAULT_START_DATE = START_DATES.FR
-export const getStartDate = (country: string) => START_DATES[country] || DEFAULT_START_DATE
+export const getStartDate = (country: string) => START_DATES[country] || START_DATES.FR
 
 export const COLORS = {
   white: "#ffffff",

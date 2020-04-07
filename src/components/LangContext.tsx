@@ -39,12 +39,13 @@ export const LangProvider: React.FC<{ translation: Translation }> = ({ translati
         const match = data.match(/loc=([A-Z]+)\n/)
         setCountry(match && match.length > 0 ? match[1] : "FR")
       })
+      .catch(() => setCountry("FR"))
   }, [])
 
   return <LangContext.Provider value={{ translation, country }}>{children}</LangContext.Provider>
 }
 
-export const useCountry = () => useContext(LangContext)
+export const useCountry = () => useContext(LangContext).country
 
 export const useTranslate = () => {
   const { translation } = useContext(LangContext)

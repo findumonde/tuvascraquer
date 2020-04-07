@@ -92,7 +92,7 @@ interface Props {
 
 const Result: React.FC<Props> = ({ points }) => {
   const { translate } = useTranslate()
-  const { country } = useCountry()
+  const country = useCountry()
   const dateFormat = EUROPEAN_ENGLISH.includes(navigator.language) ? "EEEE, do MMMM!" : translate("date")
   const date = format(getDate(points, country), dateFormat, { locale: DATE_LOCALE })
   const sharedText = translate("shareText").replace("%date%", date)

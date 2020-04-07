@@ -45,7 +45,7 @@ interface Props {
 }
 
 const Home: React.FC<Props> = ({ start }) => {
-  const { country } = useCountry()
+  const country = useCountry()
   const { translate, getTranslation } = useTranslate()
   const day =
     isBrowser() && country ? ` ${translate("day")} ${differenceInDays(new Date(), getStartDate(country)) + 1}` : ""
