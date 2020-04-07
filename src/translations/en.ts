@@ -4,6 +4,7 @@ const en: Translation = {
   _root: {
     lockdown: "Lockdown %day%",
     day: "Day",
+    loading: "Loading…",
     start: "Start",
     next: "Next",
     subtitle: "When will you lose it?",

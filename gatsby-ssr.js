@@ -5,7 +5,9 @@
  */
 
 import render from "src/gatsby/onRenderBody"
+import root from "src/gatsby/wrapRootElement"
 import wrapper from "src/gatsby/wrapPageElement"
 
 export const onRenderBody = render
+export const wrapRootElement = root
 export const wrapPageElement = wrapper

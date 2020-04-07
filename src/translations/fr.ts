@@ -4,6 +4,7 @@ const fr: Translation = {
   _root: {
     lockdown: "Confinement %day%",
     day: "Jour",
+    loading: "Chargement…",
     start: "Démarrer",
     next: "Suivant",
     subtitle: "Quand vas-tu craquer\u00A0?",

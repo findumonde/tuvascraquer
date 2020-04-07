@@ -17,6 +17,8 @@ if (isBrowser() && !window.ga) {
   // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
   // @ts-ignore
   window.ga = (...args: any[]) => {
-    console.log("[GA]", args.join(" / "))
+    if (process.env.NODE_ENV !== "production") {
+      console.log("[GA]", args.join(" / "))
+    }
   }
 }
