@@ -15,6 +15,9 @@ const Subtitle = styled.h1`
   color: ${THEMES.red.color};
   margin-bottom: 50px;
 `
+const Loading = styled.div`
+  padding: 25px 30px 40px;
+`
 const Bottom = styled.div`
   svg {
     display: block;
@@ -56,10 +59,14 @@ const Home: React.FC<Props> = ({ start }) => {
       {process.env.GATSBY_LANG === "fr" && <Flag />}
       <Title>{translate("lockdown").replace("%day%", day)}</Title>
       <Subtitle>{translate("subtitle")}</Subtitle>
-      <NextButton onClick={start}>
-        {translate("start")}
-        <span />
-      </NextButton>
+      {isBrowser() ? (
+        <NextButton onClick={start}>
+          {translate("start")}
+          <span />
+        </NextButton>
+      ) : (
+        <Loading>{translate("loading")}</Loading>
+      )}
       <Bottom>
         {Characters.map((Character, index) => (
           <Character key={index} />
