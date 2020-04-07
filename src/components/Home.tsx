@@ -2,9 +2,9 @@ import React from "react"
 import styled from "styled-components"
 import { differenceInDays } from "date-fns"
 
-import { THEMES, START_DATE, AUTHORS } from "src/helpers/constants"
+import { THEMES, getStartDate, AUTHORS } from "src/helpers/constants"
 import { isBrowser } from "src/helpers/window"
-import { useTranslate } from "src/components/LangContext"
+import { useTranslate, useCountry } from "src/components/LangContext"
 import NextButton from "src/components/NextButton"
 import Authors from "src/components/Authors"
 import Flag from "src/components/Flag"
@@ -45,8 +45,10 @@ interface Props {
 }
 
 const Home: React.FC<Props> = ({ start }) => {
+  const country = useCountry()
   const { translate, getTranslation } = useTranslate()
-  const day = isBrowser() ? ` ${translate("day")} ${differenceInDays(new Date(), START_DATE)}` : ""
+  const day =
+    isBrowser() && country ? ` ${translate("day")} ${differenceInDays(new Date(), getStartDate(country)) + 1}` : ""
 
   const translators = getTranslation("translators")
 

@@ -1,4 +1,4 @@
-import React, { useContext } from "react"
+import React, { useContext, useState, useEffect } from "react"
 
 import { Localized, Translation } from "src/types"
 
@@ -6,6 +6,7 @@ import { isBrowser } from "src/helpers/window"
 
 interface ILangContext {
   translation: Translation
+  country: string
 }
 
 const LangContext = React.createContext<ILangContext>({} as ILangContext)
@@ -27,10 +28,27 @@ export const localize = (data: Data) => {
   return data.label
 }
 
-export const LangProvider = LangContext.Provider
+export const LangProvider: React.FC<{ translation: Translation }> = ({ translation, children }) => {
+  const [country, setCountry] = useState("")
+
+  useEffect(() => {
+    fetch(`/cdn-cgi/trace`)
+      .then((response) => response.text())
+      .then((data) => {
+        const match = data.match(/loc=([A-Z]+)\n/)
+        setCountry(match && match.length > 0 ? match[1] : "FR")
+      })
+      .catch(() => setCountry("FR"))
+  }, [])
+
+  return <LangContext.Provider value={{ translation, country }}>{children}</LangContext.Provider>
+}
+
+export const useCountry = () => useContext(LangContext).country
 
 export const useTranslate = () => {
   const { translation } = useContext(LangContext)
+
   return {
     translate: (key: string, cat = "_root") => {
       const messages = translation[cat]
