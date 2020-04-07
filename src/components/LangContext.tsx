@@ -28,7 +28,11 @@ export const localize = (data: Data) => {
   return data.label
 }
 
-export const LangProvider: React.FC<{ translation: Translation }> = ({ translation, children }) => {
+interface Props {
+  translation: Translation
+}
+
+export const LangProvider: React.FC<Props> = ({ translation, children }) => {
   const [country, setCountry] = useState("")
 
   useEffect(() => {

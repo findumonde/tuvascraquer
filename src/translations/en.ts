@@ -2,7 +2,7 @@ import { Translation } from "src/types"
 
 const en: Translation = {
   _root: {
-    lockdown: "Lockdown Countdown",
+    lockdown: "Lockdown %day%",
     day: "Day",
     start: "Start",
     next: "Next",

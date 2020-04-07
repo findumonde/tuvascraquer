@@ -103,22 +103,22 @@ const getAnimation = (rotate: number) => {
 }
 
 interface AnimatedVirusProps {
-  index: number
-  multiplier: number
-  rotate: number
-  animation: any
+  $index: number
+  $multiplier: number
+  $rotate: number
+  $animation: any
 }
 
 const AnimatedViruses = {}
 Object.keys(THEMES).forEach((theme) => {
   AnimatedViruses[theme] = styled(THEMES[theme].Virus)<AnimatedVirusProps>`
-    top: ${({ multiplier }) => `${random(range * (multiplier + 1), range * multiplier)}`}%;
-    ${({ index }) => `${index % 2 ? "right" : "left"}: -${random(25, 10)}px;`};
-    ${({ animation }) =>
+    top: ${({ $multiplier }: AnimatedVirusProps) => `${random(range * ($multiplier + 1), range * $multiplier)}`}%;
+    ${({ $index }: AnimatedVirusProps) => `${$index % 2 ? "right" : "left"}: -${random(25, 10)}px;`};
+    ${({ $animation: { keyFrame, duration, delay, iteration } }: AnimatedVirusProps) =>
       css`
-        animation: ${animation.keyFrame} ${animation.duration}s ease-in-out ${animation.delay}s ${animation.iteration};
+        animation: ${keyFrame} ${duration}s ease-in-out ${delay}s ${iteration};
       `};
-    transform: rotate(${({ rotate }) => rotate}deg);
+    transform: rotate(${({ $rotate }: AnimatedVirusProps) => $rotate}deg);
   `
 })
 
@@ -148,10 +148,10 @@ const Background: React.FC<Props> = ({ theme }) => {
         return (
           <AnimatedVirus
             key={index}
-            index={index}
-            multiplier={multiplier}
-            rotate={rotate}
-            animation={animation}
+            $index={index}
+            $multiplier={multiplier}
+            $rotate={rotate}
+            $animation={animation}
             width={width}
           />
         )

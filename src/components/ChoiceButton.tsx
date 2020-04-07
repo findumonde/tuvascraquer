@@ -4,7 +4,12 @@ import styled from "styled-components"
 import { COLORS } from "src/helpers/constants"
 import BaseButton from "src/components/Button"
 
-const Button = styled(BaseButton)<{ selected?: boolean; color: string }>`
+interface ButtonProps {
+  $selected?: boolean
+  $color: string
+}
+
+const Button = styled(BaseButton)<ButtonProps>`
   flex: 1 0 100%;
   margin: 15px 30px;
   @media (min-width: 470px) {
@@ -15,9 +20,9 @@ const Button = styled(BaseButton)<{ selected?: boolean; color: string }>`
     margin: 30px;
     padding: 30px;
   }
-  background-color: ${({ selected, color }) => (selected ? color : COLORS.white)};
-  border-color: ${({ selected }) => (selected ? COLORS.white : COLORS.black)};
-  color: ${({ selected }) => (selected ? COLORS.white : COLORS.black)};
+  background-color: ${({ $selected, $color }) => ($selected ? $color : COLORS.white)};
+  border-color: ${({ $selected }) => ($selected ? COLORS.white : COLORS.black)};
+  color: ${({ $selected }) => ($selected ? COLORS.white : COLORS.black)};
   white-space: pre-line;
 `
 
@@ -28,7 +33,7 @@ interface Props extends React.ButtonHTMLAttributes<HTMLButtonElement> {
 }
 
 const ChoiceButton: React.FC<Props> = ({ label, color, selected, ...props }) => (
-  <Button color={color} selected={selected} {...props}>
+  <Button $color={color} $selected={selected} {...props}>
     {label}
   </Button>
 )
