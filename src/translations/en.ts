@@ -17,6 +17,8 @@ const en: Translation = {
     shareText: "I'll crack on %date%\n#lockdown #covid19 #WhenWillYouCrack",
     and: "and",
     translatedBy: "Translated with ❤︎ by",
+    donateText: "Liked this quiz? Consider offering us a coffee or more!",
+    donate: "Donate ❤︎",
   },
   persona: {
     worst:

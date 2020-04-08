@@ -5,13 +5,14 @@ import { COLORS, THEMES } from "src/helpers/constants"
 interface Props {
   $selected?: boolean
   $color?: string
+  $small?: boolean
 }
 
 const Button = styled.button<Props>`
   border-radius: 20px;
   box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.2);
   border: 2px solid ${COLORS.black};
-  padding: 15px 30px;
+  padding: ${({ $small }) => ($small ? "8px 15px" : "15px 30px")};
   &,
   span {
     transition-duration: 0.2s;

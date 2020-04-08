@@ -5,13 +5,14 @@ import { COLORS, FONTS } from "src/helpers/constants"
 
 interface Props {
   $color?: string
+  $small?: boolean
 }
 
 const NextButton = styled(BaseButton)<Props>`
   border-radius: 40px;
   margin: 0 auto 20px;
   font-family: ${FONTS.title};
-  font-size: 1.6em;
+  font-size: ${({ $small }) => ($small ? "1.4em" : "1.6em")};
   ${({ $color }) => `color: ${$color || COLORS.black}; border-color: ${$color || COLORS.black}`};
   span {
     display: inline-block;
