@@ -16,6 +16,8 @@ const fr: Translation = {
     share: "Partage la nouvelle\navant qu’il ne soit trop tard",
     shareText: "Je vais craquer %date%\n#confinement #covid19 #TuVasCraquer",
     and: "et",
+    donateText: "Vous avez aimé ce quiz ? Offrez nous un café !",
+    donate: "Faire un don ❤︎",
   },
   persona: {
     worst:

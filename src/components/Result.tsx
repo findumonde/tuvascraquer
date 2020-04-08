@@ -6,10 +6,12 @@ import { fr, enUS } from "date-fns/locale"
 import { RESULTS, RANGES, getStartDate } from "src/helpers/constants"
 import { isBrowser, openPopup } from "src/helpers/window"
 import { translate, useCountry } from "src/components/LangContext"
+import NextButton from "src/components/NextButton"
 
 import ShareIcon from "src/images/share.svg"
 import FacebookIcon from "src/images/facebook.svg"
 import TwitterIcon from "src/images/twitter.svg"
+import WhatsAppIcon from "src/images/whatsapp.svg"
 import Characters from "src/images/characters"
 
 const DATE_LOCALES = {
@@ -48,6 +50,7 @@ const Bottom = styled.div`
 
 const ShareButton = styled.button`
   display: inline-block;
+  margin-bottom: 40px;
 `
 
 const queryString = (query: Record<string, string>) =>
@@ -114,6 +117,14 @@ const Result: React.FC<Props> = ({ points }) => {
       })
   }
 
+  const handleWhatsApp = () => {
+    const params = {
+      text: `${sharedText}\n${location.href}`,
+    }
+    openPopup("wa", `https://wa.me/?${queryString(params)}`)
+    trackSharing("whatsapp")
+  }
+
   const handleFacebook = () => {
     const params = {
       u: location.href,
@@ -149,6 +160,9 @@ const Result: React.FC<Props> = ({ points }) => {
           </ShareButton>
         ) : (
           <>
+            <ShareButton onClick={handleWhatsApp}>
+              <WhatsAppIcon />
+            </ShareButton>
             <ShareButton onClick={handleTwitter}>
               <TwitterIcon />
             </ShareButton>
@@ -157,6 +171,14 @@ const Result: React.FC<Props> = ({ points }) => {
             </ShareButton>
           </>
         )}
+        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+          <input type="hidden" name="cmd" value="_s-xclick" />
+          <input type="hidden" name="hosted_button_id" value={process.env.GATSBY_PAYPAL} />
+          <p>{translate("donateText")}</p>
+          <NextButton $small $color={color} title="PayPal - The safer, easier way to pay online!">
+            {translate("donate")}
+          </NextButton>
+        </form>
       </Content>
       <Bottom>
         {Characters.map((Character, index) => (
