@@ -24,6 +24,7 @@ const EUROPEAN_ENGLISH = ["en-GB", "en-IE"]
 const Content = styled.div`
   min-height: calc(100vh - 90px);
   padding-bottom: 30px;
+  margin-top: -20px;
 `
 const Score = styled.h1``
 const Text = styled.p`
@@ -171,14 +172,16 @@ const Result: React.FC<Props> = ({ points }) => {
             </ShareButton>
           </>
         )}
-        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-          <input type="hidden" name="cmd" value="_s-xclick" />
-          <input type="hidden" name="hosted_button_id" value={process.env.GATSBY_PAYPAL} />
-          <p>{translate("donateText")}</p>
-          <NextButton $small $color={color} title="PayPal - The safer, easier way to pay online!">
-            {translate("donate")}
-          </NextButton>
-        </form>
+        <p>{translate("donateText")}</p>
+        <NextButton
+          $small
+          as="a"
+          href={`https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=${process.env.GATSBY_PAYPAL}&source=url`}
+          $color={color}
+          title="PayPal - The safer, easier way to pay online!"
+        >
+          {translate("donate")}
+        </NextButton>
       </Content>
       <Bottom>
         {Characters.map((Character, index) => (

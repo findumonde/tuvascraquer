@@ -4,18 +4,24 @@ import { ThemeId, Theme, Result } from "src/types"
 
 export const DEFAULT_COUNTRY = "FR"
 
-export const START_DATES = {
-  FR: new Date(2020, 2, 17),
-  GB: new Date(2020, 2, 24),
-  AU: new Date(2020, 2, 23),
-  IN: new Date(2020, 2, 25),
-  US: new Date(2020, 2, 19),
-  DE: new Date(2020, 2, 20),
-  AE: new Date(2020, 2, 26),
-  LB: new Date(2020, 2, 15),
-  IT: new Date(2020, 2, 9),
+// https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2
+// https://en.wikipedia.org/wiki/Curfews_and_lockdowns_related_to_the_2019%E2%80%9320_coronavirus_pandemic
+export const START_DAYS = {
+  IT: 9,
+  ES: 14,
+  LB: 15,
+  FR: 17, // default
+  US: 19,
+  DE: 20,
+  AU: 23,
+  GB: 24,
+  CO: 24,
+  IN: 25,
+  RO: 25,
+  MX: 30,
+  AE: 31,
 }
-export const getStartDate = (country: string) => START_DATES[country] || START_DATES[DEFAULT_COUNTRY]
+export const getStartDate = (country: string) => new Date(2020, 2, START_DAYS[country] || START_DAYS[DEFAULT_COUNTRY])
 
 export const COLORS = {
   white: "#ffffff",
