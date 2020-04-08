@@ -9,6 +9,8 @@ interface Props {
 }
 
 const NextButton = styled(BaseButton)<Props>`
+  display: inline-block;
+  text-decoration: none;
   border-radius: 40px;
   margin: 0 auto 20px;
   font-family: ${FONTS.title};
@@ -18,6 +20,7 @@ const NextButton = styled(BaseButton)<Props>`
     display: inline-block;
     width: 0;
     height: 0;
+    vertical-align: -1px;
     border-top: 10px solid transparent;
     border-bottom: 10px solid transparent;
     border-left: 15px solid ${({ $color }) => $color || COLORS.black};

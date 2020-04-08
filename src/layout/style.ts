@@ -17,11 +17,7 @@ export default css`
   }
   button {
     cursor: pointer;
-    outline: none;
     background-color: ${COLORS.white};
-    display: flex;
-    align-items: center;
-    justify-content: center;
     font-size: 1.2em;
     -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
     border: none;
@@ -29,6 +25,10 @@ export default css`
   a {
     color: ${COLORS.black};
     text-decoration-color: #aaa;
+  }
+  button,
+  a {
+    outline: none;
   }
   @media (max-width: 350px) {
     body {

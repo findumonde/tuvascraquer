@@ -88,7 +88,7 @@ const Question: React.FC<QuestionProps> = ({ question, next }) => {
           />
         ))}
       </Choices>
-      <NextButton disabled={!answers.length} color={color} onClick={handleNext}>
+      <NextButton disabled={!answers.length} $color={color} onClick={handleNext}>
         {translate("next")}
         <span />
       </NextButton>
