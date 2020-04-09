@@ -6,6 +6,7 @@ import { translate } from "src/components/LangContext"
 import { Subtitle, Bottom } from "src/components/Home"
 import NextButton from "src/components/NextButton"
 import Characters from "src/images/characters"
+import { Link } from "gatsby"
 
 const ThanksPage: GatsbyPage = () => {
   return (
@@ -14,7 +15,7 @@ const ThanksPage: GatsbyPage = () => {
         <meta name="robots" content="noindex" />
       </Helmet>
       <Subtitle>{translate("thanks")}</Subtitle>
-      <NextButton as="a" href="/">
+      <NextButton as={Link} to="/">
         {translate("restart")}
         <span />
       </NextButton>
