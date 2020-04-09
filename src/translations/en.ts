@@ -20,6 +20,8 @@ const en: Translation = {
     donateText: "Liked this quiz? Consider offering us a coffee or more!",
     donate: "Donate ❤︎",
     thanks: "Thank you ❤︎",
+    thanksDisclaimer:
+      "We genuinely hope you won't crack too soon though. Take care of yourself and your relatives, and don't lose that sense of humour!",
     restart: "Start again",
   },
   persona: {

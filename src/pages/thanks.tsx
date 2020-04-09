@@ -4,7 +4,7 @@ import { Link } from "gatsby"
 
 import Layout from "src/layout"
 import { translate } from "src/components/LangContext"
-import { Subtitle, Bottom } from "src/components/Home"
+import { Title, Subtitle, Bottom } from "src/components/Home"
 import NextButton from "src/components/NextButton"
 import Characters from "src/images/characters"
 
@@ -14,7 +14,8 @@ const ThanksPage: GatsbyPage = () => {
       <Helmet>
         <meta name="robots" content="noindex" />
       </Helmet>
-      <Subtitle>{translate("thanks")}</Subtitle>
+      <Title>{translate("thanks")}</Title>
+      <Subtitle>{translate("thanksDisclaimer")}</Subtitle>
       <NextButton as={Link} to="/">
         {translate("restart")}
         <span />
