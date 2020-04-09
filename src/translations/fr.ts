@@ -19,6 +19,8 @@ const fr: Translation = {
     donateText: "Vous avez aimé ce quiz ? Offrez nous un café !",
     donate: "Faire un don ❤︎",
     thanks: "Merci ❤︎",
+    thanksDisclaimer:
+      "En vrai, on espère que vous ne craquerez pas de si tôt. Prenez soin de vous et de vos proches et surtout ne perdez pas votre sens de l'humour\u00A0!",
     restart: "Recommencer",
   },
   persona: {

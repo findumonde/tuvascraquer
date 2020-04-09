@@ -339,7 +339,7 @@ const questions: Record<Slug, IQuestion> = {
   },
   days: {
     theme: "pink",
-    label: "Let's get back to the important things… How are you spending your time?",
+    label: "Let's get into it… How are you spending your time?",
     multiple: true,
     next: "drink",
     choices: [
