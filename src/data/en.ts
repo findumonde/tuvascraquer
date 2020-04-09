@@ -285,6 +285,9 @@ const questions: Record<Slug, IQuestion> = {
       },
       {
         label: "My housemates",
+        localized: {
+          "en-GB,en-IE,en-IN": "My flatmates",
+        },
         points: 2,
       },
       {
@@ -306,7 +309,7 @@ const questions: Record<Slug, IQuestion> = {
   },
   celebrities: {
     theme: "orange",
-    label: "Among those people, you have",
+    label: "Among those people, you have…",
     multiple: true,
     next: "days",
     choices: [
