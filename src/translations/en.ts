@@ -19,6 +19,8 @@ const en: Translation = {
     translatedBy: "Translated with ❤︎ by",
     donateText: "Liked this quiz? Consider offering us a coffee or more!",
     donate: "Donate ❤︎",
+    thanks: "Tank you ❤︎",
+    restart: "Start again",
   },
   persona: {
     worst:
