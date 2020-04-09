@@ -1,6 +1,5 @@
 import React from "react"
 import Helmet from "react-helmet"
-import { Link } from "gatsby"
 
 import Layout from "src/layout"
 import { translate } from "src/components/LangContext"
@@ -15,7 +14,7 @@ const ThanksPage: GatsbyPage = () => {
         <meta name="robots" content="noindex" />
       </Helmet>
       <Subtitle>{translate("thanks")}</Subtitle>
-      <NextButton as={Link} to="/">
+      <NextButton as="a" href="/">
         {translate("restart")}
         <span />
       </NextButton>
