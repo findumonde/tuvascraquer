@@ -18,6 +18,8 @@ const fr: Translation = {
     and: "et",
     donateText: "Vous avez aimé ce quiz ? Offrez nous un café !",
     donate: "Faire un don ❤︎",
+    thanks: "Merci ❤︎",
+    restart: "Recommencer",
   },
   persona: {
     worst:

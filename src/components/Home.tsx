@@ -11,11 +11,11 @@ import Flag from "src/components/Flag"
 import Characters from "src/images/characters"
 
 const Title = styled.h1``
-const Subtitle = styled.h1`
+export const Subtitle = styled.h1`
   color: ${THEMES.red.color};
   margin-bottom: 50px;
 `
-const Bottom = styled.div`
+export const Bottom = styled.div`
   svg {
     display: block;
     margin: 50px auto;
