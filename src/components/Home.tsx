@@ -10,7 +10,7 @@ import Authors from "src/components/Authors"
 import Flag from "src/components/Flag"
 import Characters from "src/images/characters"
 
-export const Title = styled.h1``
+const Title = styled.h1``
 export const Subtitle = styled.h1`
   color: ${THEMES.red.color};
   margin-bottom: 50px;
