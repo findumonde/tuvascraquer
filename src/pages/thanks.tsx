@@ -1,12 +1,12 @@
 import React from "react"
 import Helmet from "react-helmet"
+import { Link } from "gatsby"
 
 import Layout from "src/layout"
 import { translate } from "src/components/LangContext"
 import { Subtitle, Bottom } from "src/components/Home"
 import NextButton from "src/components/NextButton"
 import Characters from "src/images/characters"
-import { Link } from "gatsby"
 
 const ThanksPage: GatsbyPage = () => {
   return (
