@@ -1,7 +1,7 @@
 import React, { useEffect } from "react"
 import styled from "styled-components"
 import { addDays, differenceInDays, format } from "date-fns"
-import { fr, enUS } from "date-fns/locale"
+import { fr, enUS, es } from "date-fns/locale"
 
 import { RESULTS, RANGES, getStartDate } from "src/helpers/constants"
 import { isBrowser, openPopup } from "src/helpers/window"
@@ -17,6 +17,7 @@ import Characters from "src/images/characters"
 const DATE_LOCALES = {
   fr,
   en: enUS,
+  es,
 }
 const DATE_LOCALE = DATE_LOCALES[process.env.GATSBY_LANG]
 const EUROPEAN_ENGLISH = ["en-GB", "en-IE"]

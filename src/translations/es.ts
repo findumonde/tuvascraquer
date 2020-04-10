@@ -2,27 +2,27 @@ import { Translation } from "src/types"
 
 const translation: Translation = {
   _root: {
-    lockdown: "Lockdown %day%",
-    day: "Day",
-    loading: "Loading…",
-    start: "Start",
-    next: "Next",
-    subtitle: "When will you lose it?",
+    lockdown: "Confinamiento %day%",
+    day: "Día",
+    loading: "Cargando…",
+    start: "Iniciar",
+    next: "Siguiente",
+    subtitle: "¿Vas a estallar?",
     multiple: "You can select multiple answers",
     createdBy: "This quiz was created with 🧻 by",
     while: "during their lockdown in France",
-    youWillCrack: "You will crack on",
-    date: "EEEE, MMMM d!",
+    youWillCrack: "Vas a estallar el",
+    date: "EEEE d 'de' MMMM !",
     share: "Share the news\nbefore it's too late!",
-    shareText: "I'll crack on %date%\n#lockdown #covid19 #WhenWillYouCrack",
+    shareText: "I'll crack on %date%\n#lockdown #covid19 #VasAEstallar",
     and: "and",
     translatedBy: "Translated with ❤︎ by",
     donateText: "Liked this quiz? Consider offering us a coffee or more!",
-    donate: "Donate ❤︎",
-    thanks: "Thank you ❤︎",
+    donate: "Donar ❤︎",
+    thanks: "Gracias ❤︎",
     thanksDisclaimer:
       "We genuinely hope you won't crack too soon though. Take care of yourself and your relatives, and don't lose that sense of humour!",
-    restart: "Start again",
+    restart: "Reiniciar",
   },
   persona: {
     worst:
@@ -37,16 +37,14 @@ const translation: Translation = {
       "You were born for this! If you catch the coronavirus, it had better self-isolate from you. Sadly, though, all good things must come to an end…",
   },
   meta: {
-    title: "When will you lose it?",
+    title: "¿Vas a estallar?",
     description: "The useless (and therefore essential) quiz to test your resistance to the lockdown",
     keywords: "lockdown, coronavirus, covid, SARS-CoV-2, crack, lose it, breakdown, quiz, StayAtHome",
-    locale: "en_US",
-    siteUrl: `https://whenwillyoucrack.com`,
+    locale: "es_MX",
+    siteUrl: `https://vasaestallar.com/`,
   },
   translators: {
-    "Catherine Murray": "https://preply.com/fr/tuteur/205648/",
-    Maw: "",
-    "Lexi Dillistone": "https://www.linkedin.com/in/lexi-dillistone-0385871a5/",
+    "Isabel Bibriesca": "https://isabel.bibriesca.net/",
   },
 }
 

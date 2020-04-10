@@ -1,6 +1,6 @@
 import { Translation } from "src/types"
 
-const fr: Translation = {
+const translation: Translation = {
   _root: {
     lockdown: "Confinement %day%",
     day: "Jour",
@@ -43,4 +43,4 @@ const fr: Translation = {
   },
 }
 
-export default fr
+export default translation
