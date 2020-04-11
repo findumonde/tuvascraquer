@@ -334,6 +334,7 @@ const questions: Record<Slug, IQuestion> = {
       },
       {
         label: "None of the above",
+        unique: true,
       },
     ],
   },
