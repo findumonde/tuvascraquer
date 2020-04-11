@@ -3,77 +3,71 @@ import { IQuestion, Slug } from "src/types"
 const questions: Record<Slug, IQuestion> = {
   place: {
     theme: "red",
-    label: "What can you see from your window?",
+    label: "¿Qué ves por la ventana?",
     next: "house",
     choices: [
       {
-        label: "Buildings, I'm in the city",
+        label: "Edificios, estoy en la ciudad",
         points: -2,
       },
       {
-        label: "Sheep, I'm in the country",
+        label: "Ovejas, estoy en el campo",
         points: 4,
       },
       {
-        label: "The sea, I'm on the coast",
+        label: "Mar, estoy en la costa",
         points: 4,
       },
       {
-        label: "Zombies, I live in New York",
-        localized: {
-          "en-GB,en-IE,en-IN": "The racecourse, I'm in Cheltenham",
-        },
+        label: "En un retiro espiritual, estoy en Santiago de Compostela", // TODO
         points: -3,
       },
       {
-        label: "I don't have a window",
+        label: "No tengo ventanas",
         points: -5,
       },
     ],
   },
   house: {
     theme: "orange",
-    label: "Where are you on lockdown?",
+    label: "¿En qué tipo de vivienda estás confinado?",
     next: "outside1",
     choices: [
       {
-        label: "In a house",
+        label: "En una casa",
         points: 4,
       },
       {
-        label: "In an apartment",
+        label: "En un departamento",
         localized: {
-          "en-GB,en-IE,en-IN": "In a flat",
+          "es-ES": "En un piso",
         },
         points: 1,
       },
       {
-        label: "In a caravan",
+        label: "En una caravana",
         points: 1,
       },
       {
-        label: "On a ship. A cruise ship",
+        label: "En un barco… hago un crucero",
         points: -3,
       },
       {
-        label: "In a bunker",
+        label: "En un bunker",
         points: -2,
       },
       {
-        label: "Up your ass",
+        label: "En tu culo",
         points: -3,
       },
     ],
   },
   outside1: {
     theme: "pink",
-    label: "Do you have access to any outdoor spaces?",
-    localized: {
-      "en-GB,en-IE,en-IN": "Do you have access to outside space?",
-    },
+    label: "¿Tienes acceso a espacios abiertos privados?",
     choices: [
       {
-        label: "Yes",
+        label: "Si",
         next: "outside2",
       },
       {
@@ -85,108 +79,105 @@ const questions: Record<Slug, IQuestion> = {
   },
   outside2: {
     theme: "pink",
-    label: "Well look at you, you lucky bastard! What type of outdoor space?",
-    localized: {
-      "en-GB,en-IE,en-IN": "Lucky bastard! What spaces exactly?",
-    },
+    label: "Pequeño suertudo! Qué lugares precisamente?",
     multiple: true,
     next: "appliances",
     choices: [
       {
-        label: "A garden",
+        label: "Un jardin",
         points: 3,
       },
       {
-        label: "A football field",
-        localized: {
-          "en-GB,en-IE,en-IN": "A croquet lawn",
-        },
+        label: "Un campo de fútbol",
         points: 4,
       },
       {
-        label: "A balcony",
+        label: "Un balcón",
         points: 1,
       },
       {
-        label: "A vegetable patch",
-        localized: {
-          "en-GB,en-IE,en-IN": "A kitchen garden",
-        },
+        label: "Un huerto",
         points: 6,
       },
       {
-        label: "A swimming pool, but I don't know how to swim",
+        label: "Una piscina… pero no sé nadar",
         points: 1,
       },
       {
-        label: "Your mum",
+        label: "Tu mamá",
+        localized: {
+          "es-ES": "Tu madre",
+        },
         points: -2,
       },
     ],
   },
   appliances: {
     theme: "green",
-    label: "Your home is equipped with",
-    localized: {
-      "en-GB,en-IE,en-IN": "Your dwelling is equipped with",
-    },
+    label: "Tu vivienda está equipada con…",
     multiple: true,
     next: "before",
     choices: [
       {
-        label: "Multiple windows",
+        label: "Varias ventanas",
         points: 0,
       },
       {
-        label: "A fridge",
+        label: "Un refrigerador",
         points: 2,
       },
       {
-        label: "A washing machine",
+        label: "Una lavadora",
         points: 2,
       },
       {
-        label: "An exercise bike",
+        label: "Una bicicleta estática",
         points: 1,
       },
       {
-        label: "An internet connection",
+        label: "Una conexión a internet",
         points: 3,
       },
       {
-        label: "A vibrator",
+        label: "Un vibrador",
         points: 2,
       },
     ],
   },
   before: {
     theme: "purple",
-    label: "Before the lockdown…",
+    label: "Antes del confinamiento…",
     multiple: true,
     next: "situation",
     choices: [
       {
-        label: "I played sport a few times a week",
+        label: "Hacía deporte varias veces a la semana",
         points: -3,
       },
       {
-        label: "I had a sex life",
+        label: "Tenía una vida sexual",
         points: -1,
       },
       {
-        label: "I had never cooked pasta",
+        label: "Nunca había cocinado pasta",
         points: -2,
       },
       {
-        label: "I made out with an Italian who'd just come back from their gap year in China",
+        label: "Me he sabroseado un·a italiano·a que pasó 6 meses en China",
+        localized: {
+          "es-ES": "Me tire a un·a italiano·a que pasó 6 meses en China",
+        },
         points: -3,
       },
       {
-        label: "What lockdown?",
+        label: "Cuál confinamiento?",
+        localized: {
+          "es-ES": "Confina… Que?",
+        },
         points: 3,
       },
       {
-        label: "None of the above",
+        label: "Nada de eso",
         points: 3,
         unique: true,
       },
@@ -194,47 +185,45 @@ const questions: Record<Slug, IQuestion> = {
   },
   situation: {
     theme: "red",
-    label: "What is your current status?",
+    label: "¿Cuál es tu situación actual?",
     multiple: true,
     next: "people",
     choices: [
       {
-        label: "I'm a student, trying to explain Discord to my teachers",
+        label: "Estudiante, explico a mis maestros cómo funciona Discord",
         points: 1,
       },
       {
-        label: "I'm looking after my kids, and my therapist is looking after me",
+        label: "Cuido a mi hijos pero yo me curo",
         points: -3,
       },
       {
-        label: "Working from home, at least that's what my boss thinks",
+        label: "Trabajo a distancia, al menos es lo que mi jefe piensa",
         points: 2,
       },
       {
-        label: "Unemployed at last! What day is it?",
+        label: "Tengo el paro… qué día es hoy?",
+        localized: {
+          "es-ES": "Estoy en el paro… qué día es hoy?",
+        },
         points: -1,
       },
       {
-        label: "I'm a key worker… I'm screwed",
+        label: "Mi trabajo es útil… estoy en la mierda",
         points: -2,
       },
       {
-        label:
-          "You see, in this world, there is two kinds of people, my friend: those with loaded guns and those who dig.",
-        localized: {
-          "en-GB,en-IE,en-IN":
-            "You know, I always say that where hope grows, miracles blossom. By unfolding, we heal. We need to open our souls to the majesty of the universe's mysteries",
-        },
+        label: "No pienso que haya buenas o malas situaciones…",
         points: 3,
       },
     ],
   },
   people: {
     theme: "orange",
-    label: "Are you in lockdown alone?",
+    label: "¿Estás confinado tu solo·a?",
     choices: [
       {
-        label: "Yes",
+        label: "Si",
         next: "alone",
       },
       {
@@ -245,11 +234,14 @@ const questions: Record<Slug, IQuestion> = {
   },
   alone: {
     theme: "orange",
-    label: "Are you a major geek?",
+    label: "¿Eres un super geek?",
+    localized: {
+      "es-ES": "¿Eres un super friki?",
+    },
     next: "days",
     choices: [
       {
-        label: "Yes",
+        label: "Si",
         points: 5,
       },
       {
@@ -259,107 +251,98 @@ const questions: Record<Slug, IQuestion> = {
   },
   peopleYes: {
     theme: "orange",
-    label: "Who else is in your home?",
+    label: "¿Con quién compartes tu techo?",
     multiple: true,
     next: "celebrities",
     choices: [
       {
-        label: "My partner",
+        label: "Mi pareja",
         points: 2,
       },
       {
-        label: "One or several childr%&#$qeorzbyqezpr",
+        label: "Con uno o varios niños",
         points: -5,
       },
       {
-        label: "My mother in law",
+        label: "Mi suegra",
         points: -4,
       },
       {
-        label: "My mother in law… but I'm sleeping with her",
+        label: "Mi suegra… pero me acuesto con ella",
         points: 2,
       },
       {
-        label: "My parents",
+        label: "Mis padres",
         points: -3,
       },
       {
-        label: "My housemates",
+        label: "Mis compañeros de piso",
         localized: {
-          "en-GB,en-IE,en-IN": "My flatmates",
+          "es-MX": "Mis roomies",
         },
         points: 2,
       },
       {
-        label: "Your brother",
+        label: "Tu hermano",
         points: 2,
       },
       {
-        label: "My cat or dog (or donkey)",
+        label: "Mi perro o gato (o hamster)",
         points: 2,
       },
       {
-        label: "My dead grand parents… saving the economy",
-        localized: {
-          "en-GB,en-IE,en-IN": "My tapeworm",
-        },
+        label: "Mi solitaria",
         points: -2,
       },
     ],
   },
   celebrities: {
     theme: "orange",
-    label: "Among those people, you have…",
+    label: "Entre todas esas personas, se encuentra…",
     multiple: true,
     next: "days",
     choices: [
       {
-        label: "A cook",
+        label: "Un·a cocinero·a",
         points: 3,
       },
       {
-        label: "Bear Grylls",
+        label: "El Zorro",
         points: 4,
       },
       {
-        label: "Another lame 'Imagine' singer",
+        label: "Un infectado de COVID-19",
         localized: {
-          "en-GB,en-IE,en-IN": "Chris Whitty (pre-infection)",
+          "es-MX": "Dr. Hugo López-Gatell",
         },
-        points: -2,
-      },
-      {
-        label: "A Covid-19 carrier",
         points: -4,
       },
       {
-        label: "None of the above",
+        label: "Nada de lo anterior",
+        unique: true,
       },
     ],
   },
   days: {
     theme: "pink",
-    label: "Let's get into it… How are you spending your time?",
+    label: "Vayamos al meollo del asunto… ¿Cómo ocupas tus días?",
     multiple: true,
     next: "drink",
     choices: [
       {
-        label: "I'm doing this stupid quiz",
+        label: "Respondo cuestionarios estúpidos",
         points: 1,
       },
       {
-        label: "I'm working on my Texas Hold'em tactics",
-        localized: {
-          "en-GB,en-IE,en-IN": "I'm working on my Whist tactics and fine-tuning my strategies for Risk",
-        },
+        label: "Perfecciono mi técnica de matatena y mis ataques jugando Risk",
         points: 3,
       },
       {
-        label: "I'm trying to have a video chat with my parents nostrils",
+        label: "Explico a mi padre como instalar HouseParty",
         points: 1,
       },
       {
-        label: "Cook, eat, weight myself in the morning, cry, repeat",
+        label: "Cocinar, comer, repeat",
         points: 2,
       },
       {
@@ -368,26 +351,23 @@ const questions: Record<Slug, IQuestion> = {
       },
       {
         label:
-          "I'm learning Japanese, perfecting my yoga poses, painting the bathroom, reading the classics… Yeah I'm boring as hell",
+          "Estoy aprendiendo japonés, estoy afinando mis posiciones de yoga, estoy pintando otra vez el baño, leo una y otra vez Harry Potter… En resumen, soy aburrido·a.",
         points: 3,
       },
       {
-        label: "Have you ever noticed that toilet water flushes anti-clockwise?",
+        label: "¿Habías notado cómo el agua de los inodoros van al sentido contrario de las manecillas del reloj?",
         points: -1,
       },
       {
-        label: "I'm touching myself watching reruns of Megan Rapinoe playing soccer",
-        localized: {
-          "en-GB,en-IE,en-IN": "I'm touching myself watching reruns of Megan Rapinoe playing football",
-        },
+        label: "Me toco viendo a Megan Rapinoe jugando fútbol",
         points: 2,
       },
       {
-        label: "I'm finishing Tetris",
+        label: "Estoy por terminar Tetris",
         points: 2,
       },
       {
-        label: "Nothing. I'm doing absolutely nothing.",
+        label: "Nada. Absolutamente nada.",
         points: -3,
         unique: true,
       },
@@ -395,157 +375,151 @@ const questions: Record<Slug, IQuestion> = {
   },
   drink: {
     theme: "green",
-    label: "Time to have a drink. You have…",
+    label: "Para el aperitivo bebes…",
+    localized: {
+      "es-MX": "Para el aperitivo tomas…",
+    },
     multiple: true,
     next: "food",
     choices: [
       {
-        label: "Water",
+        label: "Agua",
         points: 2,
       },
       {
-        label: "Beer",
+        label: "Cerveza",
         points: 3,
       },
       {
-        label: "Bourbon",
-        localized: {
-          "en-GB,en-IE,en-IN": "Gin",
-        },
+        label: "Tequila",
         points: -1,
       },
       {
-        label: "Chloroquine",
+        label: "Maestro limpio",
+        localized: {
+          "es-ES": "Mister Proper",
+        },
         points: -5,
+      },
+      {
+        label: "Cloroquina",
+        points: -4,
       },
     ],
   },
   food: {
     theme: "purple",
-    label: "What did you have for lunch yesterday?",
+    label: "¿Qué comiste ayer como almuerzo?",
     next: "shower",
     choices: [
       {
-        label: "Toilet Paper",
+        label: "Papel higiénico",
         localized: {
-          "en-GB,en-IE,en-IN": "Loo roll",
+          "es-MX": "Papel de culo",
         },
         points: -4,
       },
       {
-        label: "Cold fries and peanut butter",
-        localized: {
-          "en-GB,en-IE,en-IN": "Cold chips and marmalade",
-        },
+        label: "Costra de pan con costra de queso",
         points: -3,
       },
       {
-        label: "Instant ramen",
+        label: "Pasta en tres minutos",
         points: -1,
       },
       {
-        label: "Seared scallops, beef bourguignon and panna cotta with a raspberry coulis",
+        label: "Una ensalada primaveral, un estofado de ternera", //TODO
         points: 4,
       },
       {
-        label: "I only got up at 5pm",
-        localized: {
-          "en-GB,en-IE,en-IN": "I only got up at 8pm, Clap for Carers woke me up",
-        },
+        label: "Me levanto a las 8 pm, los aplausos me despiertan",
         points: -2,
       },
     ],
   },
   shower: {
     theme: "red",
-    label: "When was your last shower?",
+    label: "¿Cuándo fue la última vez que te duchaste?",
     next: "out",
     choices: [
       {
-        label: "An hour ago",
+        label: "Hace una hora",
         points: 2,
       },
       {
-        label: "Yesterday… or the day before… who knows",
+        label: "Ayer… o antier… ya no sé",
         points: 1,
       },
       {
-        label: "Last week",
+        label: "La semana pasada",
         points: -1,
       },
       {
-        label: "When I had my last Tinder date",
+        label: "Desde mi última cita en Tinder",
         points: -2,
       },
     ],
   },
   out: {
     theme: "orange",
-    label: "To go out…",
+    label: "Cuando tu quieres salir…",
     next: "after",
     choices: [
       {
-        label: "I put on my mask stolen from the French",
-        localized: {
-          "en-GB,en-IE,en-IN":
-            "I carefully rehearse my backstory about why all the Easter eggs I'm buying are essential medical supplies for my sick aunt",
-        },
+        label: "Cuidadosamente lleno mi certificado para pasear a mi perro de peluche", // TODO
         points: -2,
       },
       {
-        label: "I put on my gym kit so it looks like I might actually be exercising",
+        label: "Me disfrazo como bolsa de basura", // TODO
         points: -1,
       },
       {
-        label: "I send the kids out to make sure everyone is social distancing before I leave the house",
+        label: "Mando a mi hijo a explorar",
         points: -2,
       },
       {
-        label: "YOU STAY AT HOME FFS!\n#StayAtHome",
+        label: "¡QUÉDATE EN TU PUTA CASA!\n#QuedateEnCasa",
         points: 2,
       },
     ],
   },
   after: {
     theme: "pink",
-    label: "What comes after the lockdown?",
+    label: "Después del confinamiento…",
     multiple: true,
     next: "end",
     choices: [
       {
-        label: "There will be no after",
+        label: "No habrá después",
         points: 1,
       },
       {
-        label: "At least this time we'll know who the father is",
+        label: "Esta vez se sabrá quién es el papá",
         points: 1,
       },
       {
-        label: "I'll blow everything I've saved at the bar",
+        label: "Me bebo en un bar todo lo dinero que no gasté",
         localized: {
-          "en-GB,en-IE,en-IN": "I'll blow everything I've saved at the pub",
+          "es-MX": "Me tomo en un bar todo lo dinero que no gasté",
         },
         points: -1,
       },
       {
-        label: "I'll sue Trump's ass",
-        localized: {
-          "en-GB,en-IE,en-IN": "I'll vote greens in the local elections",
-        },
+        label: "Voy a dar mi voto al partido verde",
         points: 1,
       },
       {
-        label: "I might chill at home for a bit",
+        label: "Me voy quedar unos días tranquilo·a en casa",
         points: 3,
       },
     ],
   },
   end: {
     theme: "green",
-    label: "Are you sure you want to know the results of this test?",
+    label: "¿Estás seguro de quieres conocer el resultado?",
     choices: [
       {
-        label: "Yes",
+        label: "Si",
         points: 1,
       },
       {
