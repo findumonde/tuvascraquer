@@ -8,7 +8,7 @@ const translation: Translation = {
     start: "Iniciar",
     next: "Siguiente",
     subtitle: "¿Vas a estallar?",
-    multiple: "Opción multiple",
+    multiple: "Opción múltiple",
     createdBy: "Este cuestionario fue creado con 🧻 por",
     while: "durante sus confinamiento en Francia",
     youWillCrack: "Vas a estallar el",
@@ -39,12 +39,13 @@ const translation: Translation = {
     title: "¿Vas a estallar?",
     description: "El cuestionario inútil (y por lo tanto esencial) para probar tu resistencia al confinamiento",
     keywords:
-      "confinamiento, coronavirus, covid, SARS-CoV-2, tronar, flipar, crujir, colapsar, estallar, quiz, QuedateEnCasa",
+      "confinamiento, coronavirus, covid, SARS-CoV-2, tronar, flipar, crujir, colapsar, estallar, quiz, #QuedateEnCasa",
     locale: "es_MX",
     siteUrl: `https://vasaestallar.com/`,
   },
   translators: {
     "Isabel Bibriesca": "https://isabel.bibriesca.net/",
+    "Pablo Maldonado": "",
   },
 }
 

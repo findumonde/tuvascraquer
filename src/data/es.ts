@@ -19,7 +19,7 @@ const questions: Record<Slug, IQuestion> = {
         points: 4,
       },
       {
-        label: "En un retiro espiritual, estoy en Santiago de Compostela", // TODO
+        label: "Un retiro espiritual, estoy en Santiago de Compostela", // TODO
         points: -3,
       },
       {
@@ -49,11 +49,11 @@ const questions: Record<Slug, IQuestion> = {
         points: 1,
       },
       {
-        label: "En un barco… hago un crucero",
+        label: "En un barco… estoy de crucero",
         points: -3,
       },
       {
-        label: "En un bunker",
+        label: "En un búnker",
         points: -2,
       },
       {
@@ -67,7 +67,7 @@ const questions: Record<Slug, IQuestion> = {
     label: "¿Tienes acceso a espacios abiertos privados?",
     choices: [
       {
-        label: "Si",
+        label: "Sí",
         next: "outside2",
       },
       {
@@ -79,12 +79,12 @@ const questions: Record<Slug, IQuestion> = {
   },
   outside2: {
     theme: "pink",
-    label: "Pequeño suertudo! Qué lugares precisamente?",
+    label: "¡Pequeño suertudo! ¿Qué lugares precisamente?",
     multiple: true,
     next: "appliances",
     choices: [
       {
-        label: "Un jardin",
+        label: "Un jardín",
         points: 3,
       },
       {
@@ -123,7 +123,10 @@ const questions: Record<Slug, IQuestion> = {
         points: 0,
       },
       {
-        label: "Un refrigerador",
+        label: "Una nevera",
+        localized: {
+          "es-ES": "Un refrigerador",
+        },
         points: 2,
       },
       {
@@ -165,14 +168,14 @@ const questions: Record<Slug, IQuestion> = {
       {
         label: "Me he sabroseado un·a italiano·a que pasó 6 meses en China",
         localized: {
-          "es-ES": "Me tire a un·a italiano·a que pasó 6 meses en China",
+          "es-ES": "Me tiré a un·a italiano·a que pasó 6 meses en China",
         },
         points: -3,
       },
       {
         label: "Cuál confinamiento?",
         localized: {
-          "es-ES": "Confina… Que?",
+          "es-ES": "Confina… Qué?",
         },
         points: 3,
       },
@@ -194,7 +197,7 @@ const questions: Record<Slug, IQuestion> = {
         points: 1,
       },
       {
-        label: "Cuido a mi hijos pero yo me curo",
+        label: "Cuido a mi hijos pero me curo",
         points: -3,
       },
       {
@@ -202,9 +205,9 @@ const questions: Record<Slug, IQuestion> = {
         points: 2,
       },
       {
-        label: "Tengo el paro… qué día es hoy?",
+        label: "Estoy desempleado·a… ¿qué día es hoy?",
         localized: {
-          "es-ES": "Estoy en el paro… qué día es hoy?",
+          "es-ES": "Estoy en el paro… ¿qué día es hoy?",
         },
         points: -1,
       },
@@ -223,7 +226,7 @@ const questions: Record<Slug, IQuestion> = {
     label: "¿Estás confinado tu solo·a?",
     choices: [
       {
-        label: "Si",
+        label: "Sí",
         next: "alone",
       },
       {
@@ -241,7 +244,7 @@ const questions: Record<Slug, IQuestion> = {
     next: "days",
     choices: [
       {
-        label: "Si",
+        label: "Sí",
         points: 5,
       },
       {
@@ -291,7 +294,7 @@ const questions: Record<Slug, IQuestion> = {
         points: 2,
       },
       {
-        label: "Mi solitaria",
+        label: "Mi lombriz solitaria",
         points: -2,
       },
     ],
@@ -318,7 +321,7 @@ const questions: Record<Slug, IQuestion> = {
         points: -4,
       },
       {
-        label: "Nada de lo anterior",
+        label: "Ninguna de las anteriores",
         unique: true,
       },
     ],
@@ -338,7 +341,7 @@ const questions: Record<Slug, IQuestion> = {
         points: 3,
       },
       {
-        label: "Explico a mi padre como instalar HouseParty",
+        label: "Explico a mi padre cómo instalar HouseParty",
         points: 1,
       },
       {
@@ -351,7 +354,7 @@ const questions: Record<Slug, IQuestion> = {
       },
       {
         label:
-          "Estoy aprendiendo japonés, estoy afinando mis posiciones de yoga, estoy pintando otra vez el baño, leo una y otra vez Harry Potter… En resumen, soy aburrido·a.",
+          "Estoy aprendiendo japonés, estoy afinando mis posiciones de yoga, estoy pintando otra vez el baño, leo una y otra vez Harry Potter… En resumen, soy un·a aburrido·a.",
         points: 3,
       },
       {
@@ -395,15 +398,8 @@ const questions: Record<Slug, IQuestion> = {
         points: -1,
       },
       {
-        label: "Maestro limpio",
-        localized: {
-          "es-ES": "Mister Proper",
-        },
+        label: "Gel antibacterial",
         points: -5,
-      },
-      {
-        label: "Cloroquina",
-        points: -4,
       },
     ],
   },
@@ -414,9 +410,6 @@ const questions: Record<Slug, IQuestion> = {
     choices: [
       {
         label: "Papel higiénico",
-        localized: {
-          "es-MX": "Papel de culo",
-        },
         points: -4,
       },
       {
@@ -424,11 +417,11 @@ const questions: Record<Slug, IQuestion> = {
         points: -3,
       },
       {
-        label: "Pasta en tres minutos",
+        label: "Pasta lista en tres minutos",
         points: -1,
       },
       {
-        label: "Una ensalada primaveral, un estofado de ternera", //TODO
+        label: "Una ensalada de primavera, y un estofado de ternera", // TODO
         points: 4,
       },
       {
@@ -455,7 +448,7 @@ const questions: Record<Slug, IQuestion> = {
         points: -1,
       },
       {
-        label: "Desde mi última cita en Tinder",
+        label: "Desde mi última cita de Tinder",
         points: -2,
       },
     ],
@@ -478,7 +471,7 @@ const questions: Record<Slug, IQuestion> = {
         points: -2,
       },
       {
-        label: "¡QUÉDATE EN TU PUTA CASA!\n#QuedateEnCasa",
+        label: "¡QUÉDATE EN TU PUTA CASA!\n#QuédateEnCasa",
         points: 2,
       },
     ],
@@ -498,7 +491,7 @@ const questions: Record<Slug, IQuestion> = {
         points: 1,
       },
       {
-        label: "Me bebo en un bar todo lo dinero que no gasté",
+        label: "Me bebo en un bar todo el dinero que no gasté",
         localized: {
           "es-MX": "Me tomo en un bar todo lo dinero que no gasté",
         },
@@ -519,7 +512,7 @@ const questions: Record<Slug, IQuestion> = {
     label: "¿Estás seguro de quieres conocer el resultado?",
     choices: [
       {
-        label: "Si",
+        label: "Sí",
         points: 1,
       },
       {
