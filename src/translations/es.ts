@@ -2,7 +2,7 @@ import { Translation } from "src/types"
 
 const translation: Translation = {
   _root: {
-    lockdown: "Confinamiento %day%",
+    lockdown: "Confinamiento %day%", // cuarentena?
     day: "Día",
     loading: "Cargando…",
     start: "Iniciar",
@@ -14,7 +14,7 @@ const translation: Translation = {
     youWillCrack: "Vas a estallar el",
     date: "EEEE d 'de' MMMM !",
     share: "¡Comparte la noticia\nantes de que sea demasiado tarde!",
-    shareText: "Voy a estallar el %date%\n#confinamiento #covid19 #VasAEstallar",
+    shareText: "Voy a estallar el %date%\n#confinamiento #cuarentena #covid19 #VasAEstallar",
     and: "y",
     translatedBy: "Traducido con ❤︎ por",
     donateText: "¿Te gustó este cuestionario? ¡Considera ofrecernos un café o más!",
@@ -32,15 +32,15 @@ const translation: Translation = {
     average:
       "Pasada la euforia de las videollamadas interminables, los aplausos en los balcones y las torres de papel higiénico, tu único fin es la locura.",
     good:
-      "Perezoso de corazón, el confinamiento te va como anillo al dedo, puedes crear un híbrido perfecto con tu sofá. Luego hablamos cuando le des toda la vuelta a Netflix…",
+      "Perezoso de corazón, la cuarentena te va como anillo al dedo, puedes crear un híbrido perfecto con tu sofá. Luego hablamos cuando le des toda la vuelta a Netflix…",
     best:
       "Fuiste nacido para estar confinado. Si atrapas el coronavirus, mejor que se ponga en cuarentena. Pero desafortunadamente, todas las buenas cosas tienen un final…",
   },
   meta: {
     title: "¿Vas a estallar?",
-    description: "El cuestionario inútil (y por lo tanto esencial) para probar tu resistencia al confinamiento",
+    description: "El cuestionario inútil (y por lo tanto esencial) para probar tu resistencia a la cuarentena",
     keywords:
-      "confinamiento, coronavirus, covid, SARS-CoV-2, tronar, flipar, crujir, colapsar, estallar, quiz, #QuedateEnCasa",
+      "confinamiento, cuarentena, coronavirus, covid, SARS-CoV-2, tronar, flipar, crujir, colapsar, estallar, quiz, #QuedateEnCasa",
     locale: "es_MX",
     siteUrl: `https://vasaestallar.com/`,
   },

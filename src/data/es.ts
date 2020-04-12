@@ -19,7 +19,10 @@ const questions: Record<Slug, IQuestion> = {
         points: 4,
       },
       {
-        label: "Un retiro espiritual, estoy en Santiago de Compostela", // TODO
+        label: "Zombies, estoy en la capital",
+        localized: {
+          "es-ES": "Zombies, estoy en Madrid",
+        },
         points: -3,
       },
       {
@@ -30,7 +33,10 @@ const questions: Record<Slug, IQuestion> = {
   },
   house: {
     theme: "orange",
-    label: "¿En qué tipo de vivienda estás confinado?",
+    label: "¿En qué tipo de vivienda estás en cuarentena?",
+    localized: {
+      "es-ES": "¿En qué tipo de vivienda estás confinado?",
+    },
     next: "outside1",
     choices: [
       {
@@ -149,7 +155,10 @@ const questions: Record<Slug, IQuestion> = {
   },
   before: {
     theme: "purple",
-    label: "Antes del confinamiento…",
+    label: "Antes de la cuarentena…",
+    localized: {
+      "es-ES": "Antes del confinamiento…",
+    },
     multiple: true,
     next: "situation",
     choices: [
@@ -166,14 +175,14 @@ const questions: Record<Slug, IQuestion> = {
         points: -2,
       },
       {
-        label: "Me he sabroseado un·a italiano·a que pasó 6 meses en China",
+        label: "Me besé con un·a italiano·a que pasó 6 meses en China",
         localized: {
           "es-ES": "Me tiré a un·a italiano·a que pasó 6 meses en China",
         },
         points: -3,
       },
       {
-        label: "Cuál confinamiento?",
+        label: "¿Que cuarentena?",
         localized: {
           "es-ES": "Confina… Qué?",
         },
@@ -223,7 +232,10 @@ const questions: Record<Slug, IQuestion> = {
   },
   people: {
     theme: "orange",
-    label: "¿Estás confinado tu solo·a?",
+    label: "¿Estás en cuarentena tu solo·a?",
+    localized: {
+      "es-ES": "¿Estás confinado tu solo·a?",
+    },
     choices: [
       {
         label: "Sí",
@@ -421,7 +433,7 @@ const questions: Record<Slug, IQuestion> = {
         points: -1,
       },
       {
-        label: "Una ensalada de primavera, y un estofado de ternera", // TODO
+        label: "Una ensalada de primavera, y un estofado de ternera",
         points: 4,
       },
       {
@@ -459,11 +471,10 @@ const questions: Record<Slug, IQuestion> = {
     next: "after",
     choices: [
       {
-        label: "Cuidadosamente lleno mi certificado para pasear a mi perro de peluche", // TODO
-        points: -2,
-      },
-      {
-        label: "Me disfrazo como bolsa de basura", // TODO
+        label: "Me disfrazo de Barney",
+        localized: {
+          "es-ES": "Me disfrazo de perro",
+        },
         points: -1,
       },
       {
@@ -478,7 +489,10 @@ const questions: Record<Slug, IQuestion> = {
   },
   after: {
     theme: "pink",
-    label: "Después del confinamiento…",
+    label: "Después de la cuarentena…",
+    localized: {
+      "es-ES": "Después del confinamiento…",
+    },
     multiple: true,
     next: "end",
     choices: [
