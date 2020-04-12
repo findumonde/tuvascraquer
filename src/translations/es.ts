@@ -26,14 +26,15 @@ const translation: Translation = {
   },
   persona: {
     worst:
-      "Ya no luces tan hermoso.a, comienzas a transformarte en un pangolin, tus vecinos tienen más miedo de cruzarse contigo que de contagiarse de corona virus.",
-    bad: "Deberías bajarle un poco al Maestro Limpio. Ve a tomar una ducha y sobretodo, libera a tus hijos del sótano.",
+      "Ya no luces tan hermoso.a, comienzas a transformarte en un pangolin, tus vecinos tienen más miedo de cruzarse contigo que de contagiarse de coronavirus.",
+    bad:
+      "Deberías bajarle un poco al gel antibacterial. Ve a tomar una ducha y sobretodo, libera a tus hijos del sótano.",
     average:
-      "Pasada la euforia del aperitivo interminable, los aplausos en los balcones y las torres de papel de culo, tu único fin es la locura.",
+      "Pasada la euforia de las videollamadas interminables, los aplausos en los balcones y las torres de papel higiénico, tu único fin es la locura.",
     good:
-      "Flojonazo de corazón, el confinamiento te va como anillo al dedo, puedes crear un híbrido perfecto con tu sofá. Después hablamos cuando le des toda la vuelta a Netflix…",
+      "Perezoso de corazón, el confinamiento te va como anillo al dedo, puedes crear un híbrido perfecto con tu sofá. Luego hablamos cuando le des toda la vuelta a Netflix…",
     best:
-      "Fuiste nacido para estar confinado. Si atrapas el corona virus, mejor que se ponga en cuarentena. Pero desafortunadamente, todas las buenas cosas tienen un final…",
+      "Fuiste nacido para estar confinado. Si atrapas el coronavirus, mejor que se ponga en cuarentena. Pero desafortunadamente, todas las buenas cosas tienen un final…",
   },
   meta: {
     title: "¿Vas a estallar?",

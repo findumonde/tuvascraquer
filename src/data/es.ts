@@ -197,11 +197,11 @@ const questions: Record<Slug, IQuestion> = {
         points: 1,
       },
       {
-        label: "Cuido a mi hijos pero me curo",
+        label: "Cuido a mis hijos, pero tomo mis tranquilizantes",
         points: -3,
       },
       {
-        label: "Trabajo a distancia, al menos es lo que mi jefe piensa",
+        label: "Trabajo desde casa, al menos es lo que mi jefe piensa",
         points: 2,
       },
       {
@@ -212,7 +212,7 @@ const questions: Record<Slug, IQuestion> = {
         points: -1,
       },
       {
-        label: "Mi trabajo es útil… estoy en la mierda",
+        label: "Mi trabajo es indispensable… vida de mierda",
         points: -2,
       },
       {
@@ -413,7 +413,7 @@ const questions: Record<Slug, IQuestion> = {
         points: -4,
       },
       {
-        label: "Costra de pan con costra de queso",
+        label: "Pan viejo y queso vencido",
         points: -3,
       },
       {
@@ -467,7 +467,7 @@ const questions: Record<Slug, IQuestion> = {
         points: -1,
       },
       {
-        label: "Mando a mi hijo a explorar",
+        label: "Mando a mi hijo a explorar primero",
         points: -2,
       },
       {
