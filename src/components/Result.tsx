@@ -65,13 +65,14 @@ const trackSharing = (label: string) => {
 }
 
 const DAYS_WEIGHTER = 1.5 // 150 points => 100 days
+const OFFSET = 60 // points to days
 
 const getDate = (points: number, country: string) => {
   const now = new Date()
   const startDate = getStartDate(country)
-  let date = addDays(startDate, (points - RANGES[0]) / DAYS_WEIGHTER)
+  let date = addDays(startDate, (points + OFFSET) / DAYS_WEIGHTER)
   if (date.getTime() < addDays(now, 5).getTime()) {
-    date = addDays(now, 3 - (RANGES[0] - points) / differenceInDays(now, startDate))
+    date = addDays(now, 3 - (-OFFSET - points) / differenceInDays(now, startDate))
   }
   return date
 }
