@@ -11,3 +11,4 @@ Jusqu'à quelle date vas-tu tenir le coup ? Cet outil magique te répond !
 
 - `fr` → https://tuvascraquer.fr
 - `en` → https://whenwillyoucrack.com
+- `es` → https://vasaestallar.com

@@ -22,3 +22,16 @@ if (isBrowser() && !window.ga) {
     }
   }
 }
+
+export const getUrlParam = (key: string) => {
+  if (isBrowser() && location.search) {
+    const pairs = location.search.substr(1).split("&")
+    for (const pair of pairs) {
+      const [name, value] = pair.split("=")
+      if (name === key) {
+        return decodeURIComponent(value)
+      }
+    }
+  }
+  return null
+}
