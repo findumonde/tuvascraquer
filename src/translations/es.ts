@@ -5,7 +5,7 @@ const translation: Translation = {
     lockdown: "Confinamiento %day%", // cuarentena?
     day: "Día",
     loading: "Cargando…",
-    start: "Iniciar",
+    start: "Inicio",
     next: "Siguiente",
     subtitle: "¿Vas a estallar?",
     multiple: "Opción múltiple",

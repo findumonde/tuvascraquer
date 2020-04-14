@@ -370,7 +370,7 @@ const questions: Record<Slug, IQuestion> = {
         points: 3,
       },
       {
-        label: "¿Habías notado cómo el agua de los inodoros van al sentido contrario de las manecillas del reloj?",
+        label: "¿Habías notado cómo el agua de los inodoros van al sentido contrario de las agujas del reloj?",
         points: -1,
       },
       {
@@ -417,7 +417,7 @@ const questions: Record<Slug, IQuestion> = {
   },
   food: {
     theme: "purple",
-    label: "¿Qué comiste ayer como almuerzo?",
+    label: "¿Qué comiste ayer?",
     next: "shower",
     choices: [
       {
