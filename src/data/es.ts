@@ -86,6 +86,9 @@ const questions: Record<Slug, IQuestion> = {
   outside2: {
     theme: "pink",
     label: "¡Pequeño suertudo! ¿Qué lugares precisamente?",
+    localized: {
+      "es-ES": "¡Que suerte! ¿Qué lugares precisamente?",
+    },
     multiple: true,
     next: "appliances",
     choices: [
@@ -203,6 +206,9 @@ const questions: Record<Slug, IQuestion> = {
     choices: [
       {
         label: "Estudiante, explico a mis maestros cómo funciona Discord",
+        localized: {
+          "es-ES": "Estudiante, explico a mis profesores cómo funciona Discord",
+        },
         points: 1,
       },
       {
@@ -224,10 +230,10 @@ const questions: Record<Slug, IQuestion> = {
         label: "Mi trabajo es indispensable… vida de mierda",
         points: -2,
       },
-      {
-        label: "No pienso que haya buenas o malas situaciones…",
-        points: 3,
-      },
+      // {
+      //   label: "No pienso que haya buenas o malas situaciones…", // TODO
+      //   points: 3,
+      // },
     ],
   },
   people: {
@@ -349,7 +355,7 @@ const questions: Record<Slug, IQuestion> = {
         points: 1,
       },
       {
-        label: "Perfecciono mi técnica de matatena y mis ataques jugando Risk",
+        label: "Perfecciono mi técnica de póker y mis ataques jugando Risk",
         points: 3,
       },
       {
@@ -370,7 +376,7 @@ const questions: Record<Slug, IQuestion> = {
         points: 3,
       },
       {
-        label: "¿Habías notado cómo el agua de los inodoros van al sentido contrario de las agujas del reloj?",
+        label: "¿Habías notado cómo el agua del baño va al sentido contrario de las agujas del reloj?",
         points: -1,
       },
       {
@@ -453,6 +459,9 @@ const questions: Record<Slug, IQuestion> = {
       },
       {
         label: "Ayer… o antier… ya no sé",
+        localized: {
+          "es-ES": "Ayer… o antes de ayer… ya no sé",
+        },
         points: 1,
       },
       {
@@ -467,7 +476,7 @@ const questions: Record<Slug, IQuestion> = {
   },
   out: {
     theme: "orange",
-    label: "Cuando tu quieres salir…",
+    label: "Cuando quieres salir…",
     next: "after",
     choices: [
       {
@@ -501,7 +510,7 @@ const questions: Record<Slug, IQuestion> = {
         points: 1,
       },
       {
-        label: "Esta vez se sabrá quién es el papá",
+        label: "Esta vez se sabrá quién es el padre",
         points: 1,
       },
       {
