@@ -1,7 +1,7 @@
 type Store = import("gatsby").Store
 type Cache = import("gatsby").Cache
 
-// hack to avoid missmatch between docs & types (context vs pageContext)
+// hack to avoid mismatch between docs & types (context vs pageContext)
 export interface GatsbyPage {
   path: string
   component: string

@@ -7,44 +7,19 @@ export const DEFAULT_COUNTRY = "FR"
 // https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2
 // https://en.wikipedia.org/wiki/Curfews_and_lockdowns_related_to_the_2019%E2%80%9320_coronavirus_pandemic
 // https://en.wikipedia.org/wiki/National_responses_to_the_2019%E2%80%9320_coronavirus_pandemic
-export const START_DAYS = {
+export const START_DAYS: Record<string, [number, number, number]> = {
   // Europe:
-  IT: 9,
-  IE: 12,
-  ES: 14,
-  FR: 17, // default
-  DE: 20,
-  GR: 23,
-  GB: 24,
-  RO: 25,
-  // Asia & Oceania:
-  LB: 15,
-  AU: 23,
-  IN: 25,
-  RU: 30,
-  AE: 31,
-  // North America:
-  US: 19,
-  CA: 21, // Québec
-  MX: 30,
-  // Central & South America:
-  SV: 12,
-  EC: 16,
-  PE: 16,
-  VE: 17,
-  HN: 17,
-  DO: 19,
-  CL: 19,
-  AR: 19,
-  PY: 20,
-  BO: 22,
-  CU: 23,
-  CR: 23,
-  BR: 24, // Santa Catarina 17, São Paulo 24
-  CO: 25,
-  PA: 25,
+  IE: [2020, 9, 22],
+  FR: [2020, 9, 30], // default
+  BE: [2020, 10, 2],
+  GB: [2020, 10, 5],
+  PT: [2020, 10, 4],
+  DE: [2020, 10, 2],
 }
-export const getStartDate = (country: string) => new Date(2020, 2, START_DAYS[country] || START_DAYS[DEFAULT_COUNTRY])
+export const getStartDate = (country: string) => {
+  const dateArray = START_DAYS[country] || START_DAYS[DEFAULT_COUNTRY]
+  return new Date(...dateArray)
+}
 
 export const COLORS = {
   white: "#ffffff",

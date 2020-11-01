@@ -32,7 +32,7 @@ const translation: Translation = {
     average:
       "Pasada la euforia de las videollamadas interminables, los aplausos en los balcones y las torres de papel higiénico, tu único fin es la locura.",
     good:
-      "Siempre fuistes un vago, la cuarentena te va como anillo al dedo, puedes crear un híbrido perfecto con tu sofá. Luego hablamos cuando hayas visto todo Netflix…",
+      "Siempre fuiste un vago, la cuarentena te va como anillo al dedo, puedes crear un híbrido perfecto con tu sofá. Luego hablamos cuando hayas visto todo Netflix…",
     best:
       "Naciste para estar confinado. Si atrapas el coronavirus, mejor que se ponga en cuarentena. Pero desafortunadamente, todas las buenas cosas tienen un final…",
   },
